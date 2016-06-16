@@ -1,0 +1,1 @@
+# hsc-wp-child-theme
