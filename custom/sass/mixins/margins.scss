@@ -1,0 +1,21 @@
+@each $item, $size in (n: 0, xs: 5px, sm: 10px, md: 15px, lg: 20px, xl: 25px, xxl: 30px) {
+    .mt-#{$item} {
+        padding-top: $size;
+    }
+    .ml-#{$item} {
+        padding-left: $size;
+    }
+    .mb-#{$item} {
+        padding-bottom: $size;
+    }
+    .mr-#{$item} {
+        padding-right: $size;
+    }
+}
+
+.clear-margins {
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+}

@@ -11,4 +11,17 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Template: Divi
 */
 
-@import './hsc-news-box.scss';
+@import './variables.scss';
+
+@import './mixins/common.scss';
+@import './mixins/fonts.scss';
+@import './mixins/backgrounds.scss';
+@import './mixins/paddings.scss';
+@import './mixins/margins.scss';
+
+@import './core/fonts.scss';
+@import './core/footer.scss';
+@import './core/header.scss';
+@import './core/layout.scss';
+
+@import './components/hsc-news-box.scss';

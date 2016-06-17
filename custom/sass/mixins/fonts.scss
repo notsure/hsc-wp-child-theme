@@ -1,0 +1,35 @@
+.text-white {
+    color: $hsc-white;
+}
+
+.text-blue {
+    color: $hsc-blue-dark;
+}
+
+.text-yellow {
+    color: $hsc-yellow;
+}
+
+.text-grey {
+    color: $hsc-grey;
+}
+
+@mixin font-italic-bold($size, $lineHeight) {
+    font-size: $size;
+    line-height: $lineHeight;
+}
+
+@mixin font-bold($size, $lineHeight) {
+    font-size: $size;
+    line-height: $lineHeight;
+}
+
+@mixin font-italic($size, $lineHeight) {
+    font-size: $size;
+    line-height: $lineHeight;
+}
+
+@mixin font-normal($size, $lineHeight) {
+    font-size: $size;
+    line-height: $lineHeight;
+}

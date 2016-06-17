@@ -1,0 +1,14 @@
+.bg-white {
+    background-color: $hsc-white;
+    @extend .text-blue;
+}
+
+.bg-blue {
+    background-color: $hsc-blue-dark;
+    @extend .text-yellow;
+}
+
+.bg-yellow {
+    background-color: $hsc-yellow;
+    @extend .text-blue;
+}
