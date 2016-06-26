@@ -1,0 +1,59 @@
+.hsc-game-schedule-widget {
+    float: left;
+    width: 100%;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+
+    .schedule-widget-holder {
+        @extend .flexbox;
+        align-items: center;
+    }
+
+    .image {
+        width: 35%;
+        text-align: center;
+
+        img {
+            max-width: 100px;
+            max-height: 100px;
+        }
+    }
+
+    .meta {
+        display: inline-block;
+        width: 30%;
+        text-align: center;
+    }
+
+    .time {
+        font-size: 26px;
+    }
+
+    .scores {
+        display: inline-block;
+        margin: auto;
+        font-size: 26px;
+
+        .score,
+        .divider {
+            float: left;
+        }
+    }
+
+    .teams {
+        width: 100%;
+    }
+
+    &.last-game-widget {
+        .time {
+            display: none;
+        }
+    }
+
+    &.next-game-widget {
+        .scores {
+            display: none;
+        }
+    }
+}

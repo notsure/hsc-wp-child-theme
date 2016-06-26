@@ -11,17 +11,17 @@
 
       if ( ! is_page_template( 'page-template-blank.php' ) ) : ?>
 
-      <footer id="main-footer">
+      <footer class="main-footer">
           <?php get_sidebar( 'footer' ); ?>
 
-          <div id="footer-bottom">
+          <div class="footer-bottom">
               <div class="container clearfix">
               <div class="footer-logo">
                   <img src="<?php echo esc_attr( $logo ); ?>" />
               </div>
 
               <?php if ( has_nav_menu( 'footer-menu' ) ) : ?>
-              <div id="et-footer-nav">
+              <div class="footer-nav">
                   <div class="container">
                       <?php
                           wp_nav_menu( array(
@@ -37,22 +37,29 @@
 			  <?php endif; ?>
 
               <ul class="footer-social">
-                  <li>Social Media</li>
-                  <li>&#xe0c1;</li>
-                  <li>YT</li>
+                  <li class="et-social-icon et-social-facebook">
+                      <a href="https://www.facebook.com/elegantthemes" class="icon">
+                          <span>Facebook</span>
+                      </a>
+                  </li>
+                  <li class="et-social-icon et-social-youtube">
+                      <a href="https://www.facebook.com/elegantthemes" class="icon">
+                          <span>Youtube</span>
+                      </a>
+                  </li>
               </ul>
           </div> <!-- .container -->
       </div>
       </footer> <!-- #main-footer -->
 
-      <footer id="mobile-footer">
-          <div id="footer-bottom">
+      <footer class="mobile-footer">
+          <div class="footer-bottom">
               <div class="footer-logo">
                   <img src="<?php echo esc_attr( $logo ); ?>" />
               </div>
 
               <?php if ( has_nav_menu( 'footer-menu' ) ) : ?>
-              <div id="et-footer-nav">
+              <div class="footer-nav">
                   <div class="container">
                       <?php
                           wp_nav_menu( array(
@@ -68,9 +75,16 @@
 			  <?php endif; ?>
 
               <ul class="footer-social">
-                  <li>Social Media</li>
-                  <li>&#xe0c1;</li>
-                  <li>YT</li>
+                  <li class="et-social-icon et-social-facebook">
+                      <a href="https://www.facebook.com/elegantthemes" class="icon">
+                          <span>Facebook</span>
+                      </a>
+                  </li>
+                  <li class="et-social-icon et-social-youtube">
+                      <a href="https://www.facebook.com/elegantthemes" class="icon">
+                          <span>Youtube</span>
+                      </a>
+                  </li>
               </ul>
           </div> <!-- .container -->
       </footer>
@@ -82,5 +96,8 @@
 	</div> <!-- #page-container -->
 
 	<?php wp_footer(); ?>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="<?php echo $themeURL . '/custom/js/hockeydata.js'; ?>" type="text/javascript"></script>
 </body>
 </html>
