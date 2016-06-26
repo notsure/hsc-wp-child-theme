@@ -5,3 +5,9 @@
 #top-menu a {
     color: $hsc-white;
 }
+
+.mobile_menu_bar {
+    &:before {
+        color: $hsc-yellow;
+    }
+}

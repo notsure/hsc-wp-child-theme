@@ -1,5 +1,5 @@
-#main-footer {
-    height: 250px;
+.main-footer {
+    height: 60px;
     background: transparent;
     position: relative;
 
@@ -7,9 +7,9 @@
         display: none;
     }
 
-    #footer-bottom {
+    .footer-bottom {
         @extend .clear-paddings;
-        height: 50px;
+        height: 60px;
         position: absolute;
         bottom: 0;
         width: 100%;
@@ -30,13 +30,13 @@
         height: 100px;
         display: inline-block;
         position: absolute;
-        bottom: 0;
+        bottom: 10px;
     }
 
-    #et-footer-nav {
+    .footer-nav {
         background: none;
         float: left;
-        margin-left: 140px;
+        margin-left: 110px;
 
         > .container {
             display: block;
@@ -45,6 +45,17 @@
 
         #menu-footer-menu {
             display: inline-block;
+        }
+
+        .bottom-nav {
+            li {
+                padding-right: 10px;
+            }
+
+            a {
+                padding: 15px 5px;
+                color: $hsc-white;
+            }
         }
     }
 
@@ -57,6 +68,7 @@
         -ms-transform: skewX(-15deg);
         transform: skewX(-15deg);
         background: $hsc-yellow;
+        padding: 18px 15px 15px 25px;
 
         li {
             -moz-transform: skewX(15deg);
@@ -65,6 +77,17 @@
             -ms-transform: skewX(15deg);
             transform: skewX(15deg);
             float: left;
+            font-size: 16px;
+            font-weight: bold;
+            color: $hsc-blue-dark;
+            margin-right: 10px;
+        }
+
+        .et-social-icon {
+            a {
+                color: $hsc-blue-dark;
+                font-size: 24px;
+            }
         }
 
         &:after {
@@ -80,12 +103,65 @@
     }
 }
 
-#mobile-footer {
+.mobile-footer {
+    text-align: center;
     display: none;
 
     @media #{$viewport-phone} {
         background: transparent;
         position: relative;
         display: inherit;
+    }
+
+    .footer-bottom {
+        background: $hsc-blue-dark;
+        padding-top: 15px;
+    }
+
+    .footer-logo {
+        width: 100px;
+        height: 100px;
+        display: inline-block;
+    }
+
+    .footer-nav {
+        .container {
+            width: 100%;
+        }
+
+        .bottom-nav {
+            height: 100%;
+            display: inline-block;
+            text-align: center;
+            width: 100%;
+
+            li {
+                padding: 15px 0;
+                width: 50%;
+                float: left;
+            }
+
+            a {
+                padding: 15px 5px;
+                color: $hsc-white;
+            }
+        }
+    }
+
+    .footer-social {
+        @extend .clear-paddings;
+        background: $hsc-yellow;
+        width: 100%;
+        height: 70px;
+
+        li {
+            float: left;
+            width: 50%;
+
+            a {
+                padding: 25px;
+                color: $hsc-blue-dark;
+            }
+        }
     }
 }
