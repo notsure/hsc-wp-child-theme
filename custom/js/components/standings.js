@@ -2,25 +2,26 @@
     "use strict";
 
     function HockeyDataWidgetsStandings() {
-        var logoBaseUrl = 'http://api2.hockeydata.net/img/icehockey/ebel/team-logos/';
+        var logoBaseUrl = '/wp-content/themes/hsc-theme/images/teams';
         var divisionId = '136';
         var teamId = '731';
 
         var retrieveHeaderTemplate = function() {
-            return '<tr>'
-                + '<th class="rank">#</th>'
-                + '<th class="team" colspan="2">Team</th>'
-                + '<th class="info">GP</th>'
-                + '<th class="info">W</th>'
-                + '<th class="info">L</th>'
-                + '<th class="info">P</th>'
+            return '<tr class="hsc-standings-header">'
+                + '<td class="rank">#</td>'
+                + '<td class="image"></td>'
+                + '<td class="team">Team</td>'
+                + '<td class="info">GP</td>'
+                + '<td class="info">W</td>'
+                + '<td class="info">L</td>'
+                + '<td class="info">P</td>'
                 + '</tr>';
         };
 
         var retrieveRowTemplate = function() {
             return '<tr class="hsc-standings-row">'
                 + '<td class="rank">{{ tableRank }}</td>'
-                + '<td class="image"><img src="' + logoBaseUrl + divisionId + '/{{ id }}.png" /></td>'
+                + '<td class="image"><img src="' + logoBaseUrl + '/{{ id }}.png" /></td>'
                 + '<td class="team">{{ teamLongname }}</td>'
                 + '<td class="info">{{ gamesPlayed }}</td>'
                 + '<td class="info">{{ gamesWon }}</td>'
@@ -30,7 +31,7 @@
         };
 
         var buildWidget = function($elem, data) {
-            var output = '<table class="table hsc-standings">';
+            var output = '<table class="hsc-table hsc-standings">';
             var rows = buildRows(data.rows);
             output += retrieveHeaderTemplate();
             output += rows;

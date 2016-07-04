@@ -5,6 +5,7 @@ window.HockeyDataService = function() {
     var baseUrl = 'http://api.hockeydata.net/data/ebel';
     var scheduleUrl = '/Schedule';
     var standingsUrl = '/Standings';
+    var knockoutUrl = '/KnockoutStage';
 
     var urlParams = {
         apiKey: 'e52b5722cbc89c3e51ee0cd6e2485a81',
@@ -68,6 +69,16 @@ window.HockeyDataService = function() {
             urlParams.divisionId = divisionId;
             var params = $.param(urlParams);
             var url = baseUrl + standingsUrl + '?' + params;
+
+            return $.ajax({
+                url: url,
+                dataType: "jsonp"
+            });
+        },
+        getKnockout: function(divisionId) {
+            urlParams.divisionId = divisionId;
+            var params = $.param(urlParams);
+            var url = baseUrl + knockoutUrl + '?' + params;
 
             return $.ajax({
                 url: url,

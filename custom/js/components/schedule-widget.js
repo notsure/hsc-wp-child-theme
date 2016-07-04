@@ -1,7 +1,7 @@
 (function($) {
     "use strict";
     var HockeyDataWidgetsScheduleSingle = function() {
-        var logoBaseUrl = 'http://api2.hockeydata.net/img/icehockey/ebel/team-logos/';
+        var logoBaseUrl = '/wp-content/themes/hsc-theme/images/teams';
         var divisionId = '136';
         var teamId = '731';
         var type = 'last';
@@ -16,7 +16,7 @@
             return '<div class="hsc-game-schedule-widget ' + className + '">'
                 + '<div class="schedule-widget-holder">'
                 + '  <div class="image image-home-team">'
-                + '    <img src="' + logoBaseUrl + divisionId + '/{{ homeTeamId }}.png" />'
+                + '    <img src="' + logoBaseUrl + '/{{ homeTeamId }}.png" />'
                 + '  </div>'
                 + '  <div class="meta">'
                 + '    <div class="date">{{ scheduledDate.value }}</div>'
@@ -28,12 +28,12 @@
                 + '    </div>'
                 + '  </div>'
                 + '  <div class="image image-away-team">'
-                + '    <img src="' + logoBaseUrl + divisionId + '/{{ awayTeamId }}.png" />'
+                + '    <img src="' + logoBaseUrl + '/{{ awayTeamId }}.png" />'
                 + '  </div>'
                 + '</div>'
                 + '  <div class="teams">'
                 + '    <span class="team home-team">{{ homeTeamLongName }}</span>'
-                + '    <span class="divider">Vs</span>'
+                + '    <span class="divider">-</span>'
                 + '    <span class="team away-team">{{ awayTeamLongName }}</span>'
                 + '  </div>'
                 + '</div>';

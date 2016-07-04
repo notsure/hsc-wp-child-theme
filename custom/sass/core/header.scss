@@ -1,13 +1,36 @@
 #main-header {
-    background: $hsc-blue-dark;
+    background: $hsc-blue-dark !important;
 }
 
-#top-menu a {
-    color: $hsc-white;
-}
+#top-menu {
+    li {
+        a {
+            color: $hsc-white !important;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 15px;
+        }
+    }
 
-.mobile_menu_bar {
-    &:before {
-        color: $hsc-yellow;
+    .sub-menu {
+        background: $hsc-blue-dark !important;
+        border-color: $hsc-yellow !important;
+        padding: 10px 0px;
+
+        li {
+            padding: 0 5px;
+        }
+    }
+
+    .current-menu-item {
+        a {
+            color: $hsc-yellow !important;
+        }
+
+        .sub-menu {
+            a {
+                color: $hsc-white !important;
+            }
+        }
     }
 }

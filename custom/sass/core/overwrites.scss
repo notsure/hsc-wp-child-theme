@@ -1,0 +1,10 @@
+.et_pb_all_tabs {
+    padding: 0;
+}
+
+@media #{$viewport-phone} {
+    .et_pb_row {
+        width: 100%;
+        padding: 0 15px;
+    }
+}

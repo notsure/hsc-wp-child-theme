@@ -31,6 +31,7 @@
         display: inline-block;
         position: absolute;
         bottom: 10px;
+        left: 0px;
     }
 
     .footer-nav {
@@ -45,6 +46,7 @@
 
         #menu-footer-menu {
             display: inline-block;
+            text-transform: uppercase;
         }
 
         .bottom-nav {

@@ -1,5 +1,5 @@
 <?php
-  $themeURL = get_theme_root_uri() . '/hsc-wp-child-theme';
+  $themeURL = get_theme_root_uri() . '/hsc-theme';
   $logo =  $themeURL . '/images/sc-hohenems-logo.png';
 ?>
 

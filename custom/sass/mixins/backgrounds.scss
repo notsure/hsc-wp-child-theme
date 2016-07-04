@@ -1,14 +1,21 @@
 .bg-white {
-    background-color: $hsc-white;
     @extend .text-blue;
+    background-color: $hsc-white;
+    padding: 0 15px;
 }
 
 .bg-blue {
-    background-color: $hsc-blue-dark;
     @extend .text-yellow;
+    background-color: $hsc-blue-dark;
+    padding: 0 15px;
 }
 
 .bg-yellow {
-    background-color: $hsc-yellow;
     @extend .text-blue;
+    background-color: $hsc-yellow;
+    padding: 0 15px;
+}
+
+@mixin bg-hsc-blue($opacity) {
+    background: rgba(28, 40, 75, $opacity);
 }

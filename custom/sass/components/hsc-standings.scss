@@ -1,12 +1,42 @@
 .hsc-standings {
+    td {
+        @media #{$viewport-phone} {
+            padding: 6px 5px !important;
+        }
+    }
+
+}
+
+.hsc-standings-header {
+    .image {
+        @media #{$viewport-phone} {
+            display: none;
+            width: 0px;
+        }
+    }
+
+    .rank,
+    .info {
+        text-align: center;
+    }
 }
 
 .hsc-standings-row {
     .image {
+        @media #{$viewport-phone} {
+            display: none;
+            width: 0px;
+        }
+
         img {
             max-width: 50px;
             max-height: 50px;
             vertical-align: middle;
         }
+    }
+
+    .rank,
+    .info {
+        text-align: center;
     }
 }

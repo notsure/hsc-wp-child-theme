@@ -1,5 +1,7 @@
 .hsc-game-schedule-list {
-
+    width: 100%;
+    display: block;
+    float: left;
 }
 
 .hsc-game-schedule-list-header {
@@ -38,12 +40,12 @@
     display: table;
     border-bottom: 1px solid #fff;
 
-    &:nth-child(even) {
-        background: #fafafa;
-    }
-
-    &:nth-child(odd) {
+    .schedule {
+        width: 100%;
+        float: left;
         background: #f5f5f5;
+        margin-bottom: 10px;
+        padding-left: 10px;
     }
 
     .date {
@@ -56,12 +58,23 @@
         width: 55px;
     }
 
+    .game {
+        display: table;
+        width: 100%;
+        float: left;
+    }
+
     .teams {
         @extend .table-cell-middle;
         padding-left: 15px;
 
         .team {
             display: table;
+            margin-bottom: 10px;
+
+            @media #{$viewport-phone} {
+                margin-bottom: 5px;
+            }
         }
 
         .teamlogo {
@@ -74,6 +87,9 @@
                 max-height: 35px;
             }
 
+            @media #{$viewport-phone} {
+                display: none;
+            }
         }
 
         .teamname {
@@ -83,7 +99,8 @@
 
     .scores {
         @extend .table-cell-middle;
-        width: 65px;
+        width: 55px;
         text-align: center;
+        font-size: 16px;
     }
 }

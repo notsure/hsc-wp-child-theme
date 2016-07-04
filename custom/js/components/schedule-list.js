@@ -2,7 +2,7 @@
     "use strict";
 
     var HockeyDataWidgetsSchedule = function() {
-        var logoBaseUrl = 'http://api2.hockeydata.net/img/icehockey/ebel/team-logos/';
+        var logoBaseUrl = '/wp-content/themes/hsc-theme/images/teams';
         var divisionId = '136';
         var teamId = '731';
 
@@ -17,15 +17,18 @@
 
         var retrieveRowTemplate = function() {
             return '<div class="hsc-game-schedule-list-item">'
-                + '  <div class="date">{{ scheduledDate.value }}</div>'
-                + '  <div class="time">{{ scheduledTime }}</div>'
+                + '  <div class="schedule">'
+                + '    <div class="date">{{ scheduledDate.value }}</div>'
+                + '    <div class="time">- {{ scheduledTime }}</div>'
+                + '  </div>'
+                + '  <div class="game">'
                 + '  <div class="teams">'
-                + '    <div class="team team-home mb-sm">'
-                + '      <div class="teamlogo"><img src="' + logoBaseUrl + divisionId + '/{{ homeTeamId }}.png" /></div>'
+                + '    <div class="team team-home">'
+                + '      <div class="teamlogo"><img src="' + logoBaseUrl + '/{{ homeTeamId }}.png" /></div>'
                 + '      <div class="teamname">{{ homeTeamLongName }}</div>'
                 + '    </div>'
                 + '    <div class="team team-away">'
-                + '      <div class="teamlogo"><img src="' + logoBaseUrl + divisionId + '/{{ awayTeamId }}.png" /></div>'
+                + '      <div class="teamlogo"><img src="' + logoBaseUrl + '/{{ awayTeamId }}.png" /></div>'
                 + '      <div class="teamname">{{ awayTeamLongName }}</div>'
                 + '    </div>'
                 + '  </div>'
@@ -33,13 +36,14 @@
                 + '      {{ homeTeamScore === null ? "-": homeTeamScore }}'
                 + '      : {{ awayTeamScore === null ? "-": awayTeamScore }}'
                 + '  </div>'
+                + '  </div>'
                 + '</div>';
         };
 
         var buildWidget = function($elem, data) {
             var output = '<div class="hsc-game-schedule-list">';
             var rows = buildRows(data.rows);
-            output += buildWidgetHeader();
+            // output += buildWidgetHeader();
             output += rows;
             output += '</div>';
 
