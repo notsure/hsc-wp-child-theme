@@ -108,6 +108,7 @@
 .mobile-footer {
     text-align: center;
     display: none;
+    position: relative;
 
     @media #{$viewport-phone} {
         background: transparent;
@@ -124,9 +125,16 @@
         width: 100px;
         height: 100px;
         display: inline-block;
+        position: absolute;
+        top: 0;
+        margin: auto;
+        margin-left: -50px;
+        margin-top: -50px;
     }
 
     .footer-nav {
+        margin-top: 35px;
+
         .container {
             width: 100%;
         }

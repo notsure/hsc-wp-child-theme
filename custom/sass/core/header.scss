@@ -1,5 +1,28 @@
 #main-header {
     background: $hsc-blue-dark !important;
+    height: 80px !important;
+
+    .logo_container {
+        margin-top: 25px;
+        width: 400px;
+        z-index: 9999;
+        transform: inherit;
+        transition: inherit;
+
+        #logo {
+            max-height: inherit;
+            height: 100px !important;
+            width: 100px !important;
+
+            transform: inherit;
+            transition: inherit;
+        }
+    }
+
+    #et-top-navigation {
+        transform: inherit;
+        transition: inherit;
+    }
 }
 
 #top-menu {

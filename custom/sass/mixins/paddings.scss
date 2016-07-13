@@ -1,15 +1,22 @@
 @each $item, $size in (n: 0, xs: 5px, sm: 10px, md: 15px, lg: 20px, xl: 25px, xxl: 30px) {
+    .p-#{$item} {
+        padding: $size !important;
+    }
+
     .pt-#{$item} {
-        padding-top: $size;
+        padding-top: $size !important;
     }
+
     .pl-#{$item} {
-        padding-left: $size;
+        padding-left: $size !important;
     }
+
     .pb-#{$item} {
-        padding-bottom: $size;
+        padding-bottom: $size !important;
     }
+
     .pr-#{$item} {
-        padding-right: $size;
+        padding-right: $size !important;
     }
 }
 
@@ -18,8 +25,4 @@
     padding-right: 0;
     padding-bottom: 0;
     padding-left: 0;
-}
-
-.center-content {
-    text-align: center;
 }

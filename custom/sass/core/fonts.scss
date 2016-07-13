@@ -1,29 +1,29 @@
 .h1-heading {
     @extend .clear-margins;
     @extend .clear-paddings;
-    @include font-italic-bold(60px, 120px);
+    @include font-italic-bold(60px, 60px);
 }
 
 .h2-heading {
     @extend .clear-margins;
     @extend .clear-paddings;
-    @include font-italic-bold(44px, 88px);
+    @include font-italic-bold(44px, 44px);
 }
 
 .h3-heading {
     @extend .clear-margins;
     @extend .clear-paddings;
-    @include font-italic-bold(36px, 72px);
+    @include font-italic-bold(36px, 36px);
 }
 
 .h4-heading {
     @extend .clear-margins;
     @extend .clear-paddings;
-    @include font-italic-bold(28px, 56px);
+    @include font-italic-bold(28px, 28px);
 }
 
 .h5-heading {
     @extend .clear-margins;
     @extend .clear-paddings;
-    @include font-italic-bold(24px, 48px);
+    @include font-italic-bold(24px, 24px);
 }

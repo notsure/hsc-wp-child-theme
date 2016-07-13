@@ -1,19 +1,19 @@
 .bg-white {
     @extend .text-blue;
     background-color: $hsc-white;
-    padding: 0 15px;
+    padding: 15px !important;
 }
 
 .bg-blue {
     @extend .text-yellow;
     background-color: $hsc-blue-dark;
-    padding: 0 15px;
+    padding: 15px !important;
 }
 
 .bg-yellow {
     @extend .text-blue;
     background-color: $hsc-yellow;
-    padding: 0 15px;
+    padding: 15px !important;
 }
 
 @mixin bg-hsc-blue($opacity) {

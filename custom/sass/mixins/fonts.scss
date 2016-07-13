@@ -1,17 +1,17 @@
 .text-white {
-    color: $hsc-white;
+    color: $hsc-white !important;
 }
 
 .text-blue {
-    color: $hsc-blue-dark;
+    color: $hsc-blue-dark !important;
 }
 
 .text-yellow {
-    color: $hsc-yellow;
+    color: $hsc-yellow !important;
 }
 
 .text-grey {
-    color: $hsc-grey;
+    color: $hsc-grey !important;
 }
 
 @mixin font-italic-bold($size, $lineHeight) {

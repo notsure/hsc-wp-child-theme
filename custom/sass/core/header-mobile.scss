@@ -6,7 +6,8 @@
     top: 80px;
     border-color: $hsc-yellow;
     z-index: 9998;
-    @include bg-hsc-blue(0.97);
+    padding-top: 60px;
+    @include bg-hsc-blue(0.95);
 
     li {
         a {
@@ -93,8 +94,8 @@
 
 @media(min-width: 341px) {
     #mobile_menu {
-        width: 340px;
-        margin-left: calc(100% - 340px);
+        width: 100%;
+        margin-left: 0;
     }
 }
 
