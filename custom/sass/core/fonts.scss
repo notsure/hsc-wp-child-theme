@@ -1,3 +1,26 @@
+@font-face {
+    font-family: 'URWGeometric-BoldOblique';
+    src: url('custom/fonts/URWGeometric/URWGeometric-BlackOblique.eot');
+    src: url('custom/fonts/URWGeometric/URWGeometric-BlackOblique.eot?#iefix') format('embedded-opentype'),
+         url('custom/fonts/URWGeometric/URWGeometric-BlackOblique.woff2') format('woff2'),
+         url('custom/fonts/URWGeometric/URWGeometric-BlackOblique.woff') format('woff'),
+         url('custom/fonts/URWGeometric/URWGeometric-BlackOblique.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'URWGeometric-SemiBoldOblique';
+    src: url('custom/fonts/URWGeometric/URWGeometric-SemiBoldOblique.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'URWGeometric-LightOblique';
+    src: url('custom/fonts/URWGeometric/URWGeometric-LightOblique.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .h1-heading {
     @extend .clear-margins;
     @extend .clear-paddings;
@@ -26,4 +49,27 @@
     @extend .clear-margins;
     @extend .clear-paddings;
     @include font-italic-bold(24px, 24px);
+}
+
+strong, b {
+    font-family: 'URWGeometric-SemiBoldOblique';
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: 'URWGeometric-LightOblique';
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+    font-family: 'URWGeometric-BoldOblique';
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
