@@ -1,66 +1,45 @@
-@font-face {
-    font-family: 'URWGeometric-BoldOblique';
-    src: url('custom/fonts/URWGeometric/URWGeometric-BlackOblique.eot');
-    src: url('custom/fonts/URWGeometric/URWGeometric-BlackOblique.eot?#iefix') format('embedded-opentype'),
-         url('custom/fonts/URWGeometric/URWGeometric-BlackOblique.woff2') format('woff2'),
-         url('custom/fonts/URWGeometric/URWGeometric-BlackOblique.woff') format('woff'),
-         url('custom/fonts/URWGeometric/URWGeometric-BlackOblique.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'URWGeometric-SemiBoldOblique';
-    src: url('custom/fonts/URWGeometric/URWGeometric-SemiBoldOblique.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'URWGeometric-LightOblique';
-    src: url('custom/fonts/URWGeometric/URWGeometric-LightOblique.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-}
-
 .h1-heading {
     @extend .clear-margins;
     @extend .clear-paddings;
-    @include font-italic-bold(60px, 60px);
+    @include font-bold(60px, 60px);
 }
 
 .h2-heading {
     @extend .clear-margins;
     @extend .clear-paddings;
-    @include font-italic-bold(44px, 44px);
+    @include font-bold(44px, 44px);
 }
 
 .h3-heading {
     @extend .clear-margins;
     @extend .clear-paddings;
-    @include font-italic-bold(36px, 36px);
+    @include font-bold(36px, 36px);
 }
 
 .h4-heading {
     @extend .clear-margins;
     @extend .clear-paddings;
-    @include font-italic-bold(28px, 28px);
+    @include font-bold(28px, 28px);
 }
 
 .h5-heading {
     @extend .clear-margins;
     @extend .clear-paddings;
-    @include font-italic-bold(24px, 24px);
+    @include font-bold(24px, 24px);
 }
 
 strong, b {
-    font-family: 'URWGeometric-SemiBoldOblique';
+    font-family: 'URWGeometric-SemiBoldOblique' !important;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0.5pt;
+    font-weight: normal !important;
 }
 
-body {
-    font-family: 'URWGeometric-LightOblique';
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+body, input, textarea, select {
+    @include font-light(14px, 18px);
+    letter-spacing: 0.5pt;
+    font-weight: normal !important;
 }
 
 h1, .h1,
@@ -69,7 +48,9 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-    font-family: 'URWGeometric-BoldOblique';
+    font-family: 'URWGeometric-BlackOblique';
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0.5pt;
+    font-weight: normal !important;
 }

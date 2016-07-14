@@ -19,12 +19,14 @@ Template: Divi
 @import './mixins/paddings.scss';
 @import './mixins/margins.scss';
 
+@import './core/fonts-core.scss';
 @import './core/fonts.scss';
 @import './core/footer.scss';
 @import './core/header.scss';
 @import './core/header-mobile.scss';
 @import './core/layout.scss';
 @import './core/overwrites.scss';
+@import './core/hsc-icons.scss';
 
 @import './components/hsc-table.scss';
 @import './components/hsc-news-box.scss';

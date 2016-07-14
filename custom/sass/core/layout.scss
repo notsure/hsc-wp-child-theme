@@ -1,3 +1,7 @@
 body {
     border-bottom: 5px solid $hsc-yellow;
 }
+
+#main-content {
+    min-height: calc(100vh - 189px);
+}

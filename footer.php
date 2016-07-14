@@ -37,14 +37,14 @@
 			  <?php endif; ?>
 
               <ul class="footer-social">
-                  <li class="et-social-icon et-social-facebook">
-                      <a href="https://www.facebook.com/elegantthemes" class="icon">
-                          <span>Facebook</span>
+                  <li class="mr-md">
+                      <a href="https://www.facebook.com/SC.Hohenems" target="_blank">
+                          <i class="hsc-icon hsc-icon-facebook"></i>
                       </a>
                   </li>
-                  <li class="et-social-icon et-social-youtube">
-                      <a href="https://www.facebook.com/elegantthemes" class="icon">
-                          <span>Youtube</span>
+                  <li>
+                      <a href="https://www.youtube.com/channel/UCDcIe4y3sXSmEjDCutV2T6g" target="_blank">
+                          <i class="hsc-icon hsc-icon-youtube"></i>
                       </a>
                   </li>
               </ul>
@@ -76,13 +76,13 @@
 
               <ul class="footer-social">
                   <li class="et-social-icon et-social-facebook">
-                      <a href="https://www.facebook.com/elegantthemes" class="icon">
-                          <span>Facebook</span>
+                      <a href="https://www.facebook.com/SC.Hohenems" target="_blank">
+                          <i class="hsc-icon hsc-icon-facebook"></i>
                       </a>
                   </li>
                   <li class="et-social-icon et-social-youtube">
-                      <a href="https://www.facebook.com/elegantthemes" class="icon">
-                          <span>Youtube</span>
+                      <a href="https://www.youtube.com/channel/UCDcIe4y3sXSmEjDCutV2T6g" target="_blank">
+                          <i class="hsc-icon hsc-icon-youtube"></i>
                       </a>
                   </li>
               </ul>

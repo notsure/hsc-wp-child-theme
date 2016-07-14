@@ -8,13 +8,14 @@
     z-index: 9998;
     padding-top: 60px;
     @include bg-hsc-blue(0.95);
+    @include font-bold(21px, 21px);
 
     li {
         a {
             color: $hsc-white !important;
             text-transform: uppercase;
-            font-weight: bold;
             font-size: 15px;
+            font-weight: normal !important;
         }
     }
 
@@ -84,7 +85,8 @@
     }
 
     .logo_container {
-        padding-left: 30px;
+        padding-left: 75px;
+        width: 300px !important;
 
         #logo {
             max-width: 100%;
@@ -111,5 +113,9 @@
     #mobile_menu {
         width: 100%;
         margin-left: 0;
+    }
+
+    .logo_container {
+        padding-left: 30px;
     }
 }

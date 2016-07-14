@@ -8,6 +8,7 @@
         z-index: 9999;
         transform: inherit;
         transition: inherit;
+        margin-left: -4px;
 
         #logo {
             max-height: inherit;
@@ -33,6 +34,7 @@
 #top-menu {
     height: 100%;
     margin-right: -25px;
+    @include font-bold(21px, 21px);
 
     > li {
         height: 100%;
@@ -47,12 +49,14 @@
 
             > a {
                 color: $hsc-yellow !important;
+                font-weight: normal !important;
             }
         }
 
-        a {
+        > a {
             height: 100%;
             padding-bottom: 20px !important;
+            font-weight: normal !important;
         }
 
         &:last-child {
@@ -65,8 +69,8 @@
         a {
             color: $hsc-white !important;
             text-transform: uppercase;
-            font-weight: bold;
             font-size: 15px;
+            font-weight: normal !important;
 
             &:hover {
                 opacity: 1 !important;
