@@ -1,6 +1,6 @@
 <?php
   $themeURL = get_theme_root_uri() . '/hsc-theme';
-  $logo =  $themeURL . '/images/sc-hohenems-logo.png';
+  $logo =  $themeURL . '/images/sc-hohenems-logo.svg';
 ?>
 
 <?php if ( 'on' == et_get_option( 'divi_back_to_top', 'false' ) ) : ?>

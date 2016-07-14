@@ -16,6 +16,22 @@
     padding: 15px !important;
 }
 
+.bg-oblique {
+    -moz-transform: skewX(-5deg);
+    -webkit-transform: skewX(-5deg);
+    -o-transform: skewX(-5deg);
+    -ms-transform: skewX(-5deg);
+    transform: skewX(-5deg);
+
+    * {
+        -moz-transform: skewX(5deg);
+        -webkit-transform: skewX(5deg);
+        -o-transform: skewX(5deg);
+        -ms-transform: skewX(5deg);
+        transform: skewX(5deg);
+    }
+}
+
 @mixin bg-hsc-blue($opacity) {
     background: rgba(28, 40, 75, $opacity);
 }
