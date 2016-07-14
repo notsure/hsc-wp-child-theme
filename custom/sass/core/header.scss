@@ -3,8 +3,8 @@
     height: 80px !important;
 
     .logo_container {
-        margin-top: 25px;
-        width: 400px;
+        margin-top: 29px;
+        width: 135px;
         z-index: 9999;
         transform: inherit;
         transition: inherit;
@@ -25,13 +25,53 @@
     }
 }
 
+#et-top-navigation {
+    padding-top: 0px !important;
+    height: 80px;
+}
+
 #top-menu {
+    height: 100%;
+    margin-right: -25px;
+
+    > li {
+        height: 100%;
+        padding-right: 30px;
+        padding-top: 55px;
+        margin-left: -15px;
+
+        &.current-menu-parent,
+        &.current-menu-item {
+            background: url('images/line.svg') no-repeat;
+            background-position: right bottom;
+
+            > a {
+                color: $hsc-yellow !important;
+            }
+        }
+
+        a {
+            height: 100%;
+            padding-bottom: 20px !important;
+        }
+
+        &:last-child {
+            padding-right: 35px;
+        }
+    }
+
     li {
+
         a {
             color: $hsc-white !important;
             text-transform: uppercase;
             font-weight: bold;
             font-size: 15px;
+
+            &:hover {
+                opacity: 1 !important;
+                color: $hsc-yellow !important;
+            }
         }
     }
 
@@ -39,9 +79,16 @@
         background: $hsc-blue-dark !important;
         border-color: $hsc-yellow !important;
         padding: 10px 0px;
+        width: 320px;
+        margin-top: -9px;
 
         li {
             padding: 0 5px;
+            background: none;
+
+            a {
+                width: 300px;
+            }
         }
     }
 

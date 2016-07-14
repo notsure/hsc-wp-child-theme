@@ -85,10 +85,18 @@
 
     .logo_container {
         padding-left: 30px;
+
+        #logo {
+            max-width: 100%;
+        }
     }
 
     #et-top-navigation {
         padding-right: 30px;
+    }
+
+    #et_mobile_nav_menu {
+        margin-top: 22px;
     }
 }
 
