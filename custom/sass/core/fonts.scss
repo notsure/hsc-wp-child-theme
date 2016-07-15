@@ -34,12 +34,14 @@ strong, b {
 	-moz-osx-font-smoothing: grayscale;
     letter-spacing: 0.5pt;
     font-weight: normal !important;
+    color: $hsc-blue-dark;
 }
 
 body, input, textarea, select {
     @include font-light(14px, 18px);
     letter-spacing: 0.5pt;
     font-weight: normal !important;
+    color: $hsc-blue-dark;
 }
 
 h1, .h1,
@@ -53,4 +55,5 @@ h6, .h6 {
 	-moz-osx-font-smoothing: grayscale;
     letter-spacing: 0.5pt;
     font-weight: normal !important;
+    color: $hsc-blue-dark;
 }

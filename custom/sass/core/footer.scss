@@ -60,6 +60,11 @@
                 padding: 15px 5px;
                 color: $hsc-white;
                 font-weight: normal !important;
+
+                &:hover {
+                    color: $hsc-yellow !important;
+                    color: $hsc-yellow !important;
+                }
             }
         }
     }
