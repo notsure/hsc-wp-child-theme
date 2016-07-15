@@ -27,7 +27,7 @@
 
             a {
                 color: white;
-                font-size: 18px;
+                @include font-bold(16px, 16px);
             }
         }
 
@@ -35,26 +35,29 @@
             @extend .clear-borders;
             background-color: transparent;
             bottom: 0;
-            border-bottom: 3px solid $hsc-yellow;
 
             a {
                 color: white !important;
+                border-bottom: 3px solid $hsc-yellow;
             }
         }
     }
 
-    .title,
+    .title {
+        @include font-bold(16px, 16px);
+    }
+
     .excerpt {
-        line-height: 18px;
+        @include font-semibold(16px, 16px);
     }
 
     .date {
-        font-size: 12px;
+        @include font-semibold(14px, 14px);
     }
 
     .category-display {
         margin-left: 5px;
-        font-size: 12px;
+        @include font-semibold(14px, 14px);
 
         &:before {
             content: ' | ';
@@ -90,7 +93,7 @@
 
         img {
             width: auto;
-            height: 100%;
+            min-width: 100%;
         }
     }
 
@@ -99,13 +102,21 @@
     }
 
     .title {
-        font-size: 16px;
+        @include font-bold(20px, 20px);
     }
 
     .content-holder,
     .meta-holder {
         display: inline-block;
         width: 100%;
+    }
+
+    &:hover {
+        .title {
+            a {
+                color: $hsc-yellow;
+            }
+        }
     }
 }
 
@@ -121,9 +132,9 @@
         display: block;
         float: left;
         width: 100%;
-        padding: 20px;
-        border-left: 1px solid rgba(255, 255, 255, 0.4);
+        padding: 5px 5px 5px 0;
         border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+        border-left: 2px solid transparent;
 
         @media #{$viewport-phone} {
             border-left: 0;
@@ -133,14 +144,26 @@
             padding-bottom: 15px;
         }
 
+        &:first-child {
+            padding-top: 0px;
+        }
+
         &:last-child {
             border-bottom: 0;
+        }
+
+        &:hover {
+            .title {
+                a {
+                    color: $hsc-yellow;
+                }
+            }
         }
     }
 
     .title {
-        font-size: 14px;
-        padding-bottom: 0px;
+        padding-top: 3px;
+        padding-bottom: 5px;
     }
 
     .image {
@@ -148,6 +171,8 @@
         line-height: 0;
         width: 20%;
         margin-right: 2%;
+        height: 75px;
+        overflow: hidden;
 
         @media #{$viewport-phone} {
             display: none;
@@ -160,6 +185,10 @@
 
         &.no-image {
             width: 100%;
+
+            .image {
+                display: none;
+            }
         }
 
         @media #{$viewport-phone} {
