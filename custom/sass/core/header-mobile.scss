@@ -3,7 +3,7 @@
 #mobile_menu {
     display: block !important;
     min-height: 100vh;
-    top: 80px;
+    top: 55px;
     border-color: $hsc-yellow;
     z-index: 9998;
     padding-top: 60px;
@@ -75,6 +75,10 @@
 }
 
 @media(max-width: 980px) {
+    #main-header {
+        height: 55px !important;
+    }
+
     .et_header_style_split .mobile_menu_bar,
     .et_header_style_left .mobile_menu_bar {
         z-index: 9999;
@@ -86,6 +90,7 @@
 
     .logo_container {
         padding-left: 75px;
+        margin-top: 5px !important;
         width: 300px !important;
 
         #logo {
@@ -98,7 +103,7 @@
     }
 
     #et_mobile_nav_menu {
-        margin-top: 22px;
+        margin-top: 10px;
     }
 }
 
@@ -116,6 +121,6 @@
     }
 
     .logo_container {
-        padding-left: 30px;
+        padding-left: 15px;
     }
 }

@@ -27,6 +27,7 @@ Template: Divi
 @import './core/layout.scss';
 @import './core/overwrites.scss';
 @import './core/hsc-icons.scss';
+@import './core/sidebar.scss';
 
 @import './components/hsc-table.scss';
 @import './components/hsc-news-box.scss';
@@ -34,3 +35,4 @@ Template: Divi
 @import './components/hsc-game-schedule-list.scss';
 @import './components/hsc-standings.scss';
 @import './components/hsc-knockout.scss';
+@import './components/et-tabs.scss';

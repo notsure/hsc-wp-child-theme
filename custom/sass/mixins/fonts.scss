@@ -14,7 +14,7 @@
     color: $hsc-grey !important;
 }
 
-@mixin font-bold($size, $lineHeight) {
+@mixin font-bold($size, $lineHeight: $size) {
     font-family: 'URWGeometric-BlackOblique' !important;
     font-size: $size;
     line-height: $lineHeight;
@@ -24,7 +24,7 @@
     font-weight: normal !important;
 }
 
-@mixin font-semibold($size, $lineHeight) {
+@mixin font-semibold($size, $lineHeight: $size) {
     font-family: 'URWGeometric-SemiBoldOblique' !important;
     font-size: $size;
     line-height: $lineHeight;
@@ -34,7 +34,7 @@
     font-weight: normal !important;
 }
 
-@mixin font-light($size, $lineHeight) {
+@mixin font-light($size, $lineHeight: $size) {
     font-family: 'URWGeometric-LightOblique' !important;
     font-size: $size;
     line-height: $lineHeight;
@@ -44,7 +44,7 @@
     font-weight: normal !important;
 }
 
-@mixin font-normal($size, $lineHeight) {
+@mixin font-normal($size, $lineHeight: $size) {
     font-family: 'URWGeometric-Regular' !important;
     font-size: $size;
     line-height: $lineHeight;

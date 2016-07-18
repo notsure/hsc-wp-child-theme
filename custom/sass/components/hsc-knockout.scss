@@ -4,11 +4,39 @@
 .hsc-knockout-game {
     display: inline-block;
     float: left;
-    width: 100%;
-    margin-bottom: 10px;
+    width: 49%;
+    margin-bottom: 30px;
+    margin-right: 2%;
 
     &:last-child {
         margin-bottom: 0px;
+        border-bottom: 0;
+        margin-right: 0;
+    }
+
+    &:only-child {
+        width: 100%;
+        margin-right: 0;
+
+        .hsc-knockout-overview {
+            .image {
+                img {
+                    max-width: 140px;
+                    max-height: 140px;
+
+                    @media #{$viewport-phone} {
+                        max-width: 50px;
+                        max-height: 50px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media #{$viewport-tablet} {
+        width: 100%;
+        margin-right: 0;
+        border-bottom: 1px solid #eee;
     }
 }
 
@@ -16,8 +44,13 @@
     float: left;
     width: 100%;
     text-align: center;
-    margin-bottom: 0 !important;
-    border: 0px;
+    margin: 15px 0 !important;
+    border-collapse: collapse;
+    border: 0 !important;
+
+    td {
+        border: 0 !important;
+    }
 
     .image {
         text-align: center;
@@ -38,10 +71,11 @@
     .meta {
         text-align: center;
         padding: 15px;
+        @include font-semibold(16px);
     }
 
     .score {
-        font-size: 26px;
+        @include font-bold(26px);
         clear: right;
     }
 }
@@ -51,14 +85,18 @@
     width: 100%;
     margin-bottom: 0 !important;
     border: 0px;
+    border-collapse: collapse;
+    border: 0 !important;
 
     .date {
         background: #fafafa;
+        @include font-semibold(14px);
     }
 
     .score {
         width: 85px;
         text-align: center;
+        @include font-semibold(16px);
     }
 
     @media #{$viewport-phone} {

@@ -11,10 +11,14 @@
                 + '<td class="rank">#</td>'
                 + '<td class="image"></td>'
                 + '<td class="team">Team</td>'
-                + '<td class="info">GP</td>'
-                + '<td class="info">W</td>'
-                + '<td class="info">L</td>'
-                + '<td class="info">P</td>'
+                + '<td class="info td-gp">Sp</td>'
+                + '<td class="info td-w">S</td>'
+                + '<td class="info td-l">N</td>'
+                + '<td class="info td-otw">OTS</td>'
+                + '<td class="info td-otl">OTN</td>'
+                + '<td class="info td-goals">Tore</td>'
+                + '<td class="info td-gd">TD</td>'
+                + '<td class="info td-pts">PKT</td>'
                 + '</tr>';
         };
 
@@ -23,10 +27,14 @@
                 + '<td class="rank">{{ tableRank }}</td>'
                 + '<td class="image"><img src="' + logoBaseUrl + '/{{ id }}.png" /></td>'
                 + '<td class="team">{{ teamLongname }}</td>'
-                + '<td class="info">{{ gamesPlayed }}</td>'
-                + '<td class="info">{{ gamesWon }}</td>'
-                + '<td class="info">{{ gamesLost }}</td>'
-                + '<td class="info">{{ points }}</td>'
+                + '<td class="info td-gp">{{ gamesPlayed }}</td>'
+                + '<td class="info td-w">{{ gamesWon }}</td>'
+                + '<td class="info td-l">{{ gamesLost }}</td>'
+                + '<td class="info td-otw">{{ gamesWonInOt }}</td>'
+                + '<td class="info td-otl">{{ gamesLostInOt }}</td>'
+                + '<td class="info td-goals">{{ goalsFor }}:{{ goalsAgainst }}</td>'
+                + '<td class="info td-gd">{{ goalDifference }}</td>'
+                + '<td class="info td-pts">{{ points }}</td>'
                 + '</tr>';
         };
 

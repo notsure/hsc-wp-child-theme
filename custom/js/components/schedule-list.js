@@ -27,6 +27,7 @@
                 + '      <div class="teamlogo"><img src="' + logoBaseUrl + '/{{ homeTeamId }}.png" /></div>'
                 + '      <div class="teamname">{{ homeTeamLongName }}</div>'
                 + '    </div>'
+                + '    <div class="divider"></div>'
                 + '    <div class="team team-away">'
                 + '      <div class="teamlogo"><img src="' + logoBaseUrl + '/{{ awayTeamId }}.png" /></div>'
                 + '      <div class="teamname">{{ awayTeamLongName }}</div>'

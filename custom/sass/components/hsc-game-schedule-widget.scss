@@ -1,10 +1,10 @@
 .hsc-game-schedule-widget {
     float: left;
     width: 100%;
-    font-size: 18px;
     text-align: center;
     padding: 15px;
     border: 1px solid $hsc-blue-dark;
+    margin-bottom: 15px;
 
     .schedule-widget-holder {
         @extend .flexbox;
@@ -35,16 +35,17 @@
 
     .date {
         margin-bottom: 10px;
+        @include font-semibold(18px);
     }
 
     .time {
-        font-size: 26px;
+        @include font-bold(26px);
     }
 
     .scores {
         display: inline-block;
         margin: auto;
-        font-size: 26px;
+        @include font-bold(26px);
 
         .score,
         .divider {
@@ -54,7 +55,8 @@
 
     .teams {
         width: 100%;
-        font-size: 14px;
+        @include font-semibold(16px);
+        margin-top: 15px;
     }
 
     &.last-game-widget {

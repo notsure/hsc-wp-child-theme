@@ -1,0 +1,37 @@
+#sidebar {
+
+    @media(min-width: 981px) {
+        .hsc-game-schedule-widget {
+            .image {
+                width: 49%;
+
+                img {
+                    max-width: 80%;
+                    max-height: 80%;
+                    margin-top: 5px;
+                }
+            }
+
+            .meta {
+                width: 2% !important;
+                max-width: 2% !important;
+                overflow: visible;
+            }
+
+            .date {
+                @include font-semibold(14px);
+                width: 85px;
+                margin-left: -43px;
+            }
+
+            .time,
+            .scores {
+                @include font-bold(20px);
+                width: 85px;
+                margin-top: 80px;
+                margin-left: -43px;
+                text-align: center;
+            }
+        }
+    }
+}

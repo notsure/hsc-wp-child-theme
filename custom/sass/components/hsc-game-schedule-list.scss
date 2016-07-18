@@ -4,47 +4,21 @@
     float: left;
 }
 
-.hsc-game-schedule-list-header {
-    width: 100%;
-    display: table;
-    padding: 10px 10px;
-
-    .date {
-        @extend .table-cell-middle;
-        width: 80px;
-    }
-
-    .time {
-        @extend .table-cell-middle;
-        width: 55px;
-    }
-
-    .team {
-        @extend .table-cell-middle;
-        padding-left: 15px;
-    }
-
-    .scores {
-        @extend .table-cell-middle;
-        width: 65px;
-        text-align: center;
-    }
-}
-
 .hsc-game-schedule-list-item {
     width: 100%;
     float: left;
     height: 100px;
-    padding: 10px 10px;
     display: table;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
 
     .schedule {
         width: 100%;
         float: left;
         background: #f5f5f5;
         margin-bottom: 10px;
-        padding-left: 10px;
+        padding: 6px 10px;
+        @include font-semibold(14px);
     }
 
     .date {
@@ -65,25 +39,44 @@
 
     .teams {
         @extend .table-cell-middle;
+        @include font-semibold(16px);
         padding-left: 15px;
+        padding-top: 10px;
+        padding-bottom: 15px;
+
+        .divider {
+            display: none;
+            float: left;
+            width: 20px;
+            height: 1px;
+            margin: 5px 3px;
+            @include bg-hsc-blue(0.4);
+
+            @media #{$viewport-phone} {
+                display: block;
+            }
+        }
 
         .team {
             display: table;
-            margin-bottom: 10px;
+            float: left;
+            width: 50%;
 
             @media #{$viewport-phone} {
-                margin-bottom: 5px;
+                width: 100%;
+                padding-left: 2px;
             }
         }
 
         .teamlogo {
             @extend .table-cell-middle;
+            width: 50px;
             padding-right: 15px;
 
             img {
                 @extend .table-cell-middle;
-                max-width: 35px;
-                max-height: 35px;
+                max-width: 50px;
+                max-height: 50px;
             }
 
             @media #{$viewport-phone} {
@@ -94,12 +87,20 @@
         .teamname {
             @extend .table-cell-middle;
         }
+
+        @media #{$viewport-phone} {
+            padding-left: 3px;
+        }
     }
 
     .scores {
         @extend .table-cell-middle;
+        @include font-bold(18px);
         width: 55px;
         text-align: center;
-        font-size: 16px;
+
+        @media #{$viewport-phone} {
+            @include font-bold(16px);
+        }
     }
 }

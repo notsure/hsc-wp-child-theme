@@ -1,14 +1,45 @@
 .hsc-standings {
+    .rank {
+        padding: 6px;
+    }
+
+    .image {
+        padding: 6px 15px;
+    }
+
+    .team {
+        padding: 6px 15px;
+    }
+
+    .info {
+        padding: 6px 10px;
+    }
+
     td {
         @media #{$viewport-phone} {
             padding: 6px 5px !important;
         }
     }
 
+    @media #{$viewport-phone} {
+        .td-otw,
+        .td-otl,
+        .td-goals,
+        .td-gd {
+            display: none;
+        }
+    }
 }
 
 .hsc-standings-header {
+    td {
+        @include font-bold(16px);
+        border-top: 0px !important;
+    }
+
     .image {
+        width: 50px;
+
         @media #{$viewport-phone} {
             display: none;
             width: 0px;
@@ -22,7 +53,13 @@
 }
 
 .hsc-standings-row {
+    td {
+        @include font-semibold(14px);
+    }
+
     .image {
+        width: 50px;
+
         @media #{$viewport-phone} {
             display: none;
             width: 0px;
