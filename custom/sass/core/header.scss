@@ -89,11 +89,12 @@
         @include font-semibold(21px, 21px);
 
         li {
-            padding: 0 5px;
+            padding: 0 3px;
             background: none;
 
             a {
                 width: 300px;
+                padding: 3px 20px;
             }
         }
     }
