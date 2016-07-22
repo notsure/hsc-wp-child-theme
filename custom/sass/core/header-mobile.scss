@@ -36,6 +36,20 @@
             background: none;
         }
     }
+
+    .sub-menu {
+        @include font-semibold(21px, 21px);
+
+        li {
+            padding-left: 15px;
+        }
+
+        a {
+            &:before {
+                content: '- ';
+            }
+        }
+    }
 }
 
 .mobile_nav.closed #mobile_menu {
@@ -103,7 +117,7 @@
     }
 
     #et_mobile_nav_menu {
-        margin-top: 10px;
+        margin-top: 12px;
     }
 }
 

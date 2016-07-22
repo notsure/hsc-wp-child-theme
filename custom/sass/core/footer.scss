@@ -78,7 +78,7 @@
         -ms-transform: skewX(-15deg);
         transform: skewX(-15deg);
         background: $hsc-yellow;
-        padding: 25px 15px 15px 25px;
+        padding: 22px 15px 15px 25px;
 
         li {
             -moz-transform: skewX(15deg);
@@ -97,6 +97,11 @@
                 color: $hsc-blue-dark;
                 font-size: 24px;
             }
+        }
+
+        .hsc-icon {
+            height: 30px;
+            width: 30px;
         }
 
         &:after {
@@ -182,6 +187,11 @@
                 padding: 25px;
                 color: $hsc-blue-dark;
             }
+        }
+
+        .hsc-icon {
+            height: 30px;
+            width: 30px;
         }
     }
 }

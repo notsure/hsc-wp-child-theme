@@ -81,11 +81,12 @@
     }
 
     .sub-menu {
-        background: $hsc-blue-dark !important;
+        @include bg-hsc-blue(0.85);
         border-color: $hsc-yellow !important;
         padding: 10px 0px;
         width: 320px;
         margin-top: -9px;
+        @include font-semibold(21px, 21px);
 
         li {
             padding: 0 5px;
