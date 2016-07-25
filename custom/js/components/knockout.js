@@ -47,7 +47,9 @@
             output += phases;
             output += '</div>';
 
-            $elem.html(output);
+            output = $(output);
+            $elem.append(output);
+            output.fadeIn();
         };
 
         var buildKnockoutPhases = function(data) {

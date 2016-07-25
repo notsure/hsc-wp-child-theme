@@ -1,0 +1,154 @@
+.hsc-btn {
+    cursor: pointer;
+    padding: 20px 80px;
+    display: inline-block;
+    margin: 5px;
+    border: 2px solid $hsc-blue-dark;
+    color: $hsc-blue-dark;
+    background: transparent;
+    @include font-bold(18px);
+    @include transition(all 0.3s);
+
+    &:hover {
+        background: #ccc;
+    }
+}
+
+.hsc-btn-small {
+    padding: 10px 40px;
+    @include font-bold(14px);
+}
+
+.hsc-btn-big {
+    padding: 30px 100px;
+    @include font-bold(22px);
+}
+
+.hsc-btn-primary {
+    background: $hsc-blue-dark;
+    color: $hsc-white;
+
+    &:hover {
+        @include bg-hsc-white(0.1);
+        color: $hsc-blue-dark;
+    }
+}
+
+.hsc-btn-success {
+    background: $hsc-green;
+    color: $hsc-white;
+    border-color: $hsc-green;
+
+    &:hover {
+        @include bg-hsc-white(0.1);
+        color: $hsc-green;
+        border-color: $hsc-green;
+    }
+}
+
+.hsc-btn-warning {
+    background: $hsc-orange;
+    color: $hsc-white;
+    border-color: $hsc-orange;
+
+    &:hover {
+        @include bg-hsc-white(0.1);
+        color: $hsc-orange;
+        border-color: $hsc-orange;
+    }
+}
+
+.hsc-btn-danger {
+    background: $hsc-red;
+    color: $hsc-white;
+    border-color: $hsc-red;
+
+    &:hover {
+        @include bg-hsc-white(0.1);
+        color: $hsc-red;
+        border-color: $hsc-red;
+    }
+}
+
+.hsc-btn-yellow {
+    background: $hsc-yellow;
+    color: $hsc-blue-dark;
+    border-color: $hsc-yellow;
+
+    &:hover {
+        @include bg-hsc-white(0.1);
+        color: $hsc-yellow;
+        border-color: $hsc-yellow;
+    }
+}
+
+.hsc-btn-link {
+    background: transparent !important;
+    border-color: transparent !important;
+
+    &:hover {
+        background: transparent !important;
+        border-color: transparent !important;
+    }
+}
+
+
+/* Inverse */
+.hsc-btn-primary-inverse {
+    @include bg-hsc-white(0.1);
+    color: $hsc-blue-dark;
+    border: 3px solid $hsc-blue-dark;
+
+    &:hover {
+        background: $hsc-blue-dark;
+        color: $hsc-white;
+    }
+}
+
+.hsc-btn-success-inverse {
+    @include bg-hsc-white(0.1);
+    color: $hsc-green;
+    border: 3px solid $hsc-green;
+
+    &:hover {
+        background: $hsc-green;
+        color: $hsc-white;
+        border-color: $hsc-green;
+    }
+}
+
+.hsc-btn-warning-inverse {
+    @include bg-hsc-white(0.1);
+    color: $hsc-orange;
+    border: 3px solid $hsc-orange;
+
+    &:hover {
+        background: $hsc-orange;
+        color: $hsc-white;
+        border-color: $hsc-orange;
+    }
+}
+
+.hsc-btn-danger-inverse {
+    @include bg-hsc-white(0.1);
+    color: $hsc-red;
+    border: 3px solid $hsc-red;
+
+    &:hover {
+        background: $hsc-red;
+        color: $hsc-white;
+        border-color: $hsc-red;
+    }
+}
+
+.hsc-btn-yellow-inverse {
+    @include bg-hsc-white(0.1);
+    color: $hsc-yellow;
+    border: 3px solid $hsc-yellow;
+
+    &:hover {
+        background: $hsc-yellow;
+        color: $hsc-blue-dark;
+        border-color: $hsc-yellow;
+    }
+}

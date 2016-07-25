@@ -2,6 +2,9 @@ $hsc-white: #ffffff;
 $hsc-blue-dark: #1c284b;
 $hsc-blue-light: #4276b9;
 $hsc-yellow: rgb(255, 219, 000);
+$hsc-red: #e4303f;
+$hsc-green: #2ac56c;
+$hsc-orange: #f19f0f;
 $hsc-grey: #ddd;
 
 $break-small: 320px;
@@ -9,3 +12,4 @@ $break-large: 1200px;
 
 $viewport-phone: "only screen and (max-width : 767px)";
 $viewport-tablet: "only screen and (max-width : 1000px)";
+$viewport-desktop: "only screen and (min-width : 1001px)";

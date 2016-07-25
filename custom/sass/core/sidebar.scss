@@ -1,6 +1,5 @@
 #sidebar {
-
-    @media(min-width: 981px) {
+    @media #{$viewport-desktop} {
         .hsc-game-schedule-widget {
             .image {
                 width: 49%;
@@ -30,6 +29,31 @@
                 width: 85px;
                 margin-top: 80px;
                 margin-left: -43px;
+                text-align: center;
+            }
+        }
+    }
+
+    @media #{$viewport-tablet} {
+        .hsc-game-schedule-widget {
+            .image {
+
+                img {
+                    margin-top: 5px;
+                }
+            }
+
+            .meta {
+                overflow: visible;
+            }
+
+            .date {
+                @include font-semibold(14px);
+            }
+
+            .time,
+            .scores {
+                @include font-bold(20px);
                 text-align: center;
             }
         }

@@ -1,3 +1,23 @@
+.text-size-xs {
+    font-size: 65%;
+}
+
+.text-size-sm {
+    font-size: 85%;
+}
+
+.text-size-md {
+    font-size: 110%;
+}
+
+.text-size-lg {
+    font-size: 120%;
+}
+
+.text-size-xlg {
+    font-size: 135%;
+}
+
 .text-white {
     color: $hsc-white !important;
 }
@@ -14,7 +34,31 @@
     color: $hsc-grey !important;
 }
 
-@mixin font-bold($size, $lineHeight: $size) {
+.text-bold {
+    font-family: 'URWGeometric-BlackOblique' !important;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0.5pt;
+    font-weight: normal !important;
+}
+
+.text-semibold {
+    font-family: 'URWGeometric-SemiBoldOblique' !important;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0.5pt;
+    font-weight: normal !important;
+}
+
+.text-italic {
+    font-family: 'URWGeometric-LightOblique' !important;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0.5pt;
+    font-weight: normal !important;
+}
+
+@mixin font-bold($size, $lineHeight: 1.5) {
     font-family: 'URWGeometric-BlackOblique' !important;
     font-size: $size;
     line-height: $lineHeight;
@@ -24,7 +68,7 @@
     font-weight: normal !important;
 }
 
-@mixin font-semibold($size, $lineHeight: $size) {
+@mixin font-semibold($size, $lineHeight: 1.5) {
     font-family: 'URWGeometric-SemiBoldOblique' !important;
     font-size: $size;
     line-height: $lineHeight;
@@ -34,7 +78,7 @@
     font-weight: normal !important;
 }
 
-@mixin font-light($size, $lineHeight: $size) {
+@mixin font-light($size, $lineHeight: 1.5) {
     font-family: 'URWGeometric-LightOblique' !important;
     font-size: $size;
     line-height: $lineHeight;
@@ -44,7 +88,7 @@
     font-weight: normal !important;
 }
 
-@mixin font-normal($size, $lineHeight: $size) {
+@mixin font-normal($size, $lineHeight: 1.5) {
     font-family: 'URWGeometric-Regular' !important;
     font-size: $size;
     line-height: $lineHeight;

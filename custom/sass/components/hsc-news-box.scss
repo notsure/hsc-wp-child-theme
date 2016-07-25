@@ -23,11 +23,23 @@
             @extend .clear-paddings;
             @extend .clear-borders;
             margin-right: 25px;
-            border-bottom: 3px solid transparent;
 
             a {
                 color: white;
+                border-bottom: 3px solid transparent;
                 @include font-bold(16px, 16px);
+
+                @media #{$viewport-desktop} {
+                    @include transition(all 0.3s);
+
+                    &:hover {
+                        border-color: rgba(255, 219, 000, .5);
+                    }
+                }
+            }
+
+            @media #{$viewport-phone} {
+                float: left;
             }
         }
 
@@ -39,6 +51,10 @@
             a {
                 color: white !important;
                 border-bottom: 3px solid $hsc-yellow;
+
+                &:hover {
+                    border-color: $hsc-yellow;
+                }
             }
         }
     }
@@ -95,6 +111,10 @@
             width: auto;
             min-width: 100%;
         }
+
+        @media #{$viewport-tablet} {
+            height: auto;
+        }
     }
 
     .image-holder {
@@ -103,6 +123,12 @@
 
     .title {
         @include font-bold(20px, 20px);
+
+        @media #{$viewport-desktop} {
+            a {
+                @include transition(all 0.3s);
+            }
+        }
     }
 
     .content-holder,
@@ -111,10 +137,12 @@
         width: 100%;
     }
 
-    &:hover {
-        .title {
-            a {
-                color: $hsc-yellow;
+    @media #{$viewport-desktop} {
+        &:hover {
+            .title {
+                a {
+                    color: $hsc-yellow;
+                }
             }
         }
     }
@@ -146,16 +174,22 @@
 
         &:first-child {
             padding-top: 0px;
+
+            @media #{$viewport-phone} {
+                padding-top: 15px;
+            }
         }
 
         &:last-child {
             border-bottom: 0;
         }
 
-        &:hover {
-            .title {
-                a {
-                    color: $hsc-yellow;
+        @media #{$viewport-desktop} {
+            &:hover {
+                .title {
+                    a {
+                        color: $hsc-yellow;
+                    }
                 }
             }
         }
@@ -164,6 +198,12 @@
     .title {
         padding-top: 3px;
         padding-bottom: 5px;
+
+        @media #{$viewport-desktop} {
+            a {
+                @include transition(all 0.3s);
+            }
+        }
     }
 
     .image {

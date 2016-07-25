@@ -6,6 +6,12 @@
         var teamId = '731';
         var type = 'last';
 
+        var retrieveEmptyTemplate = function() {
+            return '<div class="no-games">'
+                + 'Keine Spiele zur Zeit.'
+                + '</div>';
+        };
+
         var retrieveRowTemplate = function() {
             var className = 'last-game-widget';
 
@@ -36,20 +42,17 @@
         };
 
         var buildWidget = function($elem, data) {
-            var output = '<div>';
-            var rows = buildRows(data.rows);
-            output += rows;
-            output += '</div>';
-
-            $elem.html(output);
+            var holder = $('<div class="js-schedule-widget"></div>');
+            $elem.append(holder);
+            buildRows(data.rows, holder);
         };
 
-        var buildRows = function(rows) {
+        var buildRows = function(rows, element) {
             var output = '';
             var template = _.template(retrieveRowTemplate());
             var today = moment();
             var limit = 1;
-            var found = 0;
+            var found = false;
 
             if (type === 'last') {
                 rows = _.chain(rows).reverse()._wrapped;
@@ -60,6 +63,7 @@
                         && row.awayTeamScore !== null
                        ) {
                         var gameDate = moment(row.scheduledDate.value, 'DD.MM.YYYY');
+
                         if (gameDate.isBefore(today)) {
                             return row;
                         }
@@ -67,6 +71,7 @@
                 });
 
                 if (lastGame) {
+                    found = true;
                     output += template(lastGame);
                 }
             }
@@ -79,6 +84,7 @@
                         && row.awayTeamScore === null
                        ) {
                         var gameDate = moment(row.scheduledDate.value, 'DD.MM.YYYY');
+
                         if (gameDate.isSameOrAfter(today)) {
                             return row;
                         }
@@ -86,11 +92,24 @@
                 });
 
                 if (nextGame) {
+                    found = true;
                     output += template(nextGame);
                 }
             }
 
-            return output;
+            if (found) {
+                output = $(output);
+                element.append(output);
+                output.hide().delay('slow').fadeIn();
+
+                return true;
+            }
+
+            template = $(retrieveEmptyTemplate());
+            element.append(template);
+            template.hide().delay('slow').fadeIn();
+
+            return true;
         };
 
         return {

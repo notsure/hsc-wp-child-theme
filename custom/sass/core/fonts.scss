@@ -2,30 +2,50 @@
     @extend .clear-margins;
     @extend .clear-paddings;
     @include font-bold(60px, 60px);
+
+    @media #{$viewport-phone} {
+        @include font-bold(50px, 50px);
+    }
 }
 
 .h2-heading {
     @extend .clear-margins;
     @extend .clear-paddings;
     @include font-bold(44px, 44px);
+
+    @media #{$viewport-phone} {
+        @include font-bold(38px, 38px);
+    }
 }
 
 .h3-heading {
     @extend .clear-margins;
     @extend .clear-paddings;
     @include font-bold(36px, 36px);
+
+    @media #{$viewport-phone} {
+        @include font-bold(32px, 32px);
+    }
 }
 
 .h4-heading {
     @extend .clear-margins;
     @extend .clear-paddings;
     @include font-bold(28px, 28px);
+
+    @media #{$viewport-phone} {
+        @include font-bold(28px, 28px);
+    }
 }
 
 .h5-heading {
     @extend .clear-margins;
     @extend .clear-paddings;
     @include font-bold(24px, 24px);
+
+    @media #{$viewport-phone} {
+        @include font-bold(24px, 24px);
+    }
 }
 
 strong, b {

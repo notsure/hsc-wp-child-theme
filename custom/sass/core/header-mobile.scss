@@ -1,11 +1,17 @@
 /** Divi Space slide in mobile edits**/
 
+.et_mobile_menu {
+    z-index: 2;
+}
+.mobile_nav.opened #mobile_menu {
+    z-index: 2;
+}
+
 #mobile_menu {
     display: block !important;
     min-height: 100vh;
     top: 55px;
     border-color: $hsc-yellow;
-    z-index: 9998;
     padding-top: 60px;
     @include bg-hsc-blue(0.95);
     @include font-bold(21px, 21px);
@@ -119,6 +125,12 @@
     #et_mobile_nav_menu {
         margin-top: 12px;
     }
+}
+
+@media(max-width: 440px) {
+   .logo_container {
+       padding-left: 2%;
+   }
 }
 
 @media(min-width: 341px) {

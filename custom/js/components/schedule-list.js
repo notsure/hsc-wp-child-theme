@@ -6,12 +6,9 @@
         var divisionId = '136';
         var teamId = '731';
 
-        var buildWidgetHeader = function() {
-            return '<div class="hsc-game-schedule-list-header">'
-                + '  <div class="date">Datum</div>'
-                + '  <div class="time"></div>'
-                + '  <div class="team">Begegnung</div>'
-                + '  <div class="scores">Ergebnis</div>'
+        var retrieveEmptyTemplate = function() {
+            return '<div class="no-games">'
+                + 'Keine Spiele zur Zeit.'
                 + '</div>';
         };
 
@@ -42,26 +39,34 @@
         };
 
         var buildWidget = function($elem, data) {
-            var output = '<div class="hsc-game-schedule-list">';
-            var rows = buildRows(data.rows);
-            // output += buildWidgetHeader();
-            output += rows;
-            output += '</div>';
-
-            $elem.html(output);
+            var listHolder = $('<div class="hsc-game-schedule-list"></div>');
+            $elem.append(listHolder);
+            buildRows(data.rows, listHolder);
         };
 
-        var buildRows = function(rows) {
-            var output = '';
+        var buildRows = function(rows, element) {
             var template = _.template(retrieveRowTemplate());
+            var output = '';
+            var row = '';
+            var delay = 1;
+
+            if (rows.length === 0) {
+                template = $(retrieveEmptyTemplate());
+                element.append(template);
+                template.hide().delay(delay * key).fadeIn();
+
+                return true;
+            }
 
             _.each(rows, function(value, key) {
                 if (value.homeTeamId === teamId || value.awayTeamId === teamId) {
-                    output += template(value);
+                    row = $(template(value));
+                    element.append(row);
+                    row.hide().delay(delay * key).fadeIn();
                 }
             });
 
-            return output;
+            return true;
         };
 
         return {
