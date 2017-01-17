@@ -2,6 +2,62 @@ body {
     border-bottom: 5px solid $hsc-yellow;
 }
 
+#page-container {
+    overflow: hidden;
+}
+
 #main-content {
     min-height: calc(100vh - 189px);
+
+    @media #{$viewport-tablet} {
+        /* padding: 50px 0px; */
+
+        /* .container { */
+        /*     padding-top: 30px !important; */
+        /*     padding-bottom: 30px !important; */
+        /* } */
+    }
+}
+
+.block-content-holder {
+    display: table;
+    width: 100%;
+}
+
+#left-area .post-meta a,
+.et_pb_widget a {
+    color: $hsc-blue-light;
+
+    &:hover {
+        color: $hsc-blue-dark !important;
+    }
+}
+
+.wp-pagenavi {
+    @media #{$viewport-tablet} {
+        .pages {
+            display: inline-block;
+            text-align: left;
+            width: 100%;
+        }
+
+        .last {
+            display: none;
+        }
+    }
+}
+
+
+@media all and (min-width: 981px) {
+    .et_right_sidebar #main-content .container:before {
+        right: 24.875% !important;
+    }
+
+    #left-area {
+        width: 75.125%;
+    }
+
+    #sidebar {
+        width: 24.875%;
+    }
 }

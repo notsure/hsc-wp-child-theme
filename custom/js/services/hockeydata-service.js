@@ -2,17 +2,18 @@
     window.HockeyDataService = function() {
         "use strict";
 
-        var baseUrl = 'http://api.hockeydata.net/data/ebel';
+        var config = new HockeyDataConfig();
+        var baseUrl = config.hockeyDataApiUrl;
         var scheduleUrl = '/Schedule';
         var standingsUrl = '/Standings';
         var knockoutUrl = '/KnockoutStage';
 
         var urlParams = {
-            apiKey: 'e52b5722cbc89c3e51ee0cd6e2485a81',
+            apiKey: config.hockeyDataApiKey,
             divisionId: '136',
-            league: 'ebel',
-            sport: 'icehockey',
-            referer: 'www.h-sc.at'
+            league: config.league,
+            sport: config.sport,
+            referer: config.referer
         };
 
         return {

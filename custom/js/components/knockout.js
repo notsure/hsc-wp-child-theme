@@ -2,23 +2,22 @@
     "use strict";
 
     function HscKnockout() {
-        var logoBaseUrl = '/wp-content/themes/hsc-theme/images/teams';
+        var config = new HockeyDataConfig();
         var divisionId = '136';
-        var teamId = '731';
         var type = 'halbfinale';
 
         var retrieveEncounterOverviewTemplate = function(data) {
             var template = '<table class="hsc-knockout-overview">'
                 + '<tr>'
                 + '  <td class="image">'
-                + '    <img src="' + logoBaseUrl + '/{{ teams[0].id }}.png" />'
+                + '    <img src="' + config.logoBaseUrl + '/{{ teams[0].id }}.png" />'
                 + '  </td>'
                 + '  <td class="meta">'
                 + '    <span class="score">{{ teams[0].gamesWon }} : {{ teams[1].gamesWon }}</span><br/>'
                 + '    <span class="bestof">Best of: {{ bestOf }}</span>'
                 + '  </td>'
                 + '  <td class="image">'
-                + '    <img src="' + logoBaseUrl + '/{{ teams[1].id }}.png" />'
+                + '    <img src="' + config.logoBaseUrl + '/{{ teams[1].id }}.png" />'
                 + '  </td>'
                 + '</tr>'
                 + '</table>';

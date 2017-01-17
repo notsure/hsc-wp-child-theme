@@ -2,7 +2,7 @@
     "use strict";
 
     var HockeyDataWidgetsSchedule = function() {
-        var logoBaseUrl = '/wp-content/themes/hsc-theme/images/teams';
+        var config = new HockeyDataConfig();
         var divisionId = '136';
         var teamId = '731';
 
@@ -21,18 +21,18 @@
                 + '  <div class="game">'
                 + '  <div class="teams">'
                 + '    <div class="team team-home">'
-                + '      <div class="teamlogo"><img src="' + logoBaseUrl + '/{{ homeTeamId }}.png" /></div>'
+                + '      <div class="teamlogo"><img src="' + config.logoBaseUrl + '/{{ homeTeamId }}.png" /></div>'
                 + '      <div class="teamname">{{ homeTeamLongName }}</div>'
                 + '    </div>'
                 + '    <div class="divider"></div>'
                 + '    <div class="team team-away">'
-                + '      <div class="teamlogo"><img src="' + logoBaseUrl + '/{{ awayTeamId }}.png" /></div>'
+                + '      <div class="teamlogo"><img src="' + config.logoBaseUrl + '/{{ awayTeamId }}.png" /></div>'
                 + '      <div class="teamname">{{ awayTeamLongName }}</div>'
                 + '    </div>'
                 + '  </div>'
                 + '  <div class="scores">'
-                + '      {{ homeTeamScore === null ? "-": homeTeamScore }}'
-                + '      : {{ awayTeamScore === null ? "-": awayTeamScore }}'
+                + '      {{ gameStatus > 0 ? homeTeamScore : "-" }}'
+                + '      : {{ gameStatus > 0 ? awayTeamScore : "-" }}'
                 + '  </div>'
                 + '  </div>'
                 + '</div>';
@@ -60,6 +60,10 @@
 
             _.each(rows, function(value, key) {
                 if (value.homeTeamId === teamId || value.awayTeamId === teamId) {
+                    if (value.scheduledTime === '00:00') {
+                        value.scheduledTime = 'k.A.';
+                    }
+
                     row = $(template(value));
                     element.append(row);
                     row.hide().delay(delay * key).fadeIn();

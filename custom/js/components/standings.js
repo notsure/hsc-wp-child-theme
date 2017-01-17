@@ -2,7 +2,7 @@
     "use strict";
 
     function HockeyDataWidgetsStandings() {
-        var logoBaseUrl = '/wp-content/themes/hsc-theme/images/teams';
+        var config = new HockeyDataConfig();
         var divisionId = '136';
         var teamId = '731';
 
@@ -25,7 +25,7 @@
         var retrieveRowTemplate = function() {
             return '<tr class="hsc-standings-row">'
                 + '<td class="rank">{{ tableRank }}</td>'
-                + '<td class="image"><img src="' + logoBaseUrl + '/{{ id }}.png" /></td>'
+                + '<td class="image"><img src="' + config.logoBaseUrl + '/{{ id }}.png" /></td>'
                 + '<td class="team">{{ teamLongname }}</td>'
                 + '<td class="info td-gp">{{ gamesPlayed }}</td>'
                 + '<td class="info td-w">{{ gamesWon }}</td>'

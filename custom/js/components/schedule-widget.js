@@ -1,7 +1,7 @@
 (function($) {
     "use strict";
     var HockeyDataWidgetsScheduleSingle = function() {
-        var logoBaseUrl = '/wp-content/themes/hsc-theme/images/teams';
+        var config = new HockeyDataConfig();
         var divisionId = '136';
         var teamId = '731';
         var type = 'last';
@@ -22,7 +22,7 @@
             return '<div class="hsc-game-schedule-widget ' + className + '">'
                 + '<div class="schedule-widget-holder">'
                 + '  <div class="image image-home-team">'
-                + '    <img src="' + logoBaseUrl + '/{{ homeTeamId }}.png" />'
+                + '    <img src="' + config.logoBaseUrl + '/{{ homeTeamId }}.png" />'
                 + '  </div>'
                 + '  <div class="meta">'
                 + '    <div class="date">{{ scheduledDate.value }}</div>'
@@ -30,7 +30,7 @@
                 + '    <div class="scores">{{ homeTeamScore }}:{{ awayTeamScore }}</div>'
                 + '  </div>'
                 + '  <div class="image image-away-team">'
-                + '    <img src="' + logoBaseUrl + '/{{ awayTeamId }}.png" />'
+                + '    <img src="' + config.logoBaseUrl + '/{{ awayTeamId }}.png" />'
                 + '  </div>'
                 + '</div>'
                 + '  <div class="teams">'
@@ -59,8 +59,7 @@
                 var lastGame = _.find(rows, function(row) {
                     if ((row.homeTeamId === teamId || row.awayTeamId === teamId)
                         && (row.scheduledDate && row.scheduledDate.value)
-                        && row.homeTeamScore !== null
-                        && row.awayTeamScore !== null
+                        && row.gameStatus > 0
                        ) {
                         var gameDate = moment(row.scheduledDate.value, 'DD.MM.YYYY');
 
@@ -72,6 +71,11 @@
 
                 if (lastGame) {
                     found = true;
+
+                    if (lastGame.scheduledTime === '00:00') {
+                        lastGame.scheduledTime = 'k.A.';
+                    }
+
                     output += template(lastGame);
                 }
             }
@@ -80,12 +84,11 @@
                 var nextGame = _.find(rows, function(row) {
                     if ((row.homeTeamId === teamId || row.awayTeamId === teamId)
                         && (row.scheduledDate && row.scheduledDate.value)
-                        && row.homeTeamScore === null
-                        && row.awayTeamScore === null
+                        && row.gameStatus === 0
                        ) {
                         var gameDate = moment(row.scheduledDate.value, 'DD.MM.YYYY');
 
-                        if (gameDate.isSameOrAfter(today)) {
+                        if (gameDate.isSameOrAfter(today, 'day')) {
                             return row;
                         }
                     }
@@ -93,6 +96,11 @@
 
                 if (nextGame) {
                     found = true;
+
+                    if (nextGame.scheduledTime === '00:00') {
+                        nextGame.scheduledTime = 'k.A.';
+                    }
+
                     output += template(nextGame);
                 }
             }

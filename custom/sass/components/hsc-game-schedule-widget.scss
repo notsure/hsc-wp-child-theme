@@ -1,3 +1,7 @@
+.hsc-game-schedule-widget-holder {
+    width: 100%;
+    display: inline-block;
+}
 .hsc-game-schedule-widget {
     float: left;
     width: 100%;
@@ -5,6 +9,7 @@
     padding: 15px;
     border: 1px solid $hsc-blue-dark;
     margin-bottom: 15px;
+    display: inline-block;
 
     .schedule-widget-holder {
         @extend .flexbox;

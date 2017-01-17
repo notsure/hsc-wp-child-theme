@@ -10,7 +10,9 @@
     height: 100px;
     display: table;
     border-bottom: 1px solid #eee;
-    margin-bottom: 10px;
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+    margin-bottom: 25px;
 
     .schedule {
         width: 100%;
@@ -23,7 +25,7 @@
 
     .date {
         @extend .table-cell-middle;
-        width: 80px;
+        width: 70px;
     }
 
     .time {

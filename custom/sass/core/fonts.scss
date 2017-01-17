@@ -76,4 +76,12 @@ h6, .h6 {
     letter-spacing: 0.5pt;
     font-weight: normal !important;
     color: $hsc-blue-dark;
+
+    &.text-yellow {
+        text-shadow: 1px 1px $hsc-blue-dark;
+    }
+
+    &.text-shadow {
+        text-shadow: 1px 1px $hsc-blue-dark;
+    }
 }

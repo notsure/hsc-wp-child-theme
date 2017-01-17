@@ -26,6 +26,16 @@
     vertical-align: middle;
 }
 
+@each $item, $type in (top: top, right: right, bottom: bottom, left: left) {
+    .border-#{$type}-blue {
+        border-#{$type}: 3px solid $hsc-blue-dark;
+    }
+
+    .border-#{$type}-yellow {
+        border-#{$type}: 3px solid $hsc-yellow;
+    }
+}
+
 @mixin transition($transition...) {
     -moz-transition:    $transition;
     -o-transition:      $transition;
