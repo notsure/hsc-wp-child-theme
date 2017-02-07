@@ -4,21 +4,34 @@
     function HscKnockout() {
         var config = new HockeyDataConfig();
         var divisionId = '136';
+        var defaultTeams = [4951, 4952];
         var type = 'halbfinale';
 
         var retrieveEncounterOverviewTemplate = function(data) {
             var template = '<table class="hsc-knockout-overview">'
                 + '<tr>'
-                + '  <td class="image">'
-                + '    <img src="' + config.logoBaseUrl + '/{{ teams[0].id }}.png" />'
-                + '  </td>'
+                + '  <td class="image">';
+
+            if (_.contains(defaultTeams, data.teams[0].id)) {
+                template += '<strong>{{ teams[0].longname }}</strong>';
+            } else {
+                template += '<img src="' + config.logoBaseUrl + '/{{ teams[0].id }}.png"/>';
+            }
+
+            template += '  </td>'
                 + '  <td class="meta">'
                 + '    <span class="score">{{ teams[0].gamesWon }} : {{ teams[1].gamesWon }}</span><br/>'
                 + '    <span class="bestof">Best of: {{ bestOf }}</span>'
                 + '  </td>'
-                + '  <td class="image">'
-                + '    <img src="' + config.logoBaseUrl + '/{{ teams[1].id }}.png" />'
-                + '  </td>'
+                + '  <td class="image">';
+
+            if (_.contains(defaultTeams, data.teams[1].id)) {
+                template += '<strong>{{ teams[1].longname }}</strong>';
+            } else {
+                template += '<img src="' + config.logoBaseUrl + '/{{ teams[1].id }}.png"/>';
+            }
+
+            template += '  </td>'
                 + '</tr>'
                 + '</table>';
             template = _.template(template);
@@ -33,7 +46,10 @@
                 + '  </td>'
                 + '</tr><tr>'
                 + '  <td class="team">{{ homeTeamLongName }} <br/> {{ awayTeamLongName }}</td>'
-                + '  <td class="score">{{ homeTeamScore }} : {{ awayTeamScore }}</td>'
+                + '  <td class="score">'
+                + '      {{ gameStatus > 0 ? homeTeamScore : "-" }}'
+                + '      : {{ gameStatus > 0 ? awayTeamScore : "-" }}'
+                + '  </td>'
                 + '</tr>';
             template = _.template(template);
 

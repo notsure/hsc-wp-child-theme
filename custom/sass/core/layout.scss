@@ -24,6 +24,10 @@ body {
     width: 100%;
 }
 
+.hidden-content {
+    display: none !important;
+}
+
 #left-area .post-meta a,
 .et_pb_widget a {
     color: $hsc-blue-light;
