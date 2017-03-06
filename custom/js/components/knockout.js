@@ -4,7 +4,7 @@
     function HscKnockout() {
         var config = new HockeyDataConfig();
         var divisionId = '136';
-        var defaultTeams = [4951, 4952];
+        var defaultTeams = [3740, 3741, 4951, 4952];
         var type = 'halbfinale';
 
         var retrieveEncounterOverviewTemplate = function(data) {
