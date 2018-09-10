@@ -2,7 +2,7 @@
     window.HockeyDataConfig = function() {
         return {
             logoBaseUrl: '/wp-content/themes/hsc-theme/images/teams',
-            hockeyDataApiUrl: 'http://api.hockeydata.net/data/ebel',
+            hockeyDataApiUrl: 'https://api.hockeydata.net/data/ebel',
             league: 'ebel',
             sport: 'icehockey',
             referer: 'www.h-sc.at',
