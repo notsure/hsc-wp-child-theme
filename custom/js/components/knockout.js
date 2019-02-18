@@ -40,11 +40,19 @@
         };
 
         var retrieveEncounterGameTemplate = function(game) {
-            var template = '<tr>'
-                + '  <td class="date" colspan="2">'
-                + '    {{ scheduledDate.value }} - {{ scheduledTime }}'
-                + '  </td>'
-                + '</tr><tr>'
+            var template = '<tr>';
+
+            if (!game.dateIsToBeDetermined) {
+                template += '  <td class="date" colspan="2">'
+                    + '    {{ scheduledDate.value }} - {{ scheduledTime }}'
+                    + '  </td>';
+            } else {
+                template += '  <td class="date" colspan="2">'
+                    + '    TBD'
+                    + '  </td>';
+            }
+
+            template += '</tr><tr>'
                 + '  <td class="team">{{ homeTeamLongName }} <br/> {{ awayTeamLongName }}</td>'
                 + '  <td class="score">'
                 + '      {{ gameStatus > 0 ? homeTeamScore : "-" }}'
