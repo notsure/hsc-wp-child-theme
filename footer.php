@@ -42,6 +42,11 @@
                           <i class="hsc-icon hsc-icon-facebook"></i>
                       </a>
                   </li>
+                  <li class="mr-md">
+                      <a href="https://www.instagram.com/sc_hohenems" target="_blank">
+                          <i class="hsc-icon hsc-icon-instagram"></i>
+                      </a>
+                  </li>
                   <li>
                       <a href="https://www.youtube.com/channel/UCDcIe4y3sXSmEjDCutV2T6g" target="_blank">
                           <i class="hsc-icon hsc-icon-youtube"></i>
@@ -78,6 +83,11 @@
                   <li class="et-social-icon et-social-facebook">
                       <a href="https://www.facebook.com/SC.Hohenems" target="_blank">
                           <i class="hsc-icon hsc-icon-facebook"></i>
+                      </a>
+                  </li>
+                  <li class="et-social-icon et-social-instagram">
+                      <a href="https://www.instagram.com/sc_hohenems" target="_blank">
+                          <i class="hsc-icon hsc-icon-instagram"></i>
                       </a>
                   </li>
                   <li class="et-social-icon et-social-youtube">
