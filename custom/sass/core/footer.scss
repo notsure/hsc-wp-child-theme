@@ -14,10 +14,14 @@
         bottom: 0;
         width: 100%;
         background: $hsc-blue-dark;
-        background: -moz-linear-gradient(left, $hsc-blue-dark 0%, $hsc-blue-dark 50%, $hsc-yellow 50%, $hsc-yellow 100%); /* FF3.6-15 */
-        background: -webkit-linear-gradient(left, $hsc-blue-dark 0%, $hsc-blue-dark 50%, $hsc-yellow 50%, $hsc-yellow 100%); /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(to right, $hsc-blue-dark 0%, $hsc-blue-dark 50%, $hsc-yellow 50%, $hsc-yellow 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$hsc-blue-dark, endColorstr=$hsc-yellow, GradientType=1); /* IE6-9 */
+        background: -moz-linear-gradient(left, $hsc-blue-dark 0%, $hsc-blue-dark 50%, $hsc-yellow 50%, $hsc-yellow 100%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(left, $hsc-blue-dark 0%, $hsc-blue-dark 50%, $hsc-yellow 50%, $hsc-yellow 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to right, $hsc-blue-dark 0%, $hsc-blue-dark 50%, $hsc-yellow 50%, $hsc-yellow 100%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$hsc-blue-dark, endColorstr=$hsc-yellow, GradientType=1);
+        /* IE6-9 */
 
         > .container {
             height: 100%;
@@ -31,7 +35,8 @@
         display: inline-block;
         position: absolute;
         bottom: 20px;
-        left: 0px;
+        left: 0;
+        z-index: 9;
     }
 
     .footer-nav {
@@ -141,9 +146,7 @@
         display: inline-block;
         position: absolute;
         top: 0;
-        margin: auto;
-        margin-left: -50px;
-        margin-top: -50px;
+        margin: -50px auto auto -50px;
     }
 
     .footer-nav {

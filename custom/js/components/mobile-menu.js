@@ -1,9 +1,9 @@
-(function($) {
+(function ($) {
     function initMobileMenu() {
         var $mainArea = $('#et-main-area');
         var $menuButton = $('.mobile_menu_bar_toggle');
 
-        $menuButton.on('click', function(event) {
+        $menuButton.on('click', function (event) {
             event.preventDefault();
 
             if ($(event.currentTarget).hasClass('opened')) {
@@ -23,8 +23,8 @@
 
         $logo.animate({
             top: '-50px'
-        }, 'fast', function() {
-            window.setTimeout(function() {
+        }, 'fast', function () {
+            window.setTimeout(function () {
                 $logo.animate({
                     top: '0px'
                 }, 'fast');
@@ -32,7 +32,7 @@
         });
     }
 
-    $(window).load(function() {
+    $(window).load(function () {
         initMobileMenu();
     });
 })(jQuery);

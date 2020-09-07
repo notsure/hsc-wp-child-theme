@@ -1,6 +1,6 @@
 <?php
 
-$themeName = 'Divi-child';
+$themeName = 'hsc-theme';
 
 add_action( 'wp_enqueue_scripts', 'hsc_styles' );
 function hsc_styles() {

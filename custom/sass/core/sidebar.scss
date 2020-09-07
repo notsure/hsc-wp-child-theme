@@ -23,8 +23,8 @@
                 margin-left: -43px;
             }
 
-            .time,
-            .scores {
+            .scores,
+            .time {
                 @include font-bold(20px);
                 width: 85px;
                 margin-top: 80px;
@@ -37,7 +37,6 @@
     @media #{$viewport-tablet} {
         .hsc-game-schedule-widget {
             .image {
-
                 img {
                     margin-top: 5px;
                 }
@@ -51,8 +50,8 @@
                 @include font-semibold(14px);
             }
 
-            .time,
-            .scores {
+            .scores,
+            .time {
                 @include font-bold(20px);
                 text-align: center;
             }

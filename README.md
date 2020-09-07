@@ -1,5 +1,29 @@
 # hsc-wp-child-theme
 
-## How to install
+This project a child theme for Divi.
 
-coming soon.
+## 1. Browser Support
+
+- Latest versions of Chrome, Firefox, Safari and Windows Edge.
+
+## 2. Non-functional requirements
+
+TBD
+
+## 3. Short project description
+
+TBD
+
+## 4. Documentation
+
+### 4.1 Development
+- [Contribution](documentation/contribution.md)
+- [Installation guide](documentation/installation.md)
+- [Development](documentation/development.md)
+- [Versioning Conventions](documentation/versioning-conventions.md)
+
+### 4.2 Deployment
+- [Deployment on server](documentation/deployment.md)
+
+### 4.3 Features
+- [Features](documentation/features.md)

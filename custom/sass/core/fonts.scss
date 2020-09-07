@@ -48,31 +48,41 @@
     }
 }
 
-strong, b {
+b,
+strong {
     font-family: 'URWGeometric-SemiBoldOblique' !important;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     letter-spacing: 0.5pt;
     font-weight: normal !important;
     color: $hsc-blue-dark;
 }
 
-body, input, textarea, select {
+body,
+input,
+select,
+textarea {
     @include font-light(14px, 18px);
     letter-spacing: 0.5pt;
     font-weight: normal !important;
     color: $hsc-blue-dark;
 }
 
-h1, .h1,
-h2, .h2,
-h3, .h3,
-h4, .h4,
-h5, .h5,
-h6, .h6 {
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'URWGeometric-BlackOblique';
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     letter-spacing: 0.5pt;
     font-weight: normal !important;
     color: $hsc-blue-dark;
