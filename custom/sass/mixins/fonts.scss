@@ -1,5 +1,5 @@
 @mixin font-light($size, $lineHeight: 1.5) {
-    font-family: 'URWGeometric-LightOblique' !important;
+    font-family: 'URWGeometric-Light' !important;
     font-size: $size;
     line-height: $lineHeight;
     -webkit-font-smoothing: antialiased;
@@ -9,7 +9,7 @@
 }
 
 @mixin font-normal($size, $lineHeight: 1.5) {
-    font-family: 'URWGeometric-RegularOblique' !important;
+    font-family: 'URWGeometric-Regular' !important;
     font-size: $size;
     line-height: $lineHeight;
     -webkit-font-smoothing: antialiased;
@@ -28,7 +28,7 @@
 }
 
 @mixin font-bold($size, $lineHeight: 1.5) {
-    font-family: 'URWGeometric-BlackOblique' !important;
+    font-family: 'URWGeometric-Black' !important;
     font-size: $size;
     line-height: $lineHeight;
     -webkit-font-smoothing: antialiased;
@@ -38,7 +38,7 @@
 }
 
 @mixin font-light-italic($size, $lineHeight: 1.5) {
-    font-family: 'URWGeometric-Light' !important;
+    font-family: 'URWGeometric-LightOblique' !important;
     font-size: $size;
     line-height: $lineHeight;
     -webkit-font-smoothing: antialiased;
@@ -48,7 +48,7 @@
 }
 
 @mixin font-normal-italic($size, $lineHeight: 1.5) {
-    font-family: 'URWGeometric-Regular' !important;
+    font-family: 'URWGeometric-RegularOblique' !important;
     font-size: $size;
     line-height: $lineHeight;
     -webkit-font-smoothing: antialiased;
@@ -57,7 +57,7 @@
 }
 
 @mixin font-semibold-italic($size, $lineHeight: 1.5) {
-    font-family: 'URWGeometric-SemiBold' !important;
+    font-family: 'URWGeometric-SemiBoldOblique' !important;
     font-size: $size;
     line-height: $lineHeight;
     -webkit-font-smoothing: antialiased;
