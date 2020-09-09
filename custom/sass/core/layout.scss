@@ -8,15 +8,6 @@ body {
 
 #main-content {
     min-height: calc(100vh - 189px);
-
-    @media #{$viewport-tablet} {
-        /* padding: 50px 0px; */
-
-        /* .container { */
-        /*     padding-top: 30px !important; */
-        /*     padding-bottom: 30px !important; */
-        /* } */
-    }
 }
 
 .block-content-holder {

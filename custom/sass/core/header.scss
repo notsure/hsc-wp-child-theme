@@ -32,9 +32,9 @@
 }
 
 #top-menu {
+    @include font-bold-italic(21px, 21px);
     height: 100%;
     margin-right: -25px;
-    @include font-bold(21px, 21px);
 
     > li {
         height: 100%;
@@ -81,11 +81,11 @@
 
     .sub-menu {
         @include bg-hsc-blue(0.85);
+        @include font-semibold-italic(21px, 21px);
         border-color: $hsc-yellow !important;
         padding: 10px 0;
         width: 320px;
         margin-top: -9px;
-        @include font-semibold(21px, 21px);
 
         li {
             padding: 0 3px;

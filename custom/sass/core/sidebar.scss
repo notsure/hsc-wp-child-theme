@@ -1,3 +1,5 @@
+//TODO CHECK if this needs to be removed.
+
 #sidebar {
     @media #{$viewport-desktop} {
         .hsc-game-schedule-widget {
@@ -18,7 +20,7 @@
             }
 
             .date {
-                @include font-semibold(14px);
+                @include font-semibold-italic(14px);
                 width: 85px;
                 margin-left: -43px;
             }
@@ -47,12 +49,12 @@
             }
 
             .date {
-                @include font-semibold(14px);
+                @include font-semibold-italic(14px);
             }
 
             .scores,
             .time {
-                @include font-bold(20px);
+                @include font-bold-italic(20px);
                 text-align: center;
             }
         }

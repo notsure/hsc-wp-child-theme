@@ -9,13 +9,13 @@
 }
 
 #mobile_menu {
+    @include bg-hsc-blue(0.95);
+    @include font-bold-italic(21px, 21px);
     display: block !important;
     min-height: 100vh;
     top: 55px;
     border-color: $hsc-yellow;
     padding-top: 60px;
-    @include bg-hsc-blue(0.95);
-    @include font-bold(21px, 21px);
 
     li {
         a {
@@ -45,7 +45,7 @@
     }
 
     .sub-menu {
-        @include font-semibold(21px, 21px);
+        @include font-semibold-italic(21px, 21px);
 
         li {
             padding-left: 15px;

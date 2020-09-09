@@ -123,10 +123,10 @@
 }
 
 .mobile-footer {
+    @include font-bold-italic(21px, 21px);
     text-align: center;
     display: none;
     position: relative;
-    @include font-bold(21px, 21px);
     letter-spacing: 0.5pt;
 
     @media #{$viewport-phone} {

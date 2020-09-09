@@ -1,57 +1,26 @@
-.text-size-xs {
-    font-size: 65%;
-}
-
-.text-size-sm {
-    font-size: 85%;
-}
-
-.text-size-md {
-    font-size: 110%;
-}
-
-.text-size-lg {
-    font-size: 120%;
-}
-
-.text-size-xlg {
-    font-size: 135%;
-}
-
-.text-white {
-    color: $hsc-white !important;
-}
-
-.text-blue {
-    color: $hsc-blue-dark !important;
-}
-
-.text-yellow {
-    color: $hsc-yellow !important;
-}
-
-.text-grey {
-    color: $hsc-grey !important;
-}
-
-.text-bold {
-    font-family: 'URWGeometric-BlackOblique' !important;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    letter-spacing: 0.5pt;
-    font-weight: normal !important;
-}
-
-.text-semibold {
-    font-family: 'URWGeometric-SemiBoldOblique' !important;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    letter-spacing: 0.5pt;
-    font-weight: normal !important;
-}
-
-.text-italic {
+@mixin font-light($size, $lineHeight: 1.5) {
     font-family: 'URWGeometric-LightOblique' !important;
+    font-size: $size;
+    line-height: $lineHeight;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0.5pt;
+    font-weight: normal !important;
+}
+
+@mixin font-normal($size, $lineHeight: 1.5) {
+    font-family: 'URWGeometric-RegularOblique' !important;
+    font-size: $size;
+    line-height: $lineHeight;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0.5pt;
+}
+
+@mixin font-semibold($size, $lineHeight: 1.5) {
+    font-family: 'URWGeometric-SemiBold' !important;
+    font-size: $size;
+    line-height: $lineHeight;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     letter-spacing: 0.5pt;
@@ -68,8 +37,8 @@
     font-weight: normal !important;
 }
 
-@mixin font-semibold($size, $lineHeight: 1.5) {
-    font-family: 'URWGeometric-SemiBoldOblique' !important;
+@mixin font-light-italic($size, $lineHeight: 1.5) {
+    font-family: 'URWGeometric-Light' !important;
     font-size: $size;
     line-height: $lineHeight;
     -webkit-font-smoothing: antialiased;
@@ -78,21 +47,31 @@
     font-weight: normal !important;
 }
 
-@mixin font-light($size, $lineHeight: 1.5) {
-    font-family: 'URWGeometric-LightOblique' !important;
-    font-size: $size;
-    line-height: $lineHeight;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    letter-spacing: 0.5pt;
-    font-weight: normal !important;
-}
-
-@mixin font-normal($size, $lineHeight: 1.5) {
+@mixin font-normal-italic($size, $lineHeight: 1.5) {
     font-family: 'URWGeometric-Regular' !important;
     font-size: $size;
     line-height: $lineHeight;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     letter-spacing: 0.5pt;
+}
+
+@mixin font-semibold-italic($size, $lineHeight: 1.5) {
+    font-family: 'URWGeometric-SemiBold' !important;
+    font-size: $size;
+    line-height: $lineHeight;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0.5pt;
+    font-weight: normal !important;
+}
+
+@mixin font-bold-italic($size, $lineHeight: 1.5) {
+    font-family: 'URWGeometric-BlackOblique' !important;
+    font-size: $size;
+    line-height: $lineHeight;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0.5pt;
+    font-weight: normal !important;
 }

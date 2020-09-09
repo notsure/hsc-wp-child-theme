@@ -1,4 +1,6 @@
 .hsc-btn {
+    @include font-bold-italic(18px);
+    @include transition(all 0.3s);
     cursor: pointer;
     padding: 20px 80px;
     display: inline-block;
@@ -6,8 +8,6 @@
     border: 2px solid $hsc-blue-dark;
     color: $hsc-blue-dark;
     background: transparent;
-    @include font-bold(18px);
-    @include transition(all 0.3s);
 
     &:hover {
         background: #ccc;
@@ -15,13 +15,13 @@
 }
 
 .hsc-btn-small {
+    @include font-bold-italic(14px);
     padding: 10px 40px;
-    @include font-bold(14px);
 }
 
 .hsc-btn-big {
+    @include font-bold-italic(22px);
     padding: 30px 100px;
-    @include font-bold(22px);
 }
 
 .hsc-btn-primary {
