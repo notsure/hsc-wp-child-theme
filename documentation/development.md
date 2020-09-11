@@ -9,6 +9,10 @@ Please read the [contribution.md](../contribution.md) file to learn how to corre
 Run locally with backend calls against dev:
 
 ```
+nvm use 12
+```
+
+```
 ng serve
 ```
 

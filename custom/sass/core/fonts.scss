@@ -50,7 +50,7 @@
 
 b,
 strong {
-    @include font-semibold(14px, 18px);
+    @extend .text-semibold;
     color: $hsc-blue-dark;
 }
 
@@ -58,8 +58,7 @@ body,
 input,
 select,
 textarea {
-    @include font-normal(14px, 18px);
-    letter-spacing: 0.5pt;
+    @extend .text-normal;
     font-weight: normal !important;
     color: $hsc-blue-dark;
 }
@@ -142,6 +141,22 @@ h6 {
 
 .text-light {
     font-family: 'URWGeometric-Light' !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0.5pt;
+    font-weight: normal !important;
+}
+
+.text-normal {
+    font-family: 'URWGeometric-Regular' !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0.5pt;
+    font-weight: normal !important;
+}
+
+.text-normal-italic {
+    font-family: 'URWGeometric-RegularOblique' !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     letter-spacing: 0.5pt;
