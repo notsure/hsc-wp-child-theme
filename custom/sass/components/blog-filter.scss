@@ -1,0 +1,27 @@
+.main-blog-filter {
+  border-right: 0;
+
+  .widget_categories {
+    width: 100%;
+  }
+
+  .wp-block-categories-list {
+    .cat-item {
+      float: left;
+      padding: 5px 9px;
+      margin-right: 10px;
+      border: 1px solid #1C2B49;
+      border-radius: 2px;
+      cursor: pointer;
+      font-size: 14px;
+
+      &:hover {
+        background: #FFDB00;
+      }
+
+      &.current-cat {
+        background: #FFDB00;
+      }
+    }
+  }
+}

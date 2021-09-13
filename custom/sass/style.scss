@@ -16,10 +16,12 @@
 @import './core/mobile';
 @import './core/paddings';
 
+@import './components/blog-filter';
 @import './components/footer';
 @import './components/header';
 @import './components/header-mobile';
 @import './components/quicklinks';
+@import './components/news-list-widget';
 
 @import './divi-overwrites/overwrites';
 @import './divi-overwrites/et-tabs';
@@ -27,3 +29,4 @@
 
 @import './plugin-overwrites/groofy-mega-menu';
 @import './plugin-overwrites/naba-hockeydata-widget';
+@import './plugin-overwrites/dsm-image-carousel';
