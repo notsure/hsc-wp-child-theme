@@ -1,35 +1,29 @@
-/*
-Theme Name: Naba HSC Divi Child
-Theme URI: http://www.elegantthemes.com/gallery/divi/
-Version: 2.7.9-2020-09-11
-Description: Child Theme for Divi
-Author: Nachbauer Philip
-Author URI: http://www.naba.at
-Tags: responsive-layout, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, custom-background, custom-colors, featured-images, full-width-template, post-formats, rtl-language-support, theme-options, threaded-comments, translation-ready
-License: GNU General Public License v2
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Template: Divi
-*/
+@import './variables';
 
-@import './variables.scss';
+@import './mixins/common';
+@import './mixins/fonts';
+@import './mixins/backgrounds';
 
-@import './mixins/common.scss';
-@import './mixins/fonts.scss';
-@import './mixins/backgrounds.scss';
-@import './mixins/paddings.scss';
-@import './mixins/margins.scss';
+@import './core/backgrounds';
+@import './core/border';
+@import './core/buttons';
+@import './core/fonts';
+@import './core/fonts-families';
+@import './core/helpers';
+@import './core/hsc-icons';
+@import './core/layout';
+@import './core/margins';
+@import './core/mobile';
+@import './core/paddings';
 
-@import './core/fonts-core.scss';
-@import './core/fonts.scss';
-@import './core/footer.scss';
-@import './core/header.scss';
-@import './core/header-mobile.scss';
-@import './core/layout.scss';
-@import './core/overwrites.scss';
-@import './core/hsc-icons.scss';
-@import './core/sidebar.scss';
-@import './core/buttons.scss';
-@import './core/mobile.scss';
+@import './components/footer';
+@import './components/header';
+@import './components/header-mobile';
+@import './components/quicklinks';
 
-@import './components/et-tabs.scss';
-@import './components/owl-sliders.scss';
+@import './divi-overwrites/overwrites';
+@import './divi-overwrites/et-tabs';
+@import './divi-overwrites/owl-sliders';
+
+@import './plugin-overwrites/groofy-mega-menu';
+@import './plugin-overwrites/naba-hockeydata-widget';

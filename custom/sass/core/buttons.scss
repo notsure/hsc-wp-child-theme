@@ -4,7 +4,6 @@
     cursor: pointer;
     padding: 20px 80px;
     display: inline-block;
-    margin: 5px;
     border: 2px solid $hsc-blue-dark;
     color: $hsc-blue-dark;
     background: transparent;
@@ -12,8 +11,20 @@
     &:hover {
         background: #ccc;
     }
+
+    &.box-shadow {
+        box-shadow: 3px 10px 10px -6px rgba($hsc-blue-dark, 0.3);
+    }
+
+    &.box-shadow-yellow {
+        box-shadow: 3px 10px 10px -6px rgba($hsc-yellow, 0.3);
+    }
 }
 
+.hsc-btn-xs {
+    @include font-bold-italic(14px);
+    padding: 4px 10px;
+}
 .hsc-btn-small {
     @include font-bold-italic(14px);
     padding: 10px 40px;

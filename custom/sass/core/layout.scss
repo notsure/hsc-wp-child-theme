@@ -1,7 +1,3 @@
-body {
-    border-bottom: 5px solid $hsc-yellow;
-}
-
 #page-container {
     overflow: hidden;
 }
@@ -17,15 +13,6 @@ body {
 
 .hidden-content {
     display: none !important;
-}
-
-#left-area .post-meta a,
-.et_pb_widget a {
-    color: $hsc-blue-light;
-
-    &:hover {
-        color: $hsc-blue-dark !important;
-    }
 }
 
 .wp-pagenavi {

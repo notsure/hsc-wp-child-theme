@@ -87,6 +87,14 @@ h6 {
     }
 }
 
+.text-shadow {
+    text-shadow: 1px 1px $hsc-blue-dark;
+}
+
+.text-shadow-inverse {
+    text-shadow: 1px 1px $hsc-yellow;
+}
+
 .text-size-xs {
     font-size: 65%;
 }

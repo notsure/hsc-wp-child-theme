@@ -7,8 +7,8 @@
 ### 1. Clone the repository
 
 ```
-git clone git@github.com:anivo/vlv-customer-journey.git
-cd vlv-customer-journey
+git git@github.com:notsure/hsc-wp-child-theme.git
+cd hsc-wp-child-theme
 ```
 
 ### 2. Install the dependencies
@@ -17,12 +17,3 @@ cd vlv-customer-journey
 npm install
 ```
 
-### 3. Run the project
-
-```
-ng serve
-```
-
-The project is now up and running on `http://localhost:4200`.
-
-Please read the [development guide](development.md) for more information.

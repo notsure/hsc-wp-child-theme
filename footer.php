@@ -1,5 +1,5 @@
 <?php
-  $themeURL = get_theme_root_uri() . '/hsc-theme';
+  $themeURL = get_theme_root_uri() . '/hsc-wp-child-theme';
   $logo =  $themeURL . '/images/sc-hohenems-logo.svg';
 ?>
 
@@ -106,8 +106,5 @@
 	</div> <!-- #page-container -->
 
 	<?php wp_footer(); ?>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-    <script src="<?php echo $themeURL . '/hsc.min.js'; ?>" type="text/javascript"></script>
 </body>
 </html>
