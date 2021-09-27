@@ -1,8 +1,10 @@
 @import './variables';
+@import './variables/breakpoints';
 
 @import './mixins/common';
 @import './mixins/fonts';
 @import './mixins/backgrounds';
+@import './mixins/media';
 
 @import './core/backgrounds';
 @import './core/border';
@@ -21,7 +23,8 @@
 @import './components/header';
 @import './components/header-mobile';
 @import './components/quicklinks';
-@import './components/news-list-widget';
+@import './components/hsc-news-featured';
+@import './components/hsc-news-list';
 
 @import './divi-overwrites/columns';
 @import './divi-overwrites/overwrites';
