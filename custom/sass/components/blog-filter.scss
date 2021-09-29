@@ -2,7 +2,7 @@
   border-right: 0;
 
   .widget_categories {
-    width: 100%;
+    width: 100% !important;
   }
 
   .wp-block-categories-list {
@@ -10,17 +10,24 @@
       float: left;
       padding: 5px 9px;
       margin-right: 10px;
-      border: 1px solid #1C2B49;
+      border: 1px solid $hsc-blue-dark;
       border-radius: 2px;
       cursor: pointer;
       font-size: 14px;
+      transition: $transition-default;
+
+      a {
+        color: $hsc-blue-dark;
+      }
 
       &:hover {
-        background: #FFDB00;
+        background: rgba($hsc-yellow, 0.8);
+        box-shadow: 0 6px 8px -4px rgba($hsc-black, 0.5);
       }
 
       &.current-cat {
-        background: #FFDB00;
+        background: $hsc-yellow;
+        font-weight: 600;
       }
     }
   }

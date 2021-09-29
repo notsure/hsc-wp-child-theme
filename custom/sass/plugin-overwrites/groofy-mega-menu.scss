@@ -3,9 +3,10 @@
 }
 
 #main-page-menu {
-  font-family: 'URWGeometric-BlackOblique';
+  font-family: 'URWGeometric-Black' !important;
 
   .gm-main-menu-wrapper, .gm-navbar,
+  .gm-menu-item,
   .gm-navigation-drawer {
     font-family: inherit;
   }
