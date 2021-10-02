@@ -6,6 +6,10 @@
   form {
     display: flex;
     flex-flow: row wrap;
+
+    @include media(null, xs) {
+      display: block;
+    }
   }
 
   .webling-form__select,
