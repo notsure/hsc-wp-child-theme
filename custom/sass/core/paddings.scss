@@ -20,6 +20,11 @@
     }
 }
 
+.no-mobile-padding-sm {
+    @include media(null, xs) {
+        padding: 0 !important;
+    }
+}
 .clear-paddings {
     padding: 0;
 }

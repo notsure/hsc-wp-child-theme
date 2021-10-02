@@ -1,0 +1,45 @@
+$max-width: 100%;
+$max-cols: 12;
+
+.hsc-col {
+}
+
+.hsc-col-2 {
+  @extend .hsc-col;
+  width: calc(#{$max-width} / 12) !important;
+
+  @include media(null, xs) {
+    width: 100% !important;
+    padding-left: 0;
+  }
+}
+
+.hsc-col-3 {
+  @extend .hsc-col;
+  width: calc(#{$max-width} / 4) !important;;
+
+  @include media(null, xs) {
+    width: 100% !important;
+    padding-left: 0;
+  }
+}
+
+.hsc-col-4 {
+  @extend .hsc-col;
+  width: calc(#{$max-width} / 3) !important;;
+
+  @include media(null, xs) {
+    width: 100% !important;
+    padding-left: 0;
+  }
+}
+
+.hsc-col-6 {
+  @extend .hsc-col;
+  width: calc(#{$max-width} / 2) !important;;
+
+  @include media(null, xs) {
+    width: 100% !important;
+    padding-left: 0;
+  }
+}
