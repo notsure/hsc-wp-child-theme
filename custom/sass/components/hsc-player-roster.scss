@@ -1,0 +1,99 @@
+.hsc-team-roster-headline {
+  position: absolute;
+  top: -50px;
+  font: 'URWGeometric-BlackOblique';
+  font-size: 26px;
+  letter-spacing: .5pt;
+  border-bottom: 3px solid $hsc-yellow;
+  padding-bottom: 10px;
+  line-height: 1em;
+  width: 100%;
+  max-width: 1080px;
+}
+
+.hsc-team-roster {
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 30px;
+  position: relative;
+
+  @include media(md) {
+    grid-template-columns: auto auto auto;
+  }
+
+  [class*="Goalie"]:first-child {
+    &:before {
+      @extend .hsc-team-roster-headline;
+
+      content: 'Goalie';
+    }
+  }
+
+  [class*="Stürmer/in"]:first-child {
+    &:before {
+      @extend .hsc-team-roster-headline;
+
+      content: 'Goalie';
+    }
+  }
+
+  [class*="Verteidiger/in"]:first-child {
+    &:before {
+      @extend .hsc-team-roster-headline;
+
+      content: 'Goalie';
+    }
+  }
+}
+
+.hsc-team-roster__player {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 50px;
+  position: relative;
+  font-family: 'URWGeometric-Black';
+
+  &:nth-child(3n+3) {
+    margin-right: 0;
+  }
+
+  .hsc-team-roster__player-image {
+    width: 100%;
+    min-height: 104px;
+
+    @include media(md) {
+      min-height: 190px;
+    }
+
+    .image {
+      box-shadow: 0 12px 18px -6px rgb($hsc-black, 0.3)
+    }
+  }
+
+  .hsc-team-roster__player-meta {
+    margin-top: 10px;
+  }
+
+  .hsc-team-roster__player-number {
+    font-size: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    width: 45%;
+    height: 25%;
+    background: rgba($hsc-white, 0.5);
+
+    @include media(sm) {
+      font-size: 5rem;
+    }
+  }
+
+  .hsc-team-roster__player-name {
+    text-align: center;
+    font-size: 20px;
+    font-family: 'URWGeometric-BlackOblique';
+  }
+}
