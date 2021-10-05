@@ -1,22 +1,22 @@
 @each $item, $size in (n: 0, xs: 5px, sm: 10px, md: 15px, lg: 20px, xl: 25px, xxl: 30px) {
     .m-#{$item} {
-        margin: $size !important;
+        margin: $size;
     }
 
     .mt-#{$item} {
-        margin-top: $size !important;
+        margin-top: $size;
     }
 
     .ml-#{$item} {
-        margin-left: $size !important;
+        margin-left: $size;
     }
 
     .mb-#{$item} {
-        margin-bottom: $size !important;
+        margin-bottom: $size;
     }
 
     .mr-#{$item} {
-        margin-right: $size !important;
+        margin-right: $size;
     }
 }
 

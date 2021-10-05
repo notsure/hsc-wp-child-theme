@@ -23,6 +23,7 @@
     background-clip: padding-box;
     border: 1px solid $hsc-grey-mid;
     border-radius: .25rem;
+    min-height: 40px;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
   }
   .webling-form__select {
@@ -46,6 +47,10 @@
 
   .webling-form__group {
     margin: 0.5em 0;
+
+    @include media(null, xs) {
+      padding: 0;
+    }
   }
 
   .webling-form__label {

@@ -1,47 +1,30 @@
-.hsc-team-roster-headline {
-  position: absolute;
-  top: -50px;
-  font: 'URWGeometric-BlackOblique';
-  font-size: 26px;
-  letter-spacing: .5pt;
-  border-bottom: 3px solid $hsc-yellow;
-  padding-bottom: 10px;
-  line-height: 1em;
-  width: 100%;
-  max-width: 1080px;
-}
-
 .hsc-team-roster {
-  display: grid;
-  grid-template-columns: auto auto;
-  column-gap: 30px;
-  position: relative;
+  width: 100%;
 
-  @include media(md) {
-    grid-template-columns: auto auto auto;
+  .hsc-team-roster__section {
+    width: 100%;
+    margin-bottom: 40px;
   }
 
-  [class*="Goalie"]:first-child {
-    &:before {
-      @extend .hsc-team-roster-headline;
-
-      content: 'Goalie';
-    }
+  .hsc-team-roster__section-header {
+    font-family: 'URWGeometric-Black';
+    font-size: 26px;
+    letter-spacing: .5pt;
+    line-height: 1em;
+    border-bottom: 3px solid $hsc-yellow;
+    margin-bottom: 30px;
+    width: 100%;
   }
 
-  [class*="Stürmer/in"]:first-child {
-    &:before {
-      @extend .hsc-team-roster-headline;
+  .hsc-team-roster__section-items {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 50px;
+    position: relative;
 
-      content: 'Goalie';
-    }
-  }
-
-  [class*="Verteidiger/in"]:first-child {
-    &:before {
-      @extend .hsc-team-roster-headline;
-
-      content: 'Goalie';
+    @include media(md) {
+      grid-template-columns: auto auto auto;
     }
   }
 }
@@ -67,6 +50,8 @@
     }
 
     .image {
+      transition: opacity 0.5s linear 1s; // effect on 0.3 millisecond
+      opacity: 1; // set opacity property to 1, completely visible
       box-shadow: 0 12px 18px -6px rgb($hsc-black, 0.3)
     }
   }
@@ -81,13 +66,13 @@
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: 0;
+    top: 6px;
+    left: 6px;
     width: 45%;
     height: 25%;
-    background: rgba($hsc-white, 0.5);
 
     @include media(sm) {
-      font-size: 5rem;
+      font-size: 4.5rem;
     }
   }
 
