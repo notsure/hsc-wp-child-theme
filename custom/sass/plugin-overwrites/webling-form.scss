@@ -49,7 +49,7 @@
     margin: 0.5em 0;
 
     @include media(null, xs) {
-      padding: 0;
+      padding: 0 !important;
     }
   }
 
@@ -63,7 +63,7 @@
   }
 
   .clearfix::after {
-    content: "";
+    content: '';
     clear: both;
     display: table;
   }
