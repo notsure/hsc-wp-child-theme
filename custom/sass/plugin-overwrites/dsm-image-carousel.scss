@@ -12,23 +12,19 @@
     z-index: 2;
   }
 
-  .swiper-slide {
-    max-width: 110px;
+  .swiper-slide .dsm_image_carousel_link img {
+    width: 110px !important;
   }
 }
 
 .hsc-slider-sponsor-premium {
   @extend .hsc-slider-sponsor;
 
-  .swiper-slide {
-    max-width: 170px;
+  .swiper-slide .dsm_image_carousel_link img {
+    max-width: 170px !important;;
   }
 }
 
 .dsm_image_carousel .dsm_image_carousel_container {
   margin-bottom: 0;
-}
-
-.dsm_image_carousel .swiper-slide .dsm_image_carousel_link img {
-  width: auto;
 }
