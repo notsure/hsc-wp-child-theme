@@ -75,6 +75,7 @@
     left: 6px;
     width: 45%;
     height: 25%;
+    letter-spacing: 0.05em;
 
     @include media(sm) {
       font-size: 4.5rem;
