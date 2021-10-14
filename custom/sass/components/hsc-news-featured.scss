@@ -36,14 +36,15 @@
 
     .entry-featured-image-url {
       margin-bottom: 0;
+      border-radius: 2px;
     }
   }
 
   .entry-title {
     position: absolute;
-    bottom: 30px;
+    bottom: 40px;
     width: 100%;
-    padding: 15px;
+    padding: 30px;
     text-shadow: 0px 1px $hsc-black;
     color: $hsc-white;
     z-index: 10;
@@ -73,10 +74,10 @@
 
   .post-meta {
     position: absolute;
-    bottom: 5px;
-    left: 15px;
+    bottom: 25px;
     z-index: 11;
     font-size: 14px;
+    padding: 35px;
     color: rgba($hsc-white, 0.9) !important;
     font-style: italic;
 
