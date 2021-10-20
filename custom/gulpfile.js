@@ -38,6 +38,6 @@ function js() {
 exports.js = js;
 exports.scss = scss;
 exports.default = series(
-  parallel(scss, js),
+  parallel(scss),
   exportToRoot
 );
