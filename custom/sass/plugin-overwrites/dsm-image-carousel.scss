@@ -12,6 +12,12 @@
     z-index: 2;
   }
 
+  @include media(null, sm) {
+    .dsm_image_carousel .swiper-slide {
+      width: 150px !important;
+    }
+  }
+
   .swiper-slide .dsm_image_carousel_link img {
     width: 110px !important;
   }
