@@ -1,7 +1,7 @@
 <?php
 
 define('NABA_WP_THEME_NAME', 'hsc-wp-child-theme');
-define('NABA_WP_THEME_VERSION', '2.8.32');
+define('NABA_WP_THEME_VERSION', '2.8.33');
 define('NABA_WP_THEME_PATH', get_stylesheet_directory_uri());
 define('NABA_WP_THEME_SRC', get_stylesheet_directory() . '/src');
 
