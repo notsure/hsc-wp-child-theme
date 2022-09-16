@@ -22,19 +22,19 @@
 @mixin text-normal() {
     @include text-default();
 
-    font-family: 'URWGeometric-Regular', Tahoma, sans-serif;
+    font-family: $font-family-default;
 }
 
 @mixin text-bold() {
     @include text-default();
 
-    font-family: 'URWGeometric-Black', Tahoma, sans-serif;
+    font-family: $font-family-bold;
 }
 
 @mixin text-bold-italic() {
     @include text-default();
 
-    font-family: 'URWGeometric-BlackOblique', Tahoma, sans-serif;
+    font-family: $font-family-bold-italic;
 }
 
 @mixin text-default() {
@@ -44,7 +44,7 @@
 }
 
 @mixin text-roboto {
-    font-family: 'Roboto Flex', Tahoma, sans-serif;
+    font-family: $font-family-roboto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
