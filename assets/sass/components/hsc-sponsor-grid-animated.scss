@@ -1,0 +1,37 @@
+.hsc-sponsor-grid-animated {
+  margin: auto -1.5%;
+  display: flex;
+  flex-wrap: wrap;
+
+  @include media(sm) {
+    flex-wrap: nowrap;
+  }
+
+  &.high-contrast {
+    mix-blend-mode: luminosity;
+    backface-visibility: hidden;
+    filter: brightness(60%) invert(100%);
+  }
+
+  .hsc-sponsor-grid__item {
+    transition: filter ease-in-out 450ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 0 30%;
+    width: 200px;
+    height: 150px;
+    margin: 1.5%;
+    text-align: center;
+    filter: grayscale(100%);
+    overflow: hidden;
+
+    &:hover {
+      filter: grayscale(0);
+    }
+
+    @include media(sm) {
+      flex: 1 0 11%;
+    }
+  }
+}

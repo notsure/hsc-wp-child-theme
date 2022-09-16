@@ -7,10 +7,9 @@
   }
 
   .hsc-team-roster__section-header {
-    font-family: 'URWGeometric-Black';
-    font-size: 26px;
+    @include font-bold(26px, 1em);
+
     letter-spacing: .5pt;
-    line-height: 1em;
     border-bottom: 3px solid $hsc-yellow;
     margin-bottom: 30px;
     width: 100%;
@@ -30,12 +29,13 @@
 }
 
 .hsc-team-roster__player {
+  @include font-bold(18px);
+
   display: flex;
   flex-direction: column;
   width: 100%;
   margin-bottom: 70px;
   position: relative;
-  font-family: 'URWGeometric-Black';
 
   @include media(sm) {
     margin-bottom: 100px;
@@ -83,9 +83,9 @@
   }
 
   .hsc-team-roster__player-name {
+    @include font-bold-italic(18px);
+
     text-align: center;
-    font-size: 18px;
-    font-family: 'URWGeometric-BlackOblique';
 
     @include media(sm) {
       font-size: 20px;

@@ -1,0 +1,34 @@
+{% if mediaAssets | length %}
+  {% set galleryId = "hsc-sponsor-grid-animated-#{gridId}"  %}
+  {% set attributes = {
+    'galleryId': galleryId,
+    'mediaAssets': mediaAssets
+  } %}
+
+  <script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+      sponsorGridAnimated.init({{ attributes | json_encode() }});
+    });
+  </script>
+  <div id="{{ galleryId }}"
+       class="hsc-sponsor-grid-animated">
+    {% for media in mediaAssets %}
+      {% if loop.index <= 6 %}
+        <a id="hsc-sponsor-grid-item-{{ media.id }}"
+           href="{{ media.href ? media.href : '#' }}"
+            {% if media.href %} target="_blank"{% endif %}
+           class="hsc-sponsor-grid__item">
+          <img loading="lazy"
+               id="{{ media.id }}"
+               src="{{ Image(media.id) }}"
+               class="hsc-sponsor-grid__image"
+               width="200"
+               height="150"
+          />
+        </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+{% else %}
+  Sponsor-Slider: No-Media found for {{ folderId }}.
+{% endif %}

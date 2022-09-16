@@ -3,7 +3,7 @@
 }
 
 #main-page-menu {
-  font-family: 'URWGeometric-Black' !important;
+  @include text-bold();
 
   .gm-main-menu-wrapper {
     .gm-menu-item__link {
