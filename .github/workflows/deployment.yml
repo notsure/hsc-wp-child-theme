@@ -12,13 +12,17 @@ jobs:
     - name: 🚚 Get latest code
       uses: actions/checkout@v3
 
-    - name: Use Node.js 14
+    - name: Install BE dependencies
+      uses: php-actions/composer@v6
+
+    - name: Intall FE Node.js 14
       uses: actions/setup-node@v2
       with:
         node-version: '14'
 
     - name: 🔨 Build Project
       run: |
+        cd assets
         npm install
         gulp
 
