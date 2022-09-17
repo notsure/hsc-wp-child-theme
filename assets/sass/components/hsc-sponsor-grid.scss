@@ -1,0 +1,60 @@
+.hsc-sponsor-grid {
+  margin: auto -1%;
+  display: flex;
+  flex-wrap: wrap;
+
+  &.hsc-sponsor-grid__as_row {
+    .hsc-sponsor-grid__item {
+      flex: 1 0 21%;
+    }
+
+    @include media(xs) {
+      .hsc-sponsor-grid__item {
+        flex: 1 0 14%;
+      }
+    }
+
+    @include media(sm) {
+      flex-wrap: nowrap;
+
+      .hsc-sponsor-grid__item {
+        flex: auto;
+      }
+    }
+  }
+
+  &.high-contrast {
+    mix-blend-mode: luminosity;
+    backface-visibility: hidden;
+    filter: brightness(60%) invert(100%);
+  }
+
+  &.items-per-row-6 {
+    .hsc-sponsor-grid__item {
+      flex: 1 0 20%;
+
+      @include media(xs) {
+        flex: 1 0 14%;
+      }
+    }
+  }
+
+  &.items-per-row-4 {
+    .hsc-sponsor-grid__item {
+      flex: 1 0 21%;
+    }
+  }
+
+  &.items-per-row-3 {
+    .hsc-sponsor-grid__item {
+      flex: 1 0 31%;
+    }
+  }
+
+  .hsc-sponsor-grid__item {
+    flex: 1 0 21%;
+    width: 150px;
+    margin: 1%;
+    text-align: center;
+  }
+}

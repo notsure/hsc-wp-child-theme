@@ -1,0 +1,25 @@
+.hsc-row {
+  display: flex;
+}
+
+@media only screen and (max-width: 980px) {
+  .hsc-col-6 .et_pb_column {
+    width: 50% !important;
+  }
+
+  .hsc-col-3 .et_pb_column {
+    width: 33% !important;
+  }
+
+  .hsc-col-4 .et_pb_column {
+    width: 25% !important;
+  }
+}
+
+@media only screen and (max-width: 479px) {
+  .hsc-col-6 .et_pb_column,
+  .hsc-col-3 .et_pb_column,
+  .hsc-col-4 .et_pb_column {
+    width: 50% !important;
+  }
+}

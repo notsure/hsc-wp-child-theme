@@ -1,0 +1,72 @@
+.webling-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  form {
+    display: flex;
+    flex-flow: row wrap;
+
+    @include media(null, xs) {
+      display: block;
+    }
+  }
+
+  .webling-form__select,
+  .webling-form__input {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem !important;
+    font-size: 1rem;
+    line-height: 1.5;
+    background-color: $hsc-white;
+    background-clip: padding-box;
+    border: 1px solid $hsc-grey-mid;
+    border-radius: .25rem;
+    min-height: 40px;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  }
+  .webling-form__select {
+    height: calc(2.25rem + 2px);
+    margin: 0;
+  }
+
+  .webling-form__submit {
+    @extend .hsc-btn;
+    @extend .hsc-btn-small;
+    @extend .box-shadow;
+    @extend .hsc-btn-primary;
+    margin: 20px 0;
+  }
+
+  .webling-form__group,
+  p {
+    width: 100%;
+    float: left;
+  }
+
+  .webling-form__group {
+    margin: 0.5em 0;
+
+    @include media(null, xs) {
+      padding: 0 !important;
+    }
+  }
+
+  .webling-form__label {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .webling-form__description {
+    font-size: 12px;
+    margin-top: 10px;
+    padding: 0 5px;
+    display: block;
+    line-height: 16px;
+  }
+
+  input[type="checkbox" i] {
+    margin: 0 3px 5px 0;
+  }
+}

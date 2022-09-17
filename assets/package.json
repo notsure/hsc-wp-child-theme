@@ -1,0 +1,29 @@
+{
+    "name": "hsc-theme",
+    "devDependencies": {
+        "gulp": "4.0.2",
+        "gulp-autoprefixer": "^8.0.0",
+        "gulp-clean-css": "4.2.0",
+        "gulp-concat": "2.6.1",
+        "gulp-jshint": "2.1.0",
+        "gulp-manifest": "^0.1.1",
+        "gulp-postcss": "^9.0.1",
+        "gulp-sass": "^5.0.0",
+        "gulp-terser": "^2.1.0",
+        "gulp-uglify-es": "^3.0.0",
+        "gulp-watch": "^5.0.1",
+        "jshint": "2.10.2",
+        "postcss": "^8.3.6",
+        "run-sequence": "2.2.1",
+        "sass": "^1.39.0",
+        "terser": "^5.15.0"
+    },
+    "browserslist": [
+        ">0.2%",
+        "not dead",
+        "not op_mini all"
+    ],
+    "dependencies": {
+        "pipeline": "^0.1.3"
+    }
+}

@@ -1,0 +1,23 @@
+{% if mediaAssets | length %}
+  {% set gridClass = [args.show_as_row > 0 ? 'hsc-sponsor-grid__as_row' : 'items-per-row-' ~ args.items_per_row] %}
+  {% set gridClass = gridClass|merge([args.high_contrast > 0 ? 'high-contrast' : '']) %}
+
+  <div id="hsc-sponsor-grid-{{ gridId }}"
+       class="hsc-sponsor-grid {{ gridClass | join(' ') }}">
+    {% for media in mediaAssets %}
+      <a id="hsc-sponsor-grid-item-{{ media.id }}"
+         href="{{ media.href ? media.href : '#' }}"
+         {% if media.href %} target="_blank"{% endif %}
+         class="hsc-sponsor-grid__item">
+        <img loading="lazy"
+             src="{{ Image(media.id) }}"
+             class="hsc-sponsor-grid__image"
+             width="200"
+             height="150"
+        />
+      </a>
+    {% endfor %}
+  </div>
+{% else %}
+  Sponsor-Slider: No-Media found for {{ folderId }}.
+{% endif %}

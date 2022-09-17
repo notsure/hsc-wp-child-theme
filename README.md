@@ -8,7 +8,7 @@ This project a child theme for Divi.
 
 ## 2. Non-functional requirements
 
-TBD
+- Timber: to use Twig
 
 ## 3. Short project description
 

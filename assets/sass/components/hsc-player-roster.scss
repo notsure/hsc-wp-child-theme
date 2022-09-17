@@ -1,0 +1,94 @@
+.hsc-team-roster {
+  width: 100%;
+
+  .hsc-team-roster__section {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .hsc-team-roster__section-header {
+    @include font-bold(26px, 1em);
+
+    letter-spacing: .5pt;
+    border-bottom: 3px solid $hsc-yellow;
+    margin-bottom: 30px;
+    width: 100%;
+  }
+
+  .hsc-team-roster__section-items {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 47.5% 47.5%;
+    column-gap: 5%;
+    position: relative;
+
+    @include media(md) {
+      grid-template-columns: 30% 30% 30%;
+    }
+  }
+}
+
+.hsc-team-roster__player {
+  @include font-bold(18px);
+
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 70px;
+  position: relative;
+
+  @include media(sm) {
+    margin-bottom: 100px;
+  }
+
+  &:nth-child(3n+3) {
+    margin-right: 0;
+  }
+
+  .hsc-team-roster__player-image {
+    width: 100%;
+    min-height: 104px;
+
+    @include media(md) {
+      min-height: 190px;
+    }
+
+    .image {
+      transition: opacity 0.5s linear 1s; // effect on 0.3 millisecond
+      opacity: 1; // set opacity property to 1, completely visible
+      box-shadow: 0 12px 18px -6px rgb($hsc-black, 0.3);
+      border-radius: 2px;
+    }
+  }
+
+  .hsc-team-roster__player-meta {
+    margin-top: 10px;
+  }
+
+  .hsc-team-roster__player-number {
+    font-size: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    height: 25%;
+    letter-spacing: 0.05em;
+
+    @include media(sm) {
+      font-size: 4.5rem;
+    }
+  }
+
+  .hsc-team-roster__player-name {
+    @include font-bold-italic(18px);
+
+    text-align: center;
+
+    @include media(sm) {
+      font-size: 20px;
+    }
+  }
+}
