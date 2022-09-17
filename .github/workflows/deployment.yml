@@ -34,3 +34,15 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         protocol: ftps
         port: 21 
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
+          **/documentation/**
+          **/sass/**
+          **/js/**
+          composer.json
+          composer.lock
+          **/package.json
+          **/package-lock.json
+          
