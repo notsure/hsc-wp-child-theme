@@ -6,12 +6,8 @@
   }
 }
 
-#hsc-nav-intro-logo {
-  margin-right: 25px;
-}
-
 #hsc-nav-sticky-logo {
-  margin: 0 !important;
+  margin-right: 0 !important;
 }
 
 .menu-item-ticket {
@@ -27,47 +23,161 @@
   }
 }
 
+#hsc-navigation-toolbar,
 #hsc-navigation-primary,
 #hsc-navigation-secondary {
-  @include text-roboto();
-
-  font-weight: 600;
+  @include text-bold();
 }
 
-$navbarHeight: 66px;
-
 #hsc-main-menu {
+  // Top level
   .et-menu {
-    li {
-      padding: 12px 0;
+    > .menu-item {
+      padding: 0;
       margin: 0 12px;
       border-bottom: 2px solid transparent;
+
+      &:hover,
+      &.current_page_item {
+        border-bottom: 2px solid $hsc-yellow;
+      }
+
+      > a {
+        padding: 12px 0;
+        margin: 0;
+        text-transform: uppercase;
+        color: rgba($hsc-white, 0.99);
+
+        &:after {
+          display: none;
+        }
+
+        &:before {
+          position: absolute;
+          display: block;
+          content: "";
+          width: 100%;
+          height: 100%;
+          left: 0;
+          top: 0;
+        }
+      }
     }
 
-    li:hover,
-    li.current_page_item {
-      border-bottom: 2px solid yellow;
-    }
+    .sub-menu {
+      top: 100%;
+      left: -20px;
+      background-color: rgba($hsc-white, 0) !important;
+      border-top: 0 !important;
+      padding-top: 14px !important;
+      padding-bottom: 0 !important;
+      border-radius: 0 0 2px 2px;
+      overflow: hidden;
 
-    li > a {
-      margin: 0;
-      padding: 0;
+      > li {
+        background-color: rgba(#445168, 0.9);
 
-      &:after {
-        display: none;
+        > a {
+          @include text-bold();
+
+          font-size: 17px;
+          padding: 10px 0;
+          border-bottom: 1px solid rgba($hsc-white, 0.4);
+          justify-content: flex-start;
+
+          &:hover {
+            color: $hsc-yellow;
+          }
+        }
+
+        &:first-child {
+          border-top: 3px solid $hsc-black;
+        }
+
+        &:last-child {
+          > a {
+            border-bottom: 0;
+          }
+        }
       }
     }
   }
 
+  .menu-item.menu-item-ticket {
+    padding-left: 20px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: url('images/ticket.svg') no-repeat;
+      left: 0;
+      top: 10px;
+      filter: invert(100%);
+    }
+  }
+}
+
+// Mobile
+#hsc-main-menu-mobile {
   .et_mobile_menu {
     display: block !important;
-    min-height: calc(100vh - 58px);
+    min-height: calc(100vh - 76px);
     width: 100vw;
-    top: $navbarHeight;
+    top: 68px;
     border-top: none;
     z-index: 9998;
-    margin-left: -81vw;
-    background-color: $hsc-white !important;
+    background-color: $hsc-blue-light !important;
+    overflow: scroll;
+    height: 100%;
+  }
+
+  .et_mobile_menu,
+  .sub-menu {
+    > .menu-item {
+      &.menu-item-has-children > a {
+        background-color: $hsc-blue-light !important;
+        position: relative;
+
+        &:after {
+          position: absolute;
+          content: '';
+          background: url('images/i-arrow--down.svg') no-repeat;
+          bottom: 15px;
+          right: 25px;
+          width: 12px;
+          height: 10px;
+          background-size: 12px;
+        }
+      }
+
+      &.menu-item-has-children > a.active {
+        &:after {
+          transition: 150ms;
+          transform: rotate(180deg);
+          font-weight: 600;
+        }
+      }
+
+      > a {
+        @include text-normal();
+
+        padding: 12px 5%;
+        line-height: 1.1;
+        font-size: 16px;
+        font-weight: 600;
+        color: $hsc-blue-dark;
+        opacity: 1 !important;
+      }
+    }
+  }
+
+  .sub-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    padding-left: 0;
   }
 
   .mobile_nav.closed .et_mobile_menu {
@@ -82,6 +192,10 @@ $navbarHeight: 66px;
     transition: .8s ease-in-out;
   }
 
+  .mobile_nav.closed .mobile_menu_bar:before {
+    color: $hsc-white;
+  }
+
   .mobile_nav.opened .mobile_menu_bar:before {
     content: "\4d";
     color: $hsc-white;
@@ -92,8 +206,8 @@ $navbarHeight: 66px;
     width: 10px;
     position: absolute;
     left: -35px;
-    top: 19px;
-    color: white;
+    top: 15px;
+    color: $hsc-white;
     font-size: 12px;
   }
 

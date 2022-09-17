@@ -1,16 +1,62 @@
 jQuery(document).ready(function($) {
-  var mainMenu = $('#hsc-main-menu');
-  var menuButton = mainMenu.find('.mobile_menu_bar');
-  var contentArea = $('#et-main-area');
-  var mobileMenuCssClass = 'is-mobile-menu-open';
+  class MobileMenu {
+    SELECTORS = {
+      menuContainer: '#hsc-main-menu-mobile',
+      menuButton: '.mobile_menu_bar',
+      subMenu: '.sub-menu',
+      contentArea: '#et-main-area',
+      mobileMenuHolder: '.et_mobile_menu',
+      hasItemChildren: '.menu-item-has-children'
+    };
 
-  $(menuButton).on('click', function() {
-    if (contentArea.hasClass(mobileMenuCssClass)) {
-      contentArea.removeClass(mobileMenuCssClass);
-      contentArea.css('height', '100%');
-    } else {
-      contentArea.addClass(mobileMenuCssClass);
-      contentArea.css('height', mainMenu.find('.et_mobile_menu').height());
+    mobileMenuCssClass = 'is-mobile-menu-open';
+
+    diviContentArea = $(this.SELECTORS.contentArea);
+    menuButton = $(`${this.SELECTORS.menuContainer} ${this.SELECTORS.menuButton}`);
+    menuContainer = $(`${this.SELECTORS.menuContainer} ${this.SELECTORS.mobileMenuHolder}`);
+    accordionItems = this.menuContainer.find(`${this.SELECTORS.hasItemChildren}`);
+
+    constructor() {
+      this.setClickEventToMenuButton();
+      this.addAccordionEventListener();
     }
-  });
+
+    setClickEventToMenuButton() {
+      this.diviContentArea.on('click', () => {
+        this.diviContentArea.removeClass(this.mobileMenuCssClass);
+        this.diviContentArea.css('height', '100%');
+      });
+
+      this.menuButton.on('click', () => {
+        if (this.diviContentArea.hasClass(this.mobileMenuCssClass)) {
+          this.diviContentArea.removeClass(this.mobileMenuCssClass);
+          this.diviContentArea.css('height', '100%');
+        } else {
+          this.diviContentArea.addClass(this.mobileMenuCssClass);
+          this.diviContentArea.css('height', this.menuContainer.height());
+        }
+      });
+    }
+
+    addAccordionEventListener() {
+      this.accordionItems.each((index, element) => {
+        const linkTag = $(element).find('a')[0];
+        $(linkTag).unbind();
+
+        linkTag.addEventListener('click', (event) => {
+          let subMenu = $(element).find(this.SELECTORS.subMenu);
+          $(linkTag).toggleClass('active');
+
+          if (!subMenu.length) {
+            return;
+          }
+
+          subMenu = subMenu[0];
+          subMenu.style.maxHeight = subMenu.style.maxHeight ? null : subMenu.scrollHeight + 'px';
+        });
+      });
+    }
+  }
+
+  const sponsorGridAnimated = new MobileMenu();
 });
