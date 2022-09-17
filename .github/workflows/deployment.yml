@@ -37,6 +37,7 @@ jobs:
         exclude: |
           **/.git*
           **/.git*/**
+          **/.idea/**
           **/node_modules/**
           **/documentation/**
           **/sass/**
@@ -44,5 +45,10 @@ jobs:
           composer.json
           composer.lock
           **/package.json
+          **/gulpfile.js
           **/package-lock.json
+          DOCKER_ENV
+          docker_tag
+          output.log
+
           
