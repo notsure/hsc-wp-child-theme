@@ -10,6 +10,7 @@ jQuery(document).ready(function($) {
     };
 
     mobileMenuCssClass = 'is-mobile-menu-open';
+    menuHeight = 77;
 
     diviContentArea = $(this.SELECTORS.contentArea);
     menuButton = $(`${this.SELECTORS.menuContainer} ${this.SELECTORS.menuButton}`);
@@ -33,7 +34,7 @@ jQuery(document).ready(function($) {
           this.diviContentArea.css('height', '100%');
         } else {
           this.diviContentArea.addClass(this.mobileMenuCssClass);
-          this.diviContentArea.css('height', this.menuContainer.height());
+          this.diviContentArea.css('height', this.menuContainer.height() + this.menuHeight);
         }
       });
     }
@@ -46,6 +47,7 @@ jQuery(document).ready(function($) {
         linkTag.addEventListener('click', (event) => {
           let subMenu = $(element).find(this.SELECTORS.subMenu);
           $(linkTag).toggleClass('active');
+          $(subMenu).toggleClass('active');
 
           if (!subMenu.length) {
             return;

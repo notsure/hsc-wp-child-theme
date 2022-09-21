@@ -31,6 +31,12 @@
     font-family: $font-family-bold;
 }
 
+@mixin text-semibold() {
+    @include text-default();
+
+    font-family: $font-family-semibold;
+}
+
 @mixin text-bold-italic() {
     @include text-default();
 

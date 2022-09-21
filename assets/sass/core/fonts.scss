@@ -58,9 +58,9 @@ body,
 input,
 select,
 textarea {
-    @include text-normal();
-
+    font-family: $font-family-default !important;
     color: $hsc-blue-dark;
+    letter-spacing: 0.5pt;
 }
 
 .h1, .h2, .h3, .h4, .h5, .h6,
