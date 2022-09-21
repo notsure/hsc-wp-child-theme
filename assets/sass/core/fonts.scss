@@ -50,7 +50,9 @@
 
 b,
 strong {
-    font-weight: 700;
+    @include text-bold();
+
+    font-weight: normal !important;
     color: $hsc-blue-dark;
 }
 
@@ -58,9 +60,8 @@ body,
 input,
 select,
 textarea {
-    font-family: $font-family-default !important;
+    font-family: $font-family-default;
     color: $hsc-blue-dark;
-    letter-spacing: 0.5pt;
 }
 
 .h1, .h2, .h3, .h4, .h5, .h6,
@@ -84,26 +85,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .text-shadow-inverse {
     text-shadow: 1px 1px $hsc-yellow;
-}
-
-.text-size-xs {
-    font-size: 65%;
-}
-
-.text-size-sm {
-    font-size: 85%;
-}
-
-.text-size-md {
-    font-size: 110%;
-}
-
-.text-size-lg {
-    font-size: 120%;
-}
-
-.text-size-xlg {
-    font-size: 135%;
 }
 
 .text-white {
