@@ -1,0 +1,26 @@
+/*add a neceassry position to the blog posts*/
+
+.et_pb_blog_grid .et_pb_post,
+.et_pb_posts .et_pb_post {
+  position: relative;
+}
+
+/*make the title link spread over the entire post*/
+
+.et_pb_blog_grid .et_pb_post .entry-title a:after,
+.et_pb_posts .et_pb_post .entry-title a:after {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+/*change the mouse cursor into a pointer*/
+
+.et_pb_blog_grid .et_pb_post:hover,
+.et_pb_posts .et_pb_post:hover {
+  cursor: pointer;
+}
