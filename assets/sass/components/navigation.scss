@@ -39,14 +39,14 @@
 
       &:hover,
       &.current_page_item {
-        border-bottom: 2px solid $hsc-yellow;
+        border-bottom: 2px solid $color-yellow;
       }
 
       > a {
         padding: 12px 0;
         margin: 0;
         text-transform: uppercase;
-        color: rgba($hsc-white, 0.99);
+        color: rgba($color-white, 0.99);
 
         &:after {
           display: none;
@@ -67,7 +67,7 @@
     .sub-menu {
       top: 100%;
       left: -20px;
-      background-color: rgba($hsc-white, 0) !important;
+      background-color: rgba($color-white, 0) !important;
       border-top: 0 !important;
       padding-top: 14px !important;
       padding-bottom: 0 !important;
@@ -82,16 +82,16 @@
 
           font-size: 17px;
           padding: 10px 0;
-          border-bottom: 1px solid rgba($hsc-white, 0.4);
+          border-bottom: 1px solid rgba($color-white, 0.4);
           justify-content: flex-start;
 
           &:hover {
-            color: $hsc-yellow;
+            color: $color-yellow;
           }
         }
 
         &:first-child {
-          border-top: 3px solid $hsc-black;
+          border-top: 3px solid $color-black;
         }
 
         &:last-child {
@@ -128,14 +128,14 @@
     top: 68px;
     border-top: none;
     z-index: 9998;
-    background-color: $hsc-blue-light !important;
+    background-color: $color-blue-light !important;
     overflow: scroll;
     height: 100%;
     padding: 0;
 
     li {
       padding-left: 5%;
-      border-bottom: 1px solid rgba($hsc-black, 0.03);
+      border-bottom: 1px solid rgba($color-black, 0.03);
     }
   }
 
@@ -147,7 +147,7 @@
       position: absolute;
       height: 100%;
       width: 4px;
-      background: $hsc-yellow;
+      background: $color-yellow;
       left: 0;
     }
   }
@@ -156,7 +156,7 @@
   .sub-menu {
     > .menu-item {
       &.menu-item-has-children > a {
-        background-color: $hsc-blue-light !important;
+        background-color: $color-blue-light !important;
         position: relative;
 
         &:after {
@@ -190,7 +190,7 @@
         font-size: 17px;
         font-weight: normal;
         letter-spacing: 0.4pt;
-        color: $hsc-blue-dark;
+        color: $color-blue-dark;
         opacity: 1 !important;
         border-bottom: 0;
       }
@@ -202,7 +202,7 @@
     overflow: hidden;
     transition: all 0.2s ease-out;
     padding-left: 0;
-    border-bottom: 1px solid rgba($hsc-black, 0);
+    border-bottom: 1px solid rgba($color-black, 0);
     margin-left: -19px;
 
     li {
@@ -230,12 +230,12 @@
   }
 
   .mobile_nav.closed .mobile_menu_bar:before {
-    color: $hsc-white;
+    color: $color-white;
   }
 
   .mobile_nav.opened .mobile_menu_bar:before {
     content: "\4d";
-    color: $hsc-white;
+    color: $color-white;
   }
 
   .mobile_nav .mobile_menu_bar:after {
@@ -244,7 +244,7 @@
     position: absolute;
     left: -35px;
     top: 17px;
-    color: $hsc-white;
+    color: $color-white;
     font-size: 12px;
   }
 

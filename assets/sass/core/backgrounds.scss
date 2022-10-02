@@ -1,34 +1,34 @@
 .background-white {
-  background: $hsc-white !important;
+  background: $color-white !important;
 }
 
 .background-blue {
-  background: $hsc-blue-dark !important;
+  background: $color-blue-dark !important;
 }
 
 .background-yellow {
-  background: $hsc-yellow !important;
+  background: $color-yellow !important;
 }
 
 .background-grey {
-  background: $hsc-grey !important;
+  background: $color-grey !important;
 }
 
 .bg-white {
   @extend .text-blue;
-  background-color: $hsc-white;
+  background-color: $color-white;
   padding: 15px !important;
 }
 
 .bg-blue {
   @extend .text-yellow;
-  background-color: $hsc-blue-dark;
+  background-color: $color-blue-dark;
   padding: 15px !important;
 }
 
 .bg-yellow {
   @extend .text-blue;
-  background-color: $hsc-yellow;
+  background-color: $color-yellow;
   padding: 15px !important;
 }
 

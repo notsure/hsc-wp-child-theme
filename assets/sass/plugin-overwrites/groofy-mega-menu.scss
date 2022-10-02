@@ -57,7 +57,7 @@
 
 aside.hsc-main-menu {
   z-index: 9998 !important;
-  background: $hsc-grey-light;
+  background: $color-grey-light;
 
   .gm-menu-btn {
     display: none;
@@ -65,11 +65,11 @@ aside.hsc-main-menu {
 
   .gm-anchor,
   .gm-mega-menu__item__title {
-    color: $hsc-black;
-    border-bottom: 1px solid rgba($hsc-black, 0.6);
+    color: $color-black;
+    border-bottom: 1px solid rgba($color-black, 0.6);
 
     &.current-menu-item {
-      color: $hsc-blue-dark;
+      color: $color-blue-dark;
     }
   }
 
@@ -79,8 +79,8 @@ aside.hsc-main-menu {
 
     .gm-anchor,
     .gm-menu-item__link {
-      color: rgba($hsc-black, 0.8);
-      border-bottom: 1px solid rgba($hsc-black, 0.1);
+      color: rgba($color-black, 0.8);
+      border-bottom: 1px solid rgba($color-black, 0.1);
     }
   }
 

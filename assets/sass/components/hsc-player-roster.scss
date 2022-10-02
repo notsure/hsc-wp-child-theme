@@ -10,7 +10,7 @@
     @include font-bold(26px, 1em);
 
     letter-spacing: .5pt;
-    border-bottom: 3px solid $hsc-yellow;
+    border-bottom: 3px solid $color-yellow;
     margin-bottom: 30px;
     width: 100%;
   }
@@ -56,7 +56,7 @@
     .image {
       transition: opacity 0.5s linear 1s; // effect on 0.3 millisecond
       opacity: 1; // set opacity property to 1, completely visible
-      box-shadow: 0 12px 18px -6px rgb($hsc-black, 0.3);
+      box-shadow: 0 12px 18px -6px rgb($color-black, 0.3);
       border-radius: 2px;
     }
   }

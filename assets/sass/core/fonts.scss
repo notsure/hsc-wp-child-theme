@@ -53,7 +53,7 @@ strong {
     @include text-bold();
 
     font-weight: normal !important;
-    color: $hsc-blue-dark;
+    color: $color-blue-dark;
 }
 
 body,
@@ -61,44 +61,44 @@ input,
 select,
 textarea {
     font-family: $font-family-default;
-    color: $hsc-blue-dark;
+    color: $color-blue-dark;
 }
 
 .h1, .h2, .h3, .h4, .h5, .h6,
 h1, h2, h3, h4, h5, h6 {
     @include text-bold-italic();
 
-    color: $hsc-blue-dark;
+    color: $color-blue-dark;
 
     &.text-yellow {
-        text-shadow: 1px 1px $hsc-blue-dark;
+        text-shadow: 1px 1px $color-blue-dark;
     }
 
     &.text-shadow {
-        text-shadow: 1px 1px $hsc-blue-dark;
+        text-shadow: 1px 1px $color-blue-dark;
     }
 }
 
 .text-shadow {
-    text-shadow: 1px 1px $hsc-blue-dark;
+    text-shadow: 1px 1px $color-blue-dark;
 }
 
 .text-shadow-inverse {
-    text-shadow: 1px 1px $hsc-yellow;
+    text-shadow: 1px 1px $color-yellow;
 }
 
 .text-white {
-    color: $hsc-white !important;
+    color: $color-white !important;
 }
 
 .text-blue {
-    color: $hsc-blue-dark !important;
+    color: $color-blue-dark !important;
 }
 
 .text-yellow {
-    color: $hsc-yellow !important;
+    color: $color-yellow !important;
 }
 
 .text-grey {
-    color: $hsc-grey !important;
+    color: $color-grey !important;
 }
