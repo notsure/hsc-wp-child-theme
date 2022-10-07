@@ -2,39 +2,24 @@
     min-height: calc(100vh - 189px);
 }
 
-.block-content-holder {
-    display: table;
-    width: 100%;
+#page-container {
+    overflow: initial !important;
 }
 
-.hidden-content {
-    display: none !important;
+#et-main-area {
+    overflow: hidden;
 }
-
-.wp-pagenavi {
-    @media #{$viewport-tablet} {
-        .pages {
-            display: inline-block;
-            text-align: left;
-            width: 100%;
-        }
-
-        .last {
-            display: none;
-        }
-    }
-}
-
-@media all and (min-width: 981px) {
-    .et_right_sidebar #main-content .container:before {
-        right: 24.875% !important;
-    }
-
-    #left-area {
-        width: 75.125%;
-    }
-
-    #sidebar {
-        width: 24.875%;
-    }
-}
+//
+//@media all and (min-width: 981px) {
+//    .et_right_sidebar #main-content .container:before {
+//        right: 24.875% !important;
+//    }
+//
+//    #left-area {
+//        width: 75.125%;
+//    }
+//
+//    #sidebar {
+//        width: 24.875%;
+//    }
+//}

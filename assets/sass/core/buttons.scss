@@ -1,6 +1,7 @@
 .hsc-btn {
     @include font-bold-italic(18px);
-    @include transition(all 0.3s);
+
+    transition: all 0.3s;
     cursor: pointer;
     padding: 20px 80px;
     display: inline-block;
