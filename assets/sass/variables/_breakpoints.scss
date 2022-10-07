@@ -6,3 +6,11 @@ $breakpoints: (// Keep in sync with JS globals!
   lg: 1200px,
   xl: 1440px
 );
+
+$break-small: 320px;
+$break-large: 1200px;
+
+$viewport-small-phone: 'only screen and (max-width: 375px)';
+$viewport-phone: 'only screen and (max-width: 767px)';
+$viewport-tablet: 'only screen and (max-width: 980px)';
+$viewport-desktop: 'only screen and (min-width: 981px)';

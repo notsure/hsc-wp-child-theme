@@ -1,0 +1,96 @@
+<section id="hsc-header-nav-toolbar">
+  <div class="hsc-header-nav-container">
+    <a class="hsc--logo" href="https://www.sc-hohenems.at">
+      <img src="{{ basePath }}/images/sc-hohenems-logo.svg"
+           width="70" />
+      SC Samina Hohenems
+    </a>
+    {{ _self.getNav(toolbar) }}
+    <div class="hsc--premiums-sponsor">
+      <span class="hsc--label">
+        Präsentiert von
+      </span>
+      <a class="hsc--menu-premium-sponsor-link" href="https://www.samina.com" target="_blank">
+        <img src="{{ basePath }}/images/samina.svg"
+             width="55"
+             height="55" />
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="hsc-header-nav-desktop">
+  <div class="hsc-header-nav-container">
+    <a class="hsc--logo" href="https://www.sc-hohenems.at">
+      <img src="{{ basePath }}/images/sc-hohenems-logo.svg"
+           width="55"
+           height="55" />
+    </a>
+    {{ _self.getNav(desktop) }}
+  </div>
+</section>
+
+<div id="hsc-header-nav-mobile">
+  <a class="hsc--menu-home-link" href="https://www.sc-hohenems.at">
+    <img src="{{ basePath }}/images/sc-hohenems-logo.svg"
+         width="55"
+         height="55" />
+    SC Hohenems
+  </a>
+
+  <a class="hsc--menu-premium-sponsor-link" href="https://www.samina.com" target="_blank">
+    <img src="{{ basePath }}/images/samina.svg"
+         width="55"
+         height="55" />
+  </a>
+
+  <div id="hsc--menu-toggle" class="hsc--toggle-btn">
+    <div class="hsc--toggle-btn--bar1"></div>
+    <div class="hsc--toggle-btn--bar2"></div>
+    <div class="hsc--toggle-btn--bar3"></div>
+  </div>
+
+  <div id="hsc--menu-overlay" class="hsc--menu-overlay">
+    <a class="hsc--menu-home-link" href="https://www.sc-hohenems.at">
+      <img src="{{ basePath }}/images/sc-hohenems-logo.svg"
+           width="55"
+           height="55" />
+      SC Hohenems
+    </a>
+    {{ _self.getNav(mobile, true, true) }}
+
+    <div class="hsc--menu-premium-sponsor">
+      <a class="hsc--menu-premium-sponsor-link" href="https://www.samina.com" target="_blank">
+        <img src="{{ basePath }}/images/samina.svg"
+             width="130"/>
+      </a>
+
+      <span>Hauptsponsor</span>
+    </div>
+   </div>
+  <div id="hsc--menu-backdrop" class="hsc--menu-backdrop"></div>
+</div>
+
+{% macro getNav(menu, showSub = true, isMobile = false) %}
+  <ul class="hsc--nav">
+    {% for item in menu.items %}
+      <li class="hsc--nav-main-item {{ item.classes|join(' ') }}">
+        {% if showSub and item.children and isMobile %}
+          <span class="hsc--nav-main-link hsc--subnav-toggle">{{ item.title }}</span>
+        {% else %}
+          <a class="hsc--nav-main-link" href="{{ item.link }}">{{ item.title }}</a>
+        {% endif %}
+
+        {% if showSub and item.children %}
+          <ul class="hsc--subnav">
+            {% for child in item.children %}
+              <li class="hsc--subnav-item {{ child.classes|join(' ') }}">
+                <a class="hsc--subnav-link" href="{{ child.link }}">{{ child.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+{% endmacro %}

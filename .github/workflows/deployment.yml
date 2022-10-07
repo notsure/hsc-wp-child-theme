@@ -26,14 +26,14 @@ jobs:
         npm install
         gulp
 
-    - name: 📂 Sync files
+    - name: 📂 Sync files > to www
       uses: SamKirkland/FTP-Deploy-Action@4.3.2
       with:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USER }}
         password: ${{ secrets.FTP_PASSWORD }}
         protocol: ftps
-        port: 21 
+        port: 21
         exclude: |
           **/.git*
           **/.git*/**
@@ -51,4 +51,27 @@ jobs:
           docker_tag
           output.log
 
-          
+    - name: 📂 Sync files > to online
+      uses: SamKirkland/FTP-Deploy-Action@4.3.2
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP2_USER }}
+        password: ${{ secrets.FTP2_PASSWORD }}
+        protocol: ftps
+        port: 21
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/.idea/**
+          **/node_modules/**
+          **/documentation/**
+          **/sass/**
+          **/js/**
+          composer.json
+          composer.lock
+          **/package.json
+          **/gulpfile.js
+          **/package-lock.json
+          DOCKER_ENV
+          docker_tag
+          output.log

@@ -1,7 +1,7 @@
 <?php
 
 define('NABA_WP_THEME_NAME', 'hsc-wp-child-theme');
-define('NABA_WP_THEME_VERSION', '2.8.38');
+define('NABA_WP_THEME_VERSION', '2.9.0');
 define('NABA_WP_THEME_PATH', get_stylesheet_directory_uri());
 define('NABA_WP_THEME_SRC', get_stylesheet_directory() . '/src');
 
@@ -26,3 +26,4 @@ $timber = new \Timber\Timber();
 require_once(NABA_WP_THEME_SRC . '/deload.php');
 require_once(NABA_WP_THEME_SRC . '/script-includes.php');
 require_once(NABA_WP_THEME_SRC . '/sponsor-plugin.php');
+require_once(NABA_WP_THEME_SRC . '/header-menu-plugin.php');

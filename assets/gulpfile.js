@@ -9,6 +9,7 @@ const postcss = require('gulp-postcss');
 const uglify = require('gulp-uglify-es').default;
 const gulpTerser = require('gulp-terser');
 const terser = require('terser');
+const babel = require('gulp-babel');
 
 function scss() {
     return src([
@@ -31,6 +32,9 @@ function exportToRoot() {
 
 function js() {
     return src('js/**/*.js')
+      .pipe(babel({
+        presets: ['@babel/env']
+      }))
       .pipe(concat('scripts.js'))
       .pipe(gulpTerser({
         mangle: true,
