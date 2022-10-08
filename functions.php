@@ -1,7 +1,7 @@
 <?php
 
 define('NABA_WP_THEME_NAME', 'hsc-wp-child-theme');
-define('NABA_WP_THEME_VERSION', '2.9.2');
+define('NABA_WP_THEME_VERSION', '2.9.3');
 define('NABA_WP_THEME_PATH', get_stylesheet_directory_uri());
 define('NABA_WP_THEME_SRC', get_stylesheet_directory() . '/src');
 
@@ -26,4 +26,5 @@ $timber = new \Timber\Timber();
 require_once(NABA_WP_THEME_SRC . '/deload.php');
 require_once(NABA_WP_THEME_SRC . '/script-includes.php');
 require_once(NABA_WP_THEME_SRC . '/sponsor-plugin.php');
+require_once(NABA_WP_THEME_SRC . '/season-number.php');
 require_once(NABA_WP_THEME_SRC . '/header-menu-plugin.php');
