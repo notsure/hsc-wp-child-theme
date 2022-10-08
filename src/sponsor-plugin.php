@@ -60,7 +60,7 @@ function getGridMediaItems(string $folderId): array
         $assetUrl = wp_get_attachment_url($mediaId);
         $fileType = strtolower(wp_check_filetype($assetUrl)['ext']);
 
-        if (!in_array($fileType, ['jpg', 'jpeg', 'webp', 'png', 'gif'])) {
+        if (!in_array($fileType, ['jpg', 'jpeg', 'webp', 'png', 'gif', 'svg'])) {
             continue;
         }
 

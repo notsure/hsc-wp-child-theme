@@ -1,25 +1,14 @@
 .hsc-sponsor-grid {
   margin: auto -1%;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  grid-template-columns: repeat(5, 1fr);
 
   &.hsc-sponsor-grid__as_row {
-    .hsc-sponsor-grid__item {
-      flex: 1 0 21%;
-    }
-
-    @include media(xs) {
-      .hsc-sponsor-grid__item {
-        flex: 1 0 14%;
-      }
-    }
-
     @include media(sm) {
-      flex-wrap: nowrap;
-
-      .hsc-sponsor-grid__item {
-        flex: auto;
-      }
+      display: flex;
     }
   }
 
@@ -29,32 +18,49 @@
     filter: brightness(60%) invert(100%);
   }
 
-  &.items-per-row-6 {
-    .hsc-sponsor-grid__item {
-      flex: 1 0 20%;
+  &.items-per-row-8 {
+    @include media(sm) {
+      grid-template-columns: repeat(8, 1fr);
+    }
+  }
 
-      @include media(xs) {
-        flex: 1 0 14%;
-      }
+  &.items-per-row-7 {
+    @include media(sm) {
+      grid-template-columns: repeat(7, 1fr);
+    }
+  }
+
+  &.items-per-row-6 {
+    @include media(sm) {
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+
+  &.items-per-row-5 {
+    @include media(sm) {
+      grid-template-columns: repeat(5, 1fr);
     }
   }
 
   &.items-per-row-4 {
-    .hsc-sponsor-grid__item {
-      flex: 1 0 21%;
+    @include media(sm) {
+      grid-template-columns: repeat(4, 1fr);
     }
   }
 
   &.items-per-row-3 {
-    .hsc-sponsor-grid__item {
-      flex: 1 0 31%;
+    @include media(sm) {
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 
-  .hsc-sponsor-grid__item {
-    flex: 1 0 21%;
-    width: 150px;
-    margin: 1%;
-    text-align: center;
+  &.items-per-row-2 {
+    @include media(sm) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &.items-per-row-1 {
+    display: flex;
   }
 }

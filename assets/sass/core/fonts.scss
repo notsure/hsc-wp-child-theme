@@ -50,6 +50,7 @@
 
 b,
 strong {
+    @include font($font-size--18, $font-size--20);
     @include text-bold();
 
     font-weight: normal !important;
@@ -60,6 +61,8 @@ body,
 input,
 select,
 textarea {
+    @include font($font-size--18, $font-size--20);
+
     font-family: $font-family-default;
     color: $color-blue-dark;
     font-weight: normal;
