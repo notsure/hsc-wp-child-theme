@@ -1,0 +1,44 @@
+<div class="hsc--post-slider">
+  <button class="hsc--slider-arrow" id="hsc--slider-arrow-prev">
+    &#8249;
+  </button>
+  <button class="hsc--slider-arrow" id="hsc--slider-arrow-next">
+    &#8250;
+  </button>
+  <div class="hsc--slider-container" id="hsc--slider-container">
+    {% for post in posts %}
+      {% set image = TimberImage(post.thumbnail) %}
+      {% set preview = post.preview() %}
+
+      <div class="hsc--slide" data-index="{{ loop.index0 }}">
+        {% if post.thumbnail %}
+          <img class="hsc--slide-image"
+               src="{{ post.thumbnail.src }}"
+               srcset="{{ post.thumbnail.srcset }}"
+               sizes="{{ post.thumbnail.img_sizes }}"
+               loading="lazy"
+          />
+        {% endif %}
+        <div class="hsc--slide-container">
+          <div class="hsc--slide-content">
+            <div class="hsc--slide-title">
+              {{ post.title | trim }}
+            </div>
+            <div class="hsc--slide-excerpt">
+              {{ post.custom['custom_excerpt'] | truncate(30) }}
+            </div>
+            <a class="hsc--slide-button" href="{{ post.link }}">
+              Zum Beitrag
+            </a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  <div class="hsc--slider-pagination" id="hsc--slider-pagination">
+    {% for post in posts %}
+      <span class="hsc--pagination-item" data-index="{{ loop.index0 }}"></span>
+    {% endfor %}
+  </div>
+  <div class="hsc--slider-loader"></div>
+</div>

@@ -334,6 +334,7 @@ body {
     text-align: right;
     margin: auto;
     z-index: 60001;
+    padding: 14px;
 
     .hsc--toggle-btn--bar1, .hsc--toggle-btn--bar2, .hsc--toggle-btn--bar3 {
       width: 22px;
@@ -375,6 +376,8 @@ body {
   }
 
   .hsc--menu-backdrop {
+    @extend %button-reset;
+
     position: fixed;
     top: 0;
     left: 0;
@@ -383,12 +386,13 @@ body {
     z-index: 59999;
     display: flex;
     align-items: flex-start;
-    padding: 20px 8px;
     pointer-events: none;
     background: $color-black;
     opacity: 0;
     transition: opacity $transition-slow;
     cursor: pointer;
+    padding: 0;
+    margin: 0;
 
     &.active {
       opacity: 0.8;

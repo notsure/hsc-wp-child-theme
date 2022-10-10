@@ -44,7 +44,7 @@
          height="55" />
   </a>
 
-  <div id="hsc--menu-toggle" class="hsc--toggle-btn">
+  <div id="hsc--menu-toggle" class="hsc--toggle-btn" aria-label="Menü ein- oder ausblenden">
     <div class="hsc--toggle-btn--bar1"></div>
     <div class="hsc--toggle-btn--bar2"></div>
     <div class="hsc--toggle-btn--bar3"></div>
@@ -68,7 +68,7 @@
       <span>Hauptsponsor</span>
     </div>
    </div>
-  <div id="hsc--menu-backdrop" class="hsc--menu-backdrop"></div>
+  <button id="hsc--menu-backdrop" class="hsc--menu-backdrop" type="button" aria-label="Menü schließen"></button>
 </div>
 
 {% macro getNav(menu, showSub = true, isMobile = false) %}
