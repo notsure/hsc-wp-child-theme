@@ -30,7 +30,7 @@ jQuery(document).ready(function() {
       clearInterval(this.autoSlideInterval);
       this.autoSlideInterval = setInterval(() => {
         this.selectNextSlide();
-      }, 5000);
+      }, 7000);
     }
 
     addButtonEventListeners() {
