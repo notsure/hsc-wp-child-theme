@@ -3,11 +3,27 @@
 
   .dsm_card_image_wrapper {
     background: $color-white;
-    padding-top: 15px;
-    padding-bottom: 10px;
+    height: 200px;
+
+    img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .dsm_card_badge_text {
+    @include font-size($font-size--18);
+
+    line-height: 1;
+    font-family: $font-family-bold;
   }
 
   .dsm_card_subtitle {
     margin-bottom: 8px;
+  }
+
+  .dsm_card_description {
+    min-height: 170px;
   }
 }
