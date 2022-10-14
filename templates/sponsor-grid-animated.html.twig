@@ -4,12 +4,6 @@
     'galleryId': galleryId,
     'mediaAssets': mediaAssets
   } %}
-
-  <script>
-    window.addEventListener('DOMContentLoaded', (event) => {
-      sponsorGridAnimated.init({{ attributes | json_encode() }});
-    });
-  </script>
   <div id="{{ galleryId }}"
        class="hsc-sponsor-grid-animated">
     {% for media in mediaAssets %}
@@ -29,6 +23,13 @@
       {% endif %}
     {% endfor %}
   </div>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+      const sponsorGridAnimated = new SponsorGridAnimated();
+      sponsorGridAnimated.init({{ attributes | json_encode() }});
+    });
+  </script>
 {% else %}
   Sponsor-Slider: No-Media found for {{ folderId }}.
 {% endif %}

@@ -130,5 +130,3 @@ class SponsorGridAnimated {
     return array;
   }
 };
-
-const sponsorGridAnimated = new SponsorGridAnimated();
