@@ -328,6 +328,8 @@ body {
   }
 
   .hsc--toggle-btn {
+    @extend %button-reset;
+
     display: inline-block;
     cursor: pointer;
     grid-column: 3/3;
@@ -335,8 +337,10 @@ body {
     margin: auto;
     z-index: 60001;
     padding: 14px;
+    background-color: transparent;
 
     .hsc--toggle-btn--bar1, .hsc--toggle-btn--bar2, .hsc--toggle-btn--bar3 {
+      display: block;
       width: 22px;
       height: 2px;
       background-color: $color-white;

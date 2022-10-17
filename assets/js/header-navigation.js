@@ -14,6 +14,9 @@ class HeaderNavigation {
     sticky: 'is-sticky',
   };
 
+  isMobileDevice = ('ontouchstart' in window || navigator.maxTouchPoints);
+  clickEventType = !this.isMobileDevice ? 'tap' : 'click';
+
   constructor() {
     this.addMenuButtonClickEvent();
     this.addSubMenuClickEvents();
@@ -41,17 +44,21 @@ class HeaderNavigation {
    */
   addMenuButtonClickEvent() {
     document.getElementById(this.SELECTORS.menuButton).addEventListener('click',(event) => {
-      document.getElementById(this.SELECTORS.overlay).scrollTop = 0;
-      this.toggleOverlayActiveClass();
-      this.setInitActiveStateToMenu();
-
-      // Add event listener to hide the overlay again.
-      document.getElementById(this.SELECTORS.backdrop).addEventListener(
-        'click',
-        () => this.toggleOverlayActiveClass(),
-        { once: true }
-      );
+      this.onMenuButtonClicked();
     });
+  }
+
+  onMenuButtonClicked() {
+    document.getElementById(this.SELECTORS.overlay).scrollTop = 0;
+    this.toggleOverlayActiveClass();
+    this.setInitActiveStateToMenu();
+
+    // Add event listener to hide the overlay again.
+    document.getElementById(this.SELECTORS.backdrop).addEventListener(
+      'click',
+      () => this.toggleOverlayActiveClass(),
+      { once: true }
+    );
   }
 
   /**
@@ -101,6 +108,4 @@ class HeaderNavigation {
   }
 }
 
-window.addEventListener('DOMContentLoaded', (event) => {
-  const headerNavigation = new HeaderNavigation();
-});
+const headerNavigation = new HeaderNavigation();
