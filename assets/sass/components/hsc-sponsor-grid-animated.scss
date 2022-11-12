@@ -2,9 +2,11 @@
   margin: auto -1.5%;
   display: flex;
   flex-wrap: wrap;
+  grid-gap: 5px 0;
 
   @include media(sm) {
     flex-wrap: nowrap;
+    grid-gap: 0;
   }
 
   &.high-contrast {
@@ -19,12 +21,11 @@
     align-items: center;
     justify-content: center;
     flex: 1 0 30%;
-    width: 200px;
-    height: 150px;
     margin: 1.5%;
     text-align: center;
     filter: grayscale(100%);
     overflow: hidden;
+    aspect-ratio: 35/21;
 
     &:hover {
       filter: grayscale(0);

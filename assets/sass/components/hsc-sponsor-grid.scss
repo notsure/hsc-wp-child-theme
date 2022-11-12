@@ -3,8 +3,12 @@
   display: grid;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 12px;
   grid-template-columns: repeat(5, 1fr);
+
+  @include media(sm) {
+    gap: 20px;
+  }
 
   &.hsc-sponsor-grid__as_row {
     @include media(sm) {
@@ -62,5 +66,10 @@
 
   &.items-per-row-1 {
     display: flex;
+  }
+
+  .hsc-sponsor-grid__item {
+    overflow: hidden;
+    aspect-ratio: 35/21;
   }
 }
