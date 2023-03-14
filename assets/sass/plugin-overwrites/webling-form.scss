@@ -1,7 +1,13 @@
+@use 'sass:math';
+
 .webling-form {
+  $gap: 12px;
+
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   width: 100%;
+  gap: $gap;
 
   form {
     display: flex;
@@ -26,6 +32,7 @@
     min-height: 40px;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
   }
+
   .webling-form__select {
     height: calc(2.25rem + 2px);
     margin: 0;
@@ -39,17 +46,33 @@
     margin: 20px 0;
   }
 
-  .webling-form__group,
   p {
     width: 100%;
-    float: left;
+  }
+
+  .hsc-col-6 {
+    width: calc(50% - #{math.div($gap, 2)}) !important;
   }
 
   .webling-form__group {
-    margin: 0.5em 0;
+    margin: 0;
+    width: 100%;
+
+    &.col--half {
+      width: calc(50% - #{math.div($gap, 2)});
+    }
+
+    &.col--two-third {
+      width: calc(66% - #{math.div($gap, 3)});
+    }
+
+    &.col--one-third {
+      width: calc(33% - #{math.div($gap, 3)});
+    }
 
     @include media(null, xs) {
       padding: 0 !important;
+      width: 100%;
     }
   }
 

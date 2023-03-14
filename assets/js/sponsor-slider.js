@@ -130,3 +130,5 @@ class SponsorGridAnimated {
     return array;
   }
 };
+
+dispatchEvent(new CustomEvent('SponsorGridAnimatedLoaded', { detail: { loaded: true }}));
