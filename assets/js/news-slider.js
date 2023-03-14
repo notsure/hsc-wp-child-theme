@@ -1,11 +1,7 @@
 class NewsSlider {
   autoSlideInterval = null;
 
-  constructor() {
-    this.initComponent();
-  }
-
-  initComponent() {
+  init() {
     this.slidesContainer = document.getElementById('hsc--slider-container');
 
     if (!this.slidesContainer) {
@@ -31,6 +27,9 @@ class NewsSlider {
     this.prevButton = document.getElementById('hsc--slider-arrow-prev');
     this.nextButton = document.getElementById('hsc--slider-arrow-next');
     this.paginationItems = document.getElementsByClassName('hsc--pagination-item');
+
+    console.log('-->', this.paginationItems);
+
     this.selectedSlide = 0;
     this.amountSlides = this.slides.length;
   }
@@ -57,7 +56,7 @@ class NewsSlider {
   }
 
   addPaginationEvents() {
-    this.paginationItems.forEach((item) => {
+    Array.from(this.paginationItems).forEach((item) => {
       item.addEventListener('click', () => {
         clearInterval(this.autoSlideInterval);
         this.selectedSlide = item.dataset.index || 0;
@@ -68,7 +67,7 @@ class NewsSlider {
   }
 
   updatePagination() {
-    this.paginationItems.forEach((item) => item.classList.remove('active'));
+    Array.from(this.paginationItems).forEach((item) => item.classList.remove('active'));
     this.paginationItems[this.selectedSlide].classList.add('active');
   }
 
@@ -85,6 +84,4 @@ class NewsSlider {
   }
 }
 
-window.addEventListener('DOMContentLoaded', (event) => {
-  const newsSlider = new NewsSlider();
-});
+dispatchEvent(new CustomEvent('NewsSliderLoaded', { detail: { loaded: true }}));

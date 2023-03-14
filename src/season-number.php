@@ -1,15 +1,18 @@
 <?php
 // This file enqueues a shortcode.
-use FileBird\Classes\Helpers as Helpers;
-
 defined('ABSPATH') or die('Direct script access disallowed.');
 
-add_shortcode('season-number', function ($atts) {
-    $default_atts = [];
-    $args = shortcode_atts($default_atts, $atts);
+add_shortcode('season-number', function () {
+    $month = date('m');
 
-    $currentYear = date("Y");
-    $nextYear = date("y") + 1;
+    // Lets change the season in august.
+    if ((int)$month < 8) {
+        $currentYear = date('Y') - 1;
+        $nextYear = date('y');
+    } else {
+        $currentYear = date('Y');
+        $nextYear = date('y') + 1;
+    }
 
     ob_start();
 

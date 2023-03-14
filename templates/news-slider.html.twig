@@ -42,3 +42,13 @@
   </div>
   <div class="hsc--slider-loader"></div>
 </div>
+
+<script>
+  window.addEventListener('SponsorGridAnimatedLoaded', (event) => {
+    console.log('yolo');
+
+    const newsSlider = new NewsSlider();
+
+    newsSlider.init();
+  });
+</script>
