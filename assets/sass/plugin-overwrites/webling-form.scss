@@ -1,7 +1,7 @@
 @use 'sass:math';
 
 .webling-form {
-  $gap: 12px;
+  $gap: 15px;
 
   display: flex;
   flex-direction: row;
@@ -12,6 +12,7 @@
   form {
     display: flex;
     flex-flow: row wrap;
+    gap: $gap;
 
     @include media(null, xs) {
       display: block;
@@ -57,7 +58,6 @@
   .webling-form__group {
     margin: 0;
     width: 100%;
-    margin-bottom: 15px;
 
     &.col--half {
       width: calc(50% - #{math.div($gap, 2)});
