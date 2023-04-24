@@ -57,6 +57,7 @@
   .webling-form__group {
     margin: 0;
     width: 100%;
+    margin-bottom: 15px;
 
     &.col--half {
       width: calc(50% - #{math.div($gap, 2)});
@@ -74,6 +75,10 @@
       padding: 0 !important;
       width: 100%;
     }
+  }
+
+  .webling-form__field {
+    margin-top: 5px;
   }
 
   .webling-form__label {
