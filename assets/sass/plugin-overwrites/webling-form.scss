@@ -13,10 +13,6 @@
     display: flex;
     flex-flow: row wrap;
     gap: $gap;
-
-    @include media(null, xs) {
-      display: block;
-    }
   }
 
   .webling-form__select,
@@ -44,6 +40,7 @@
     @extend .hsc-btn-small;
     @extend .box-shadow;
     @extend .hsc-btn-primary;
+
     margin: 20px 0;
   }
 
@@ -71,9 +68,12 @@
       width: calc(33% - #{math.div($gap, 3)});
     }
 
-    @include media(null, xs) {
-      padding: 0 !important;
-      width: 100%;
+    &.col--half,
+    &.col--two-third,
+    &.col--one-third {
+      @include media(null, xs) {
+        width: 100%;
+      }
     }
   }
 
