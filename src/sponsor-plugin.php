@@ -1,6 +1,7 @@
 <?php
 // This file enqueues a shortcode.
 use FileBird\Classes\Helpers as Helpers;
+use Timber\Timber;
 
 defined('ABSPATH') or die('Direct script access disallowed.');
 

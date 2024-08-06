@@ -1,6 +1,7 @@
 <?php
 // This file enqueues a shortcode.
 use FileBird\Classes\Helpers as Helpers;
+use Timber\Timber;
 
 defined('ABSPATH') or die('Direct script access disallowed.');
 
@@ -35,7 +36,7 @@ function getWordpressMenu(string $menuId)
         return [];
     }
 
-    $menu = new Timber\Menu($menuId);
+    $menu = Timber::get_menu($menuId);
 
     if (empty($menu)) {
         return [];

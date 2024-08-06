@@ -30,22 +30,26 @@ class HeaderNavigation {
     const toolbar = document.getElementById(this.SELECTORS.toolbar);
     const desktopMenu = document.getElementById(this.SELECTORS.desktopMenu);
 
-    window.addEventListener('scroll', () => {
-      if (window.scrollY >= toolbar.offsetHeight) {
-        desktopMenu.classList.add(this.CLASSES.sticky);
-      } else {
-        desktopMenu.classList.remove(this.CLASSES.sticky);
-      }
-    });
+    if (toolbar && desktopMenu) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY >= toolbar.offsetHeight) {
+          desktopMenu.classList.add(this.CLASSES.sticky);
+        } else {
+          desktopMenu.classList.remove(this.CLASSES.sticky);
+        }
+      });
+    }
   }
 
   /**
    *
    */
   addMenuButtonClickEvent() {
-    document.getElementById(this.SELECTORS.menuButton).addEventListener('click',(event) => {
-      this.onMenuButtonClicked();
-    });
+    if (document.getElementById(this.SELECTORS.menuButton)) {
+      document.getElementById(this.SELECTORS.menuButton).addEventListener('click',(event) => {
+        this.onMenuButtonClicked();
+      });
+    }
   }
 
   onMenuButtonClicked() {

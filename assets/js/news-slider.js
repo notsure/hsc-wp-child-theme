@@ -14,10 +14,12 @@ class NewsSlider {
     this.updatePagination();
     this.startAutoSlide();
 
-    window.addEventListener('resize', () => {
-      this.startAutoSlide();
-      this.initSlider();
-    });
+    if (this.slidesContainer) {
+      window.addEventListener('resize', () => {
+        this.startAutoSlide();
+        this.initSlider();
+      });
+    }
   }
 
   initSlider() {

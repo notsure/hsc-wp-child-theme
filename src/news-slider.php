@@ -1,6 +1,7 @@
 <?php
 // This file enqueues a shortcode.
 use FileBird\Classes\Helpers as Helpers;
+use Timber\Timber;
 
 defined('ABSPATH') or die('Direct script access disallowed.');
 
@@ -8,10 +9,10 @@ add_shortcode('posts-slider', function ($atts) {
     $default_atts = [];
     $args = shortcode_atts($default_atts, $atts);
 
-    $posts = new Timber\PostQuery(array(
+    $posts = Timber::get_posts([
         'post_type' => 'post',
         'posts_per_page' => 5,
-    ));
+    ]);
 
     foreach ($posts as $post) {
         $excerpt = str_replace('&nbsp;', ' ', $post->preview);

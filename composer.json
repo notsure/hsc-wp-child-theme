@@ -1,6 +1,6 @@
 {
     "require": {
-        "timber/timber": "^1.20"
+        "timber/timber": "v2.2.0"
     },
     "config": {
         "allow-plugins": {
