@@ -7,11 +7,11 @@
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: $font-family-bold-italic;
-  line-height: $line-height--default;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: $color-blue-dark;
+  a, div, span, b, i, em, p {
+    @include heading-default;
+  }
+
+  @include heading-default;
 }
 
 .h1, .h1-heading {
