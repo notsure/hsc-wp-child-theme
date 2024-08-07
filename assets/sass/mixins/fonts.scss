@@ -1,56 +1,17 @@
-@mixin font-normal($size, $lineHeight: 1.5) {
-    @include text-normal();
-
-    font-size: $size;
-    line-height: $lineHeight;
+@mixin font-normal($size, $lineHeight: $line-height--default) {
+  font-size: $size;
+  line-height: $lineHeight;
+  font-family: $font-family-default;
 }
 
-@mixin font-bold($size, $lineHeight: 1.5) {
-    @include text-bold();
-
-    font-size: $size;
-    line-height: $lineHeight;
+@mixin font-bold($size, $lineHeight: $line-height--default) {
+  font-size: $size;
+  line-height: $lineHeight;
+  font-family: $font-family-semibold;
 }
 
-@mixin font-bold-italic($size, $lineHeight: 1.5) {
-    @include text-bold-italic();
-
-    font-size: $size;
-    line-height: $lineHeight;
-}
-
-@mixin text-normal() {
-    @include text-default();
-
-    font-family: $font-family-default;
-}
-
-@mixin text-bold() {
-    @include text-default();
-
-    font-family: $font-family-bold;
-}
-
-@mixin text-semibold() {
-    @include text-default();
-
-    font-family: $font-family-semibold;
-}
-
-@mixin text-bold-italic() {
-    @include text-default();
-
-    font-family: $font-family-bold-italic;
-}
-
-@mixin text-default() {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    letter-spacing: 0.5pt;
-}
-
-@mixin text-roboto {
-    font-family: $font-family-roboto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+@mixin font-bold-italic($size, $lineHeight: $line-height--default) {
+  font-size: $size;
+  line-height: $lineHeight;
+  font-family: $font-family-bold-italic;
 }

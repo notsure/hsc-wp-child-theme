@@ -61,8 +61,8 @@ body {
   }
 
   .hsc--logo {
-    @include font($font-size--30);
-
+    font-size: $font-size--h4;
+    line-height: $line-height--default;
     font-family: $font-family-bold;
     grid-area: logo / logo / logo / logo;
     display: flex;
@@ -93,11 +93,10 @@ body {
   }
 
   .hsc--nav-main-link {
-    @include font($font-size--14);
-
+    font-size: $font-size--default;
+    line-height: $line-height--default;
     transition: color $transition-default;
     border-bottom: 1px solid transparent;
-    line-height: 1;
     font-family: $font-family-semibold;
     color: rgba($color-white, 0.8);
     letter-spacing: 0.2px;
@@ -118,8 +117,8 @@ body {
     padding-right: 8px;
 
     .hsc--label {
-      @include font($font-size--12);
-
+      font-size: $font-size--small;
+      line-height: $line-height--default;
       font-family: $font-family-default;
       color: $color-white;
       padding-right: 8px;
@@ -217,8 +216,8 @@ body {
   }
 
   .hsc--nav-main-link {
-    @include font($font-size--16);
-
+    font-size: $font-size--default;
+    line-height: $line-height--default;
     border-bottom: 2px solid transparent;
     text-transform: uppercase;
     font-family: $font-family-bold;
@@ -265,8 +264,8 @@ body {
   }
 
   .hsc--subnav-link {
-    @include font($font-size--16);
-
+    font-size: $font-size--default;
+    line-height: $line-height--default;
     transition: all $transition-default;
     display: block;
     padding: 10px 0;
@@ -302,8 +301,8 @@ body {
   }
 
   .hsc--menu-home-link {
-    @include font($font-size--24, $font-size--24);
-
+    font-size: $font-size--h5;
+    line-height: $line-height--default;
     font-family: $font-family-bold;
     grid-column: 1/1;
     color: $color-white;
@@ -426,8 +425,8 @@ body {
   }
 
   .hsc--nav-main-link {
-    @include font($font-size--16);
-
+    font-size: $font-size--default;
+    line-height: $line-height--default;
     display: block;
     padding: $mobile-padding-top-bottom $mobile-padding-right $mobile-padding-top-bottom $mobile-padding-default;
     border-bottom: 1px solid rgba($color-black, 0.6);
@@ -480,8 +479,8 @@ body {
   }
 
   .hsc--subnav-link {
-    @include font($font-size--16);
-
+    font-size: $font-size--default;
+    line-height: $line-height--default;
     display: block;
     padding: math.div($mobile-padding-top-bottom, 2) $mobile-padding-right math.div($mobile-padding-top-bottom, 2) $mobile-padding-default * 2;
     color: $color-white;
@@ -504,8 +503,8 @@ body {
     }
 
     span {
-      @include font($font-size--8);
-
+      font-size: $font-size--xs;
+      line-height: $line-height--default;
       display: block;
       margin-top: 15px;
       text-transform: uppercase;

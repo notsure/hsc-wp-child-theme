@@ -13,9 +13,8 @@
   }
 
   .dsm_card_badge_text {
-    @include font-size($font-size--18);
-
-    line-height: 1;
+    font-size: $font-size--default;
+    line-height: $line-height--default;
     font-family: $font-family-bold;
   }
 

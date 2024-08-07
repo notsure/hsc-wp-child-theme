@@ -127,9 +127,9 @@
   }
 
   .hsc--slide .hsc--slide-button {
-    @include font($font-size--18, $font-size--18);
-
     font-family: $font-family-semibold;
+    font-size: $font-size--default;
+    line-height: $line-height--default;
     transition: all $transition-default;
     background-color: rgba($color-yellow, 0.9);
     border-color: $color-yellow;

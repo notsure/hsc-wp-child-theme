@@ -1,47 +1,23 @@
 // Font families
-$font-family--primary: 'Open Sans', sans-serif;
-
-// Font weight
-$font-weight--regular: 400;
-$font-weight--bold: 700;
-$font-weight--semi-bold: 700;
-
-// Font size
-$font-size--default: 16px;
-$font-size--7: 7px;
-$font-size--8: 8px;
-$font-size--10: 10px;
-$font-size--11: 11px;
-$font-size--12: 12px;
-$font-size--14: 14px;
-$font-size--15: 15px;
-$font-size--16: 16px;
-$font-size--18: 18px;
-$font-size--20: 20px;
-$font-size--22: 22px;
-$font-size--24: 24px;
-$font-size--25: 25px;
-$font-size--30: 30px;
-$font-size--36: 36px;
-$font-size--40: 40px;
-$font-size--56: 56px;
-
-$print-font-size-small: 10px;
-$print-font-size-default: 12px;
-$print-font-size-bigger: 14px;
-$print-font-size-biggest: 16px;
-
-$font-size-smallest: 10px;
-$font-size-small: 12px;
-$font-size-medium: 16px;
-$font-size-large: 18px;
-$font-size-jumbo: 26px;
-$font-size-mammut: 32px;
-$font-size-giant: 46px;
-$font-size--14: 14px;
-
-$font-family-default: 'URWGeometric-Regular', Arial, Helvetica, sans-serif;
 $font-family-bold: 'URWGeometric-Black', Arial, Helvetica, sans-serif;
 $font-family-semibold: 'URWGeometric-SemiBold', Arial, Helvetica, sans-serif;
 $font-family-bold-italic: 'URWGeometric-BlackOblique', Arial, Helvetica, sans-serif;
 $font-family-roboto: 'Roboto Flex', Arial, Helvetica, sans-serif;
+$font-family-urw-regular: 'URWGeometric-Regular', Arial, Helvetica, sans-serif;
+$font-family-default: $font-family-urw-regular;
+
+// new
+$font-size--h1: 3.815rem;
+$font-size--h2: 3.052rem;
+$font-size--h3: 2.441rem;
+$font-size--h4: 1.953rem;
+$font-size--h5: 1.563rem;
+$font-size--h6: 1.25rem;
+$font-size--default: 1rem;
+$font-size--small: 0.8rem;
+$font-size--xs: 0.64rem;
+$font-size--browser-fallback--mobile: 16px;
+$font-size--browser-fallback--desktop: 20px;
+
+$line-height--default: 1.15;
+$letter-spacing--default: -0.022em;
