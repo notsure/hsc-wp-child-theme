@@ -1,11 +1,14 @@
 .hsc--post-slider {
+  --spacing: 20px;
+
   position: relative;
   width: 100%;
-  max-width: 1900px;
-  height: 60vh;
-  max-height: 800px;
   margin: auto;
   z-index: 1;
+
+  @include media(sm) {
+    --spacing: 30px;
+  }
 
   .hsc--slider-container {
     display: flex;
@@ -14,7 +17,8 @@
     flex-flow: row nowrap;
     overflow: scroll;
     scroll-snap-type: x mandatory;
-    height: 100%;
+    height: 450px;
+    min-height: 450px;
 
     /* Hide the scrollbar */
     -ms-overflow-style: none;
@@ -22,6 +26,10 @@
 
     &::-webkit-scrollbar {
       display: none;
+    }
+
+    @include media(sm) {
+      height: 60vh;
     }
   }
 
@@ -44,23 +52,13 @@
       height: 100%;
       z-index: 1;
       background-color: rgba(0,0,0,.1) !important;
-      background: linear-gradient(to bottom,
-        hsla(0,0%,0%,0) 0%,
-        hsla(0,0%,0%,0) 4.7%,
-        hsla(0,0%,0%,0) 8.9%,
-        hsla(0,0%,0%,0) 12.8%,
-        hsla(0,0%,0%,0.0205) 16.6%,
-        hsla(0,0%,0%,0.05) 20.4%,
-        hsla(0,0%,0%,0.08) 24.4%,
-        hsla(0,0%,0%,0.12) 28.8%,
-        hsla(0,0%,0%,0.23) 33.8%,
-        hsla(0,0%,0%,0.3888) 39.6%,
-        hsla(0,0%,0%,0.4446) 46.3%,
-        hsla(0,0%,0%,0.495) 54.1%,
-        hsla(0,0%,0%,0.5376) 63.2%,
-        hsla(0,0%,0%,0.5706) 73.8%,
-        hsla(0,0%,0%,0.5922) 86%,
-        hsla(0,0%,0%,0.5922) 100%);
+      background: linear-gradient(0deg, #EDECEC 0%, #EDECEC 6%, rgba($color-grayscale--850, 0.5) 32%, rgba(237, 236, 236, 0) 50%)
+    }
+
+    @include media(sm) {
+      &::after {
+        background: linear-gradient(0deg, #EDECEC 0%, #EDECEC 0%, rgba($color-grayscale--850, 0.5) 30%, rgba(237, 236, 236, 0) 50%)
+      }
     }
   }
 
@@ -81,7 +79,8 @@
   .hsc--slide .hsc--slide-container {
     display: flex;
     flex-direction: column;
-    max-width: 1080px;
+    justify-content: flex-end;
+    max-width: 1344px;
     position: absolute;
     width: calc(100% - 40px);
     height: 100%;
@@ -91,62 +90,55 @@
   .hsc--slide .hsc--slide-content {
     display: flex;
     flex-direction: column;
-    width: 80%;
-    max-width: 700px;
-    height: 100%;
     align-items: flex-start;
-    justify-content: flex-end;
-    margin-bottom: 5%;
+    gap: var(--spacing);
+    margin-bottom: var(--spacing);
+
+    @include media(sm) {
+      align-items: flex-end;
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
 
   .hsc--slide .hsc--slide-title {
-    font-family: $font-family-bold;
     font-size: clamp(1.8rem, 5vw, 3.5rem);
-    line-height: 1;
-    color: $color-white;
+    font-family: $font-family-bold;
+    line-height: 1.15em;
+    color: $color-blue-dark;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-    margin-bottom: 20px;
-    padding-bottom: 2px;
-  }
-
-  .hsc--slide .hsc--slide-excerpt {
-    font-family: $font-family-semibold;
-    font-size: clamp(1.2rem, 2vw, 2.5rem);
-    line-height: 1.1;
-    color: $color-white;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    margin-bottom: 20px;
+    letter-spacing: 0.5px;
   }
 
   .hsc--slide .hsc--slide-button {
-    font-family: $font-family-semibold;
+    font-family: $font-family-bold;
     font-size: $font-size--default;
     line-height: $line-height--default;
     transition: all $transition-default;
     background-color: rgba($color-yellow, 0.9);
-    border-color: $color-yellow;
-    border-radius: $border-radius;
-    padding: 12px 12px 8px 12px;
+    padding: 8px 16px;
     color: rgba($color-black, 0.9);
     text-decoration: none;
-    text-transform: uppercase;
+    box-shadow: 0 4px 4px rgba(0, 15, 30, 0.1);
+    white-space: nowrap;
 
     &:hover {
       background-color: rgba($color-yellow, 0.7);
+    }
+
+    @include media(sm) {
+      padding: 15px 30px;
+      font-size: $font-size--h6;
     }
   }
 
   .hsc--slider-arrow {
     position: absolute;
-    display: none;
+    display: flex;
     top: 0;
     bottom: 0;
     margin: auto;
@@ -160,10 +152,6 @@
     opacity: 0.2;
     transition: opacity 100ms;
     z-index: 10;
-
-    @include media(sm) {
-      display: flex;
-    }
   }
 
   .hsc--slider-arrow:hover,
@@ -184,39 +172,79 @@
   }
 
   .hsc--slider-pagination {
-    display: flex;
-    position: absolute;
-    bottom: 0;
-    grid-gap: 12px;
-    align-items: center;
-    justify-content: flex-end;
-    width: 100%;
-    margin-bottom: 30px;
-    padding-right: 20px;
+    background: $color-grayscale--850;
+    padding-bottom: var(--spacing);
+
+    .hsc--slider-pagination-inner {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      max-width: 1344px;
+      width: calc(100% - 40px);
+      margin: auto;
+    }
 
     .hsc--pagination-item {
-      transition: all $transition-default;
-      display: block;
-      border-radius: 16px;
-      height: 9px;
-      width: 15px;
-      background-color: rgba($color-white, 0.6);
       z-index: 10;
       cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      row-gap: 20px;
+    }
+
+    .hsc--pagination-progress {
+      width: 100%;
+      height: 3px;
+      background-color: $color-grayscale--500; // Set static background to grey
+      position: relative; // Needed to position the pseudo-element
+      overflow: hidden; // Ensures the pseudo-element does not exceed the parent's bounds
+      transform: skewX(-7.77deg);
+
+      // Create a pseudo-element for the red loading bar
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 0; // Start from zero width
+        background-color: $color-yellow;
+        transform-origin: left;
+      }
 
       @include media(sm) {
-        height: 9px;
-        width: 15px;
+        height: 4px;
       }
     }
 
-    .hsc--pagination-item:hover {
-      background-color: rgba($color-white, 0.9);
+    .hsc--pagination-title {
+      color: $color-grayscale--500;
+      font-family: $font-family-semibold;
+      font-size: $font-size--small;
+      display: none;
+
+      @include media(sm) {
+        display: block;
+      }
     }
 
     .hsc--pagination-item.active {
-      background-color: rgba($color-white, 0.9);
-      width: 18px;
+      .hsc--pagination-progress:before {
+        animation: fillProgress 6000ms linear forwards;
+      }
+
+      .hsc--pagination-title {
+        color: $color-blue-dark;
+      }
+    }
+  }
+
+  @keyframes fillProgress {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%; // Animates to full width
     }
   }
 }

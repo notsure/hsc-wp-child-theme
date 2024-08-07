@@ -7,8 +7,8 @@
   </button>
   <div class="hsc--slider-container" id="hsc--slider-container">
     {% for post in posts %}
-      {% set image = TimberImage(post.thumbnail) %}
-      {% set preview = post.preview() %}
+      {% set image = get_image(post.thumbnail) %}
+      {% set preview = post.excerpt %}
 
       <div class="hsc--slide" data-index="{{ loop.index0 }}">
         {% if post.thumbnail %}
@@ -24,11 +24,8 @@
             <div class="hsc--slide-title">
               {{ post.title | trim }}
             </div>
-            <div class="hsc--slide-excerpt">
-              {{ post.custom['custom_excerpt'] | truncate(30) }}
-            </div>
             <a class="hsc--slide-button" href="{{ post.link }}">
-              Zum Beitrag
+              Zur Story
             </a>
           </div>
         </div>
@@ -36,15 +33,22 @@
     {% endfor %}
   </div>
   <div class="hsc--slider-pagination" id="hsc--slider-pagination">
-    {% for post in posts %}
-      <span class="hsc--pagination-item" data-index="{{ loop.index0 }}"></span>
-    {% endfor %}
+    <div class="hsc--slider-pagination-inner">
+      {% for post in posts %}
+        <div class="hsc--pagination-item" data-index="{{ loop.index0 }}">
+          <div class="hsc--pagination-progress"></div>
+          <div class="hsc--pagination-title">
+            {{ post.title | trim }}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
   </div>
   <div class="hsc--slider-loader"></div>
 </div>
 
 <script>
-  window.addEventListener('SponsorGridAnimatedLoaded', (event) => {
+  window.addEventListener('NewsSliderLoaded', (event) => {
     console.log('yolo');
 
     const newsSlider = new NewsSlider();

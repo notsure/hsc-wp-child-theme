@@ -5,7 +5,6 @@ define('NABA_WP_THEME_VERSION', '2.9.14');
 define('NABA_WP_THEME_PATH', get_stylesheet_directory_uri());
 define('NABA_WP_THEME_SRC', get_stylesheet_directory() . '/src');
 defined('ABSPATH') or die('Direct script access disallowed.');
-//define( 'WP_DEBUG', true );
 
 function et_get_theme_version() {
     return NABA_WP_THEME_VERSION;

@@ -1,89 +1,107 @@
 class NewsSlider {
-  autoSlideInterval = null;
+  constructor() {
+    this.sliderAutoPlayDuration = 6000;
+    this.autoSlideInterval = null;
+    this.slidesContainer = document.getElementById('hsc--slider-container');
+    this.slides = document.getElementsByClassName('hsc--slide');
+    this.prevButton = document.getElementById('hsc--slider-arrow-prev');
+    this.nextButton = document.getElementById('hsc--slider-arrow-next');
+    this.paginationItems = document.getElementsByClassName('hsc--pagination-item');
+    this.selectedSlide = 0;
+    this.amountSlides = this.slides.length;
+  }
 
   init() {
-    this.slidesContainer = document.getElementById('hsc--slider-container');
-
     if (!this.slidesContainer) {
       return;
     }
 
-    this.initSlider();
+    this.slideWidth = this.slides[0].clientWidth;
     this.addButtonEventListeners();
     this.addPaginationEvents();
     this.updatePagination();
     this.startAutoSlide();
 
-    if (this.slidesContainer) {
-      window.addEventListener('resize', () => {
-        this.startAutoSlide();
-        this.initSlider();
-      });
-    }
+    window.addEventListener('resize', this.throttle(() => {
+      this.startAutoSlide();
+      this.slideWidth = this.slides[0].clientWidth;
+    }, 250));
   }
 
-  initSlider() {
-    this.slidesContainer = document.getElementById('hsc--slider-container');
-    this.slides = document.getElementsByClassName('hsc--slide');
-    this.slideWidth = this.slides[0].clientWidth;
-    this.prevButton = document.getElementById('hsc--slider-arrow-prev');
-    this.nextButton = document.getElementById('hsc--slider-arrow-next');
-    this.paginationItems = document.getElementsByClassName('hsc--pagination-item');
-
-    console.log('-->', this.paginationItems);
-
-    this.selectedSlide = 0;
-    this.amountSlides = this.slides.length;
+  throttle(func, limit) {
+    let inThrottle;
+    return function() {
+      const args = arguments;
+      const context = this;
+      if (!inThrottle) {
+        func.apply(context, args);
+        inThrottle = true;
+        setTimeout(() => inThrottle = false, limit);
+      }
+    }
   }
 
   startAutoSlide() {
     clearInterval(this.autoSlideInterval);
-    this.autoSlideInterval = setInterval(() => {
-      this.selectNextSlide();
-    }, 7000);
+    this.autoSlideInterval = setInterval(this.selectNextSlide.bind(this), this.sliderAutoPlayDuration);
   }
 
   addButtonEventListeners() {
-    this.nextButton.addEventListener('click', () => {
-      clearInterval(this.autoSlideInterval);
-      this.selectNextSlide();
-    });
+    this.nextButton.addEventListener('click', this.stopAndAdvance.bind(this));
+    this.prevButton.addEventListener('click', this.regressSlide.bind(this));
+  }
 
-    this.prevButton.addEventListener('click', () => {
-      clearInterval(this.autoSlideInterval);
-      this.slidesContainer.scrollLeft -= this.slideWidth;
-      this.selectedSlide = this.selectedSlide <= 0 ? 0 : this.selectedSlide - 1;
-      this.updatePagination();
-    });
+  stopAndAdvance() {
+    clearInterval(this.autoSlideInterval);
+    this.selectNextSlide();
+  }
+
+  regressSlide() {
+    clearInterval(this.autoSlideInterval);
+    this.moveSlideBy(-1);
   }
 
   addPaginationEvents() {
-    Array.from(this.paginationItems).forEach((item) => {
-      item.addEventListener('click', () => {
-        clearInterval(this.autoSlideInterval);
-        this.selectedSlide = item.dataset.index || 0;
-        this.slidesContainer.scrollLeft = this.slideWidth * this.selectedSlide;
-        this.updatePagination();
-      });
+    Array.from(this.paginationItems).forEach((item, index) => {
+      item.addEventListener('click', this.stopAndSelect.bind(this, index));
     });
   }
 
+  stopAndSelect(index) {
+    clearInterval(this.autoSlideInterval);
+    this.selectedSlide = index;
+    this.slidesContainer.scrollLeft = this.slideWidth * index;
+    this.updatePagination();
+  }
+
+  moveSlideBy(step) {
+    this.selectedSlide = Math.max(0, Math.min(this.amountSlides - 1, this.selectedSlide + step));
+    this.slidesContainer.scrollLeft = this.slideWidth * this.selectedSlide;
+    this.updatePagination();
+  }
+
   updatePagination() {
-    Array.from(this.paginationItems).forEach((item) => item.classList.remove('active'));
-    this.paginationItems[this.selectedSlide].classList.add('active');
+    Array.from(this.paginationItems).forEach((item, index) => {
+      item.classList.toggle('active', index === this.selectedSlide);
+    });
   }
 
   selectNextSlide() {
-    this.slidesContainer.scrollLeft += this.slideWidth;
-    this.selectedSlide = this.selectedSlide + 1;
+    this.selectedSlide += 1;
 
     if (this.selectedSlide >= this.amountSlides) {
-      this.slidesContainer.scrollLeft = 0;
-      this.selectedSlide = 0;
+      this.selectedSlide = 0; // Reset to the first slide
+      this.slidesContainer.scrollLeft = 0; // Ensure the container scrolls back to the start
+    } else {
+      this.slidesContainer.scrollLeft = this.slideWidth * this.selectedSlide;
     }
 
     this.updatePagination();
   }
 }
 
-dispatchEvent(new CustomEvent('NewsSliderLoaded', { detail: { loaded: true }}));
+document.addEventListener('DOMContentLoaded', () => {
+  const newsSlider = new NewsSlider();
+  newsSlider.init();
+  dispatchEvent(new CustomEvent('NewsSliderLoaded', { detail: { loaded: true } }));
+});
