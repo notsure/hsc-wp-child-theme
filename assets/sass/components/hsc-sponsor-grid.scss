@@ -22,6 +22,18 @@
     filter: brightness(60%) invert(100%);
   }
 
+  &.items-per-row-10 {
+    @include media(sm) {
+      grid-template-columns: repeat(10, 1fr);
+    }
+  }
+
+  &.items-per-row-9 {
+    @include media(sm) {
+      grid-template-columns: repeat(9, 1fr);
+    }
+  }
+
   &.items-per-row-8 {
     @include media(sm) {
       grid-template-columns: repeat(8, 1fr);
