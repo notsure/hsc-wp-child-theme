@@ -1,0 +1,22 @@
+@include media($down: sm) {
+  .hsc--content-slider {
+    max-width: none;
+    display: flex;
+    white-space: nowrap;
+    flex-direction: row;
+    column-gap: 15px;
+    transform: translateX(15px);
+    overflow: scroll;
+    padding: 0 15px;
+  }
+
+  .hsc--content-slider-item {
+    width: 0;
+    min-width: 300px;
+    max-width: 567px;
+
+    .dsm_card_description {
+      white-space: pre-wrap;
+    }
+  }
+}
