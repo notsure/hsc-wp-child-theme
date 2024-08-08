@@ -142,5 +142,7 @@ class NewsSlider {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  dispatchEvent(new CustomEvent('NewsSliderLoaded', { detail: { loaded: true } }));
+  const newsSlider = new NewsSlider();
+
+  newsSlider.init();
 });
