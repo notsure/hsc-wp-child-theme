@@ -90,6 +90,10 @@
     width: calc(100% - 40px);
     height: 100%;
     z-index: 2;
+
+    @include media(sm) {
+      width: 90%;
+    }
   }
 
   .hsc--slide .hsc--slide-content {
@@ -199,6 +203,10 @@
       max-width: 1344px;
       width: calc(100% - 40px);
       margin: auto;
+
+      @include media(sm) {
+        width: 90%;
+      }
     }
 
     .hsc--pagination-item {
