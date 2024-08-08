@@ -76,6 +76,11 @@
     transform-origin: 50% 52%;
   }
 
+  .hsc--slide.active .hsc--slide-image {
+    animation: zoomIn 6000ms linear forwards;
+    animation-delay: 500ms;
+  }
+
   .hsc--slide .hsc--slide-container {
     display: flex;
     flex-direction: column;
@@ -98,6 +103,18 @@
       align-items: flex-end;
       flex-direction: row;
       justify-content: space-between;
+      transform: translateX(30%);
+      transition: opacity 250ms ease-in;
+      transition-delay: 300ms;
+      opacity: 0;
+    }
+  }
+
+  .hsc--slide.active .hsc--slide-content {
+    @include media(sm) {
+      animation: slideIn 250ms forwards;
+      animation-delay: 500ms;
+      opacity: 1;
     }
   }
 
@@ -199,6 +216,7 @@
       position: relative; // Needed to position the pseudo-element
       overflow: hidden; // Ensures the pseudo-element does not exceed the parent's bounds
       transform: skewX(-7.77deg);
+      transition: all $transition-default;
 
       // Create a pseudo-element for the red loading bar
       &::before {
@@ -220,8 +238,9 @@
     .hsc--pagination-title {
       color: $color-grayscale--500;
       font-family: $font-family-semibold;
-      font-size: $font-size--small;
+      font-size: $font-size--default;
       display: none;
+      transition: all $transition-default;
 
       @include media(sm) {
         display: block;
@@ -246,5 +265,18 @@
     100% {
       width: 100%; // Animates to full width
     }
+  }
+
+  @keyframes zoomIn {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.1);
+    }
+  }
+
+  @keyframes slideIn {
+    100% { transform: translateX(0%); }
   }
 }

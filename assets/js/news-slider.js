@@ -18,12 +18,14 @@ class NewsSlider {
 
     this.slideWidth = this.slides[0].clientWidth;
     this.addButtonEventListeners();
+    this.addTouchEvents();
     this.addPaginationEvents();
     this.updatePagination();
     this.startAutoSlide();
+    this.updateActiveSlide();
 
     window.addEventListener('resize', this.throttle(() => {
-      this.startAutoSlide();
+      this.startAutoSlide();  // Restart auto-play when window is resized
       this.slideWidth = this.slides[0].clientWidth;
     }, 250));
   }
@@ -43,41 +45,88 @@ class NewsSlider {
 
   startAutoSlide() {
     clearInterval(this.autoSlideInterval);
-    this.autoSlideInterval = setInterval(this.selectNextSlide.bind(this), this.sliderAutoPlayDuration);
+    this.autoSlideInterval = setInterval(this.nextSlide.bind(this), this.sliderAutoPlayDuration);
+  }
+
+  addTouchEvents() {
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    this.slidesContainer.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+
+    this.slidesContainer.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+
+      const sensitivity = 50; // Minimum swipe distance
+      if (touchEndX + sensitivity < touchStartX) {
+        this.nextSlide();
+      } else if (touchEndX > touchStartX + sensitivity) {
+        this.prevSlide();
+      }
+    });
   }
 
   addButtonEventListeners() {
-    this.nextButton.addEventListener('click', this.stopAndAdvance.bind(this));
-    this.prevButton.addEventListener('click', this.regressSlide.bind(this));
-  }
+    this.nextButton.addEventListener('click', (e) => this.nextSlide());
+    this.prevButton.addEventListener('click', (e) => this.prevSlide());
+    this.nextButton.addEventListener('touchend', (e) => {
+      e.preventDefault(); // Prevents the mouse click event from firing
+      this.nextSlide();
+    });
 
-  stopAndAdvance() {
-    clearInterval(this.autoSlideInterval);
-    this.selectNextSlide();
-  }
-
-  regressSlide() {
-    clearInterval(this.autoSlideInterval);
-    this.moveSlideBy(-1);
+    this.prevButton.addEventListener('touchend', (e) => {
+      e.preventDefault(); // Prevents the mouse click event from firing
+      this.prevSlide();
+    });
   }
 
   addPaginationEvents() {
     Array.from(this.paginationItems).forEach((item, index) => {
-      item.addEventListener('click', this.stopAndSelect.bind(this, index));
+      item.addEventListener('click', () => {
+        this.selectSlide(index);
+      });
     });
   }
 
-  stopAndSelect(index) {
+  nextSlide() {
+    clearInterval(this.autoSlideInterval);
+    this.moveSlideBy(1);
+    this.updateSlider();
+  }
+
+  prevSlide() {
+    clearInterval(this.autoSlideInterval);
+    this.moveSlideBy(-1);
+    this.updateSlider();
+  }
+
+  selectSlide(index) {
     clearInterval(this.autoSlideInterval);
     this.selectedSlide = index;
     this.slidesContainer.scrollLeft = this.slideWidth * index;
-    this.updatePagination();
+    this.updateSlider();
   }
 
   moveSlideBy(step) {
-    this.selectedSlide = Math.max(0, Math.min(this.amountSlides - 1, this.selectedSlide + step));
+    this.selectedSlide += step;
+
+    // Wrap-around logic
+    if (this.selectedSlide >= this.amountSlides) {
+      this.selectedSlide = 0;  // Go to the first slide if we move past the last slide
+      this.slidesContainer.scrollLeft = 0;
+    } else if (this.selectedSlide < 0) {
+      this.selectedSlide = this.amountSlides - 1;  // Go to the last slide if we move before the first slide
+    }
+
     this.slidesContainer.scrollLeft = this.slideWidth * this.selectedSlide;
+  }
+
+  updateSlider() {
+    this.updateActiveSlide();
     this.updatePagination();
+    this.startAutoSlide();  // Restart auto-play
   }
 
   updatePagination() {
@@ -85,23 +134,13 @@ class NewsSlider {
       item.classList.toggle('active', index === this.selectedSlide);
     });
   }
-
-  selectNextSlide() {
-    this.selectedSlide += 1;
-
-    if (this.selectedSlide >= this.amountSlides) {
-      this.selectedSlide = 0; // Reset to the first slide
-      this.slidesContainer.scrollLeft = 0; // Ensure the container scrolls back to the start
-    } else {
-      this.slidesContainer.scrollLeft = this.slideWidth * this.selectedSlide;
-    }
-
-    this.updatePagination();
+  updateActiveSlide() {
+    Array.from(this.slides).forEach((item, index) => {
+      item.classList.toggle('active', index === this.selectedSlide);
+    });
   }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const newsSlider = new NewsSlider();
-  newsSlider.init();
   dispatchEvent(new CustomEvent('NewsSliderLoaded', { detail: { loaded: true } }));
 });
