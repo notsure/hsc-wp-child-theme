@@ -15,7 +15,8 @@
     scroll-behavior: smooth;
     align-items: center;
     flex-flow: row nowrap;
-    overflow: scroll;
+    overflow-x: scroll;
+    overflow-y: hidden;
     scroll-snap-type: x mandatory;
     height: 450px;
     min-height: 450px;
