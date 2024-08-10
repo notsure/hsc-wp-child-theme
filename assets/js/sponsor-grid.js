@@ -63,7 +63,6 @@ class SponsorGrid {
   }
 
   updateImages() {
-    console.log('update');
     this.sponsorGridItems.forEach((item, index) => {
       let randomSponsor = this.getRandomSponsor();
 
@@ -115,7 +114,6 @@ class SponsorGrid {
   // Make sure to disconnect the observer when the component is destroyed or no longer needed
   beforeUnmount() {
     window.addEventListener('beforeunload', () => {
-      console.log('unmount');
       if (this.intersectionObserver) {
         this.intersectionObserver.disconnect();
       }

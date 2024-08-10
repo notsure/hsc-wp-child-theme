@@ -7,14 +7,13 @@
     column-gap: 15px;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
-    padding-left: 15px !important;
-    padding-right: 15px !important;
   }
 
   .hsc--content-slider-item {
     width: 0;
     min-width: 300px;
     max-width: 567px;
+    margin-left: 15px;
 
     .dsm_card_description {
       white-space: pre-wrap;

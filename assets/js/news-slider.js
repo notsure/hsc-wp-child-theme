@@ -12,9 +12,7 @@ class NewsSlider {
   }
 
   init() {
-    if (!this.slidesContainer) {
-      return;
-    }
+    if (!this.slidesContainer) return;
 
     this.slideWidth = this.slides[0].clientWidth;
     this.addButtonEventListeners();
@@ -25,27 +23,25 @@ class NewsSlider {
     this.updateActiveSlide();
 
     window.addEventListener('resize', this.throttle(() => {
-      this.startAutoSlide();  // Restart auto-play when window is resized
       this.slideWidth = this.slides[0].clientWidth;
+      this.startAutoSlide(); // Restart auto-play when window is resized
     }, 250));
   }
 
   throttle(func, limit) {
     let inThrottle;
-    return function() {
-      const args = arguments;
-      const context = this;
+    return () => {
       if (!inThrottle) {
-        func.apply(context, args);
+        func.apply(this);
         inThrottle = true;
         setTimeout(() => inThrottle = false, limit);
       }
-    }
+    };
   }
 
   startAutoSlide() {
     clearInterval(this.autoSlideInterval);
-    this.autoSlideInterval = setInterval(this.nextSlide.bind(this), this.sliderAutoPlayDuration);
+    this.autoSlideInterval = setInterval(() => this.nextSlide(), this.sliderAutoPlayDuration);
   }
 
   addTouchEvents() {
@@ -58,7 +54,6 @@ class NewsSlider {
 
     this.slidesContainer.addEventListener('touchend', (e) => {
       touchEndX = e.changedTouches[0].screenX;
-
       const sensitivity = 50; // Minimum swipe distance
       if (touchEndX + sensitivity < touchStartX) {
         this.nextSlide();
@@ -69,8 +64,8 @@ class NewsSlider {
   }
 
   addButtonEventListeners() {
-    this.nextButton.addEventListener('click', (e) => this.nextSlide());
-    this.prevButton.addEventListener('click', (e) => this.prevSlide());
+    this.nextButton.addEventListener('click', () => this.nextSlide());
+    this.prevButton.addEventListener('click', () => this.prevSlide());
     this.nextButton.addEventListener('touchend', (e) => {
       e.preventDefault(); // Prevents the mouse click event from firing
       this.nextSlide();
@@ -84,9 +79,7 @@ class NewsSlider {
 
   addPaginationEvents() {
     Array.from(this.paginationItems).forEach((item, index) => {
-      item.addEventListener('click', () => {
-        this.selectSlide(index);
-      });
+      item.addEventListener('click', () => this.selectSlide(index));
     });
   }
 
@@ -112,12 +105,11 @@ class NewsSlider {
   moveSlideBy(step) {
     this.selectedSlide += step;
 
-    // Wrap-around logic
     if (this.selectedSlide >= this.amountSlides) {
-      this.selectedSlide = 0;  // Go to the first slide if we move past the last slide
+      this.selectedSlide = 0;
       this.slidesContainer.scrollLeft = 0;
     } else if (this.selectedSlide < 0) {
-      this.selectedSlide = this.amountSlides - 1;  // Go to the last slide if we move before the first slide
+      this.selectedSlide = this.amountSlides - 1;
     }
 
     this.slidesContainer.scrollLeft = this.slideWidth * this.selectedSlide;
@@ -126,7 +118,7 @@ class NewsSlider {
   updateSlider() {
     this.updateActiveSlide();
     this.updatePagination();
-    this.startAutoSlide();  // Restart auto-play
+    this.startAutoSlide();
   }
 
   updatePagination() {
@@ -134,6 +126,7 @@ class NewsSlider {
       item.classList.toggle('active', index === this.selectedSlide);
     });
   }
+
   updateActiveSlide() {
     Array.from(this.slides).forEach((item, index) => {
       item.classList.toggle('active', index === this.selectedSlide);
@@ -143,6 +136,5 @@ class NewsSlider {
 
 document.addEventListener('DOMContentLoaded', () => {
   const newsSlider = new NewsSlider();
-
   newsSlider.init();
 });

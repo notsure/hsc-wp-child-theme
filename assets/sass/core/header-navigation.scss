@@ -13,23 +13,26 @@ header {
   }
 }
 
+.no-scroll {
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  position: fixed; /* This prevents scrolling on iOS */
+}
+
 // Fix the admin bar.
 .admin-bar {
   #wpadminbar {
     overflow: hidden;
+    display: none;
+
+    @include media(sm) {
+      display: block;
+    }
   }
 
   #hsc-header-nav-desktop {
     top: 32px;
-  }
-}
-
-// Fix padding for fixed header.
-body {
-  padding-top: 70px;
-
-  @include media(sm) {
-    padding-top: 0;
   }
 }
 
@@ -69,8 +72,9 @@ body {
     align-items: center;
     color: $color-white;
 
-    img {
+    svg {
       margin-right: 20px;
+      width: 70px;
     }
   }
 
@@ -109,7 +113,7 @@ body {
     color: rgba($color-white, 1);
   }
 
-  .hsc--premiums-sponsor {
+  .hsc--premium-sponsor {
     grid-area: sponsor / sponsor / sponsor / sponsor;
     display: flex;
     justify-content: flex-end;
@@ -125,8 +129,11 @@ body {
       padding-bottom: 3px;
     }
 
-    img {
-      border-radius: 3px;
+    .hsc--menu-premium-sponsor-link {
+      svg {
+        border-radius: 3px;
+        width: 55px;
+      }
     }
   }
 }
@@ -154,7 +161,7 @@ body {
       gap: 5px;
     }
 
-    .hsc--logo img {
+    .hsc--logo svg {
        transform: scale(1);
     }
   }
@@ -170,10 +177,11 @@ body {
     display: flex;
     align-items: center;
 
-    img {
+    svg {
       transition: transform 0.1s ease-in-out 0s;
       display: inline-block;
       transform: scale(0);
+      width: 55px;
     }
   }
 
@@ -281,23 +289,38 @@ body {
 }
 
 #hsc-header-nav-mobile {
+  $mobile-menu-height: 84px;
   $mobile-padding-default: 15px;
   $mobile-padding-top-bottom: 16px;
   $mobile-padding-right: 10px;
+  $mobile-nav-index: 100;
 
-  background-color: $color-blue-dark;
-  display: grid;
-  grid-template-columns: auto 50px 50px;
-  grid-template-rows: auto;
-  align-items: center;
-  gap: 5px;
-  position: fixed;
+  position: sticky;
   top: 0;
   width: 100%;
-  z-index: 20000;
+  z-index: $mobile-nav-index;
+  opacity: 1;
+  transition: opacity 250ms ease-in-out;
+
+  &.hide {
+    opacity: 0;
+  }
 
   @include media(sm) {
     display: none;
+  }
+
+  .hsc-header-nav-mobile-container {
+    position: relative;
+    background-color: $color-blue-dark;
+    display: grid;
+    grid-template-columns: auto 50px 50px;
+    grid-template-rows: auto;
+    align-items: center;
+    gap: 5px;
+    padding: 15px 5px 15px 15px;
+    height: $mobile-menu-height;
+    z-index: $mobile-nav-index;
   }
 
   .hsc--menu-home-link {
@@ -308,10 +331,10 @@ body {
     color: $color-white;
     display: flex;
     align-items: center;
-    padding: $mobile-padding-default;
 
-    img {
+    svg {
       padding-right: $mobile-padding-default;
+      width: 55px;
     }
   }
 
@@ -321,8 +344,9 @@ body {
     display: flex;
     align-items: center;
 
-    img {
+    svg {
       border-radius: 3px;
+      width: 130px;
     }
   }
 
@@ -334,7 +358,7 @@ body {
     grid-column: 3/3;
     text-align: right;
     margin: auto;
-    z-index: 60001;
+    z-index: $mobile-nav-index + 10;
     padding: 14px;
     background-color: transparent;
 
@@ -345,7 +369,7 @@ body {
       background-color: $color-white;
       margin: 5px 0;
       transition: 0.4s;
-      z-index: 60001;
+      z-index: $mobile-nav-index + 10;
     }
 
     &.active .hsc--toggle-btn--bar1 {
@@ -363,19 +387,51 @@ body {
 
   .hsc--menu-overlay {
     position: fixed;
-    top: 0;
+    top: $mobile-menu-height;
     left: 0;
-    width: calc(100vw - 40px);
+    width: 100%;
     height: 100%;
-    z-index: 60000;
+    z-index: $mobile-nav-index - 1;
     overflow: auto;
-    transform: translateX(-150vw);
-    transition: transform $transition-slow;
-    background-color: $color-blue-dark;
+    transform: translateY(-100%);
+    background-color: rgba($color-blue-dark, 0.7);
     color: $color-white;
+    transition: transform 0.4s ease; /* Define your transition for the transform property */
+    will-change: transform; /* Optimizes for animations */
+    backdrop-filter: blur(24px);
 
     &.active {
-      transform: translateX(0px);
+      transform: translateY(0px);
+    }
+  }
+
+  .hsc--menu-overlay-highlights {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: rgba($color-white, 0.4);
+  }
+
+  .hsc--menu-overlay-highlights-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px;
+    color: $color-blue-dark;
+
+    svg {
+      width: 35px;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      right: 0;
+      height: 50px;
+      width: 1px;
+      background-color: $color-blue-dark;
     }
   }
 
@@ -383,17 +439,17 @@ body {
     @extend %button-reset;
 
     position: fixed;
-    top: 0;
+    top: $mobile-menu-height;
     left: 0;
     height: 0;
     width: 0;
-    z-index: 59999;
+    z-index: $mobile-nav-index - 2;
     display: flex;
     align-items: flex-start;
     pointer-events: none;
     background: $color-black;
     opacity: 0;
-    transition: opacity $transition-slow;
+    transition: opacity 150ms ease-in-out;
     cursor: pointer;
     padding: 0;
     margin: 0;
@@ -401,8 +457,8 @@ body {
     &.active {
       opacity: 0.8;
       pointer-events: all;
-      height: 100vh;
-      width: 100vw;
+      height: 100%;
+      width: 100%;
     }
   }
 
@@ -422,14 +478,15 @@ body {
 
   .hsc--nav-main-item {
     border-left: 4px solid transparent;
+    padding: .25rem 0;
+    border-bottom: 1px solid rgba($color-black, 0.6);
   }
 
   .hsc--nav-main-link {
-    font-size: $font-size--default;
-    line-height: $line-height--default;
+    font-size: 1.25rem;
+    line-height: 1;
     display: block;
-    padding: $mobile-padding-top-bottom $mobile-padding-right $mobile-padding-top-bottom $mobile-padding-default;
-    border-bottom: 1px solid rgba($color-black, 0.6);
+    padding: 1.5rem 15px;
     color: $color-white;
     font-family: $font-family-semibold;
   }
@@ -488,7 +545,7 @@ body {
   }
 
   .current_page_item {
-    border-color: $color-yellow;
+    border-left-color: $color-yellow;
   }
 
   .hsc--menu-premium-sponsor {
