@@ -1,0 +1,49 @@
+@use '../setup/variables' as variables;
+//@use '../setup/mixins' as mixins;
+//@use '../setup/extends' as extends;
+//@use '../setup/functions' as functions;
+
+.background-white {
+  background: variables.$color-white !important;
+}
+
+.background-blue {
+  background: variables.$color-blue-dark !important;
+}
+
+.background-yellow {
+  background: variables.$color-yellow !important;
+}
+
+.background-grey {
+  background: variables.$color-grey !important;
+}
+
+.bg-white {
+  @extend .text-blue;
+
+  background-color: variables.$color-white;
+  padding: 15px !important;
+}
+
+.bg-blue {
+  @extend .text-yellow;
+
+  background-color: variables.$color-blue-dark;
+  padding: 15px !important;
+}
+
+.bg-yellow {
+  @extend .text-blue;
+
+  background-color: variables.$color-yellow;
+  padding: 15px !important;
+}
+
+.bg-oblique {
+  transform: skewX(-5deg);
+
+  * {
+    transform: skewX(5deg);
+  }
+}

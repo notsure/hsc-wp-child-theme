@@ -1,6 +1,11 @@
-@media #{$viewport-phone} {
-    table {
-        overflow-x: auto;
-        display: block;
-    }
+//@use '../setup/variables' as variables;
+@use '../setup/mixins' as mixins;
+//@use '../setup/extends' as extends;
+//@use '../setup/functions' as functions;
+
+@include mixins.media($down: sm) {
+  table {
+    overflow-x: auto;
+    display: block;
+  }
 }

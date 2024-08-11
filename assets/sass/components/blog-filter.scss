@@ -1,3 +1,8 @@
+@use '../setup/variables' as variables;
+//@use '../setup/extends' as extends;
+//@use '../setup/mixins' as mixins;
+//@use '../setup/functions' as functions;
+
 .news-tags-category {
   display: flex;
   flex-wrap: wrap;
@@ -6,7 +11,7 @@
   .cat-item {
     display: inline-block;
     padding: 6px 12px;
-    background: rgba($color-black, 0.05);
+    background: rgba(variables.$color-black, 0.05);
     border-radius: 3px;
     transition: all 0.2s ease-in-out;
     position: relative;
@@ -15,7 +20,7 @@
 
     &.current-cat,
     &:hover {
-      background: rgba($color-black, 0.15);
+      background: rgba(variables.$color-black, 0.15);
     }
 
     a:after {
@@ -31,7 +36,7 @@
 
   .cat-item,
   .cat-item a {
-    font-size: $font-size--small;
+    font-size: variables.$font-size--small;
   }
 }
 
@@ -40,7 +45,7 @@
     display: inline-block;
     font-size: 12px !important;
     padding: 2px 8px;
-    background: rgba($color-black, 0.05);
+    background: rgba(variables.$color-black, 0.05);
     margin-bottom: 4px;
     border-radius: 3px;
     -webkit-transition: all 0.2s ease-in-out;
@@ -49,7 +54,7 @@
     cursor: pointer;
 
     &:hover {
-      background: rgba($color-black, 0.15);
+      background: rgba(variables.$color-black, 0.15);
     }
   }
 }

@@ -1,14 +1,31 @@
 <?php
 
 define('NABA_WP_THEME_NAME', 'hsc-wp-child-theme');
-define('NABA_WP_THEME_VERSION', '2.9.31');
+define('NABA_WP_THEME_VERSION', getThemeVersion());
 define('NABA_WP_THEME_PATH', get_stylesheet_directory_uri());
 define('NABA_WP_THEME_SRC', get_stylesheet_directory() . '/src');
 defined('ABSPATH') or die('Direct script access disallowed.');
 
-function et_get_theme_version() {
-    return NABA_WP_THEME_VERSION;
+function getThemeVersion() {
+  // Adjust the path to where your package.json file is located relative to this PHP file
+  $path_to_package_json = __DIR__ . '/assets/package.json';
+
+  // Read the contents of the JSON file
+  $json_content = file_get_contents($path_to_package_json);
+
+  // Decode the JSON content
+  $json_data = json_decode($json_content);
+
+  // Access the version property
+  $version = $json_data->version;
+
+  return $version;
 }
+
+// Not sure why this was added but it changes the version of the divi script includes. maybe they had to be synced but I am not sure.
+//function et_get_theme_version() {
+//    return NABA_WP_THEME_VERSION;
+//}
 
 add_action( 'wp_enqueue_scripts', 'hsc_styles' );
 

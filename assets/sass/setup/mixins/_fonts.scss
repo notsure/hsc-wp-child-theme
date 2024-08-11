@@ -1,0 +1,19 @@
+@use '../variables' as variables;
+
+@mixin font-normal($size, $lineHeight: variables.$line-height--default) {
+  font-size: $size;
+  line-height: $lineHeight;
+  font-family: variables.$font-family-default;
+}
+
+@mixin font-bold($size, $lineHeight: variables.$line-height--default) {
+  font-size: $size;
+  line-height: $lineHeight;
+  font-family: variables.$font-family-semibold;
+}
+
+@mixin font-bold-italic($size, $lineHeight: variables.$line-height--default) {
+  font-size: $size;
+  line-height: $lineHeight;
+  font-family: variables.$font-family-bold-italic;
+}

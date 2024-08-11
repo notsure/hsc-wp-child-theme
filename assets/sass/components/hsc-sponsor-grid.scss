@@ -1,3 +1,8 @@
+@use '../setup/variables' as variables;
+@use '../setup/mixins' as mixins;
+//@use '../setup/extends' as extends;
+//@use '../setup/functions' as functions;
+
 .hsc-sponsor-grid {
   display: grid;
   align-items: center;
@@ -5,7 +10,7 @@
   gap: 12px;
 
   &.variant-default {
-    @include media($down: sm) {
+    @include mixins.media($down: sm) {
       grid-template-columns: repeat(3, 1fr) !important;
     }
 
@@ -20,19 +25,19 @@
   }
 
   &.variant-premium {
-    @include media($down: sm) {
+    @include mixins.media($down: sm) {
       grid-template-columns: repeat(2, 1fr) !important;
     }
   }
 
-  @include media(sm) {
+  @include mixins.media(sm) {
     gap: 20px;
   }
 
   .hsc-sponsor-grid-item {
     overflow: hidden;
     aspect-ratio: 16/9;
-    background: $color-white;
+    background: variables.$color-white;
     display: flex;
     align-items: center;
     justify-content: center;

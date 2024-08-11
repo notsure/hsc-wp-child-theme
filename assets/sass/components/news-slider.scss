@@ -1,3 +1,8 @@
+@use '../setup/variables' as variables;
+@use '../setup/mixins' as mixins;
+//@use '../setup/extends' as extends;
+//@use '../setup/functions' as functions;
+
 .hsc--post-slider {
   --spacing: 20px;
 
@@ -6,7 +11,7 @@
   margin: auto;
   z-index: 1;
 
-  @include media(sm) {
+  @include mixins.media(sm) {
     --spacing: 30px;
   }
 
@@ -29,7 +34,7 @@
       display: none;
     }
 
-    @include media(sm) {
+    @include mixins.media(sm) {
       height: 60vh;
     }
   }
@@ -52,13 +57,25 @@
       width: 100%;
       height: 100%;
       z-index: 1;
-      background-color: rgba(0,0,0,.1) !important;
-      background: linear-gradient(0deg, #EDECEC 0%, #EDECEC 6%, rgba($color-grayscale--850, 0.5) 32%, rgba(237, 236, 236, 0) 50%)
+      background-color: rgba(variables.$color-black, 0.1) !important;
+      background: linear-gradient(
+          0deg,
+          variables.$color-grayscale--850 0%,
+          variables.$color-grayscale--850 6%,
+          rgba(variables.$color-grayscale--850, 0.5) 32%,
+          rgba(variables.$color-grayscale--850, 0) 50%
+      );
     }
 
-    @include media(sm) {
+    @include mixins.media(sm) {
       &::after {
-        background: linear-gradient(0deg, #EDECEC 0%, #EDECEC 0%, rgba($color-grayscale--850, 0.5) 30%, rgba(237, 236, 236, 0) 50%)
+        background: linear-gradient(
+            0deg,
+            variables.$color-grayscale--850 0%,
+            variables.$color-grayscale--850 0%,
+            rgba(variables.$color-grayscale--850, 0.5) 30%,
+            rgba(variables.$color-grayscale--850, 0) 50%
+        );
       }
     }
   }
@@ -92,7 +109,7 @@
     height: 100%;
     z-index: 2;
 
-    @include media(sm) {
+    @include mixins.media(sm) {
       width: 90%;
     }
   }
@@ -104,7 +121,7 @@
     gap: var(--spacing);
     margin-bottom: var(--spacing);
 
-    @include media(sm) {
+    @include mixins.media(sm) {
       align-items: flex-end;
       flex-direction: row;
       justify-content: space-between;
@@ -116,7 +133,7 @@
   }
 
   .hsc--slide.active .hsc--slide-content {
-    @include media(sm) {
+    @include mixins.media(sm) {
       animation: slideIn 250ms forwards;
       animation-delay: 500ms;
       opacity: 1;
@@ -125,9 +142,9 @@
 
   .hsc--slide .hsc--slide-title {
     font-size: clamp(1.8rem, 5vw, 3.5rem);
-    font-family: $font-family-bold;
+    font-family: variables.$font-family-bold;
     line-height: 1.15em;
-    color: $color-blue-dark;
+    color: variables.$color-blue-dark;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
@@ -137,24 +154,24 @@
   }
 
   .hsc--slide .hsc--slide-button {
-    font-family: $font-family-bold;
-    font-size: $font-size--default;
-    line-height: $line-height--default;
-    transition: all $transition-default;
-    background-color: rgba($color-yellow, 0.9);
+    font-family: variables.$font-family-bold;
+    font-size: variables.$font-size--default;
+    line-height: variables.$line-height--default;
+    transition: all variables.$transition-default;
+    background-color: rgba(variables.$color-yellow, 0.9);
     padding: 8px 16px;
-    color: rgba($color-black, 0.9);
+    color: rgba(variables.$color-black, 0.9);
     text-decoration: none;
     box-shadow: 0 4px 4px rgba(0, 15, 30, 0.1);
     white-space: nowrap;
 
     &:hover {
-      background-color: rgba($color-yellow, 0.7);
+      background-color: rgba(variables.$color-yellow, 0.7);
     }
 
-    @include media(sm) {
+    @include mixins.media(sm) {
       padding: 15px 30px;
-      font-size: $font-size--h6;
+      font-size: variables.$font-size--h6;
     }
   }
 
@@ -165,7 +182,7 @@
     bottom: 0;
     margin: auto;
     height: 4.3rem;
-    background-color: rgba($color-white, 0.6);
+    background-color: rgba(variables.$color-white, 0.6);
     border: none;
     width: 2rem;
     font-size: 3rem;
@@ -194,7 +211,7 @@
   }
 
   .hsc--slider-pagination {
-    background: $color-grayscale--850;
+    background: variables.$color-grayscale--850;
     padding-bottom: var(--spacing);
 
     .hsc--slider-pagination-inner {
@@ -205,7 +222,7 @@
       width: calc(100% - 40px);
       margin: auto;
 
-      @include media(sm) {
+      @include mixins.media(sm) {
         width: 90%;
       }
     }
@@ -221,11 +238,11 @@
     .hsc--pagination-progress {
       width: 100%;
       height: 3px;
-      background-color: $color-grayscale--500; // Set static background to grey
+      background-color: variables.$color-grayscale--500; // Set static background to grey
       position: relative; // Needed to position the pseudo-element
       overflow: hidden; // Ensures the pseudo-element does not exceed the parent's bounds
       transform: skewX(-7.77deg);
-      transition: all $transition-default;
+      transition: all variables.$transition-default;
 
       // Create a pseudo-element for the red loading bar
       &::before {
@@ -235,23 +252,23 @@
         top: 0;
         height: 100%;
         width: 0; // Start from zero width
-        background-color: $color-yellow;
+        background-color: variables.$color-yellow;
         transform-origin: left;
       }
 
-      @include media(sm) {
+      @include mixins.media(sm) {
         height: 4px;
       }
     }
 
     .hsc--pagination-title {
-      color: $color-grayscale--500;
-      font-family: $font-family-semibold;
-      font-size: $font-size--default;
+      color: variables.$color-grayscale--500;
+      font-family: variables.$font-family-semibold;
+      font-size: variables.$font-size--default;
       display: none;
-      transition: all $transition-default;
+      transition: all variables.$transition-default;
 
-      @include media(sm) {
+      @include mixins.media(sm) {
         display: block;
       }
     }
@@ -262,7 +279,7 @@
       }
 
       .hsc--pagination-title {
-        color: $color-blue-dark;
+        color: variables.$color-blue-dark;
       }
     }
   }

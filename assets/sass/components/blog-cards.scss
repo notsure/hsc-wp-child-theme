@@ -1,12 +1,15 @@
-/*add a neceassry position to the blog posts*/
+//@use '../setup/variables' as variables;
+//@use '../setup/mixins' as mixins;
+//@use '../setup/extends' as extends;
+//@use '../setup/functions' as functions;
 
+/*add a necessary position to the blog posts*/
 .et_pb_blog_grid .et_pb_post,
 .et_pb_posts .et_pb_post {
   position: relative;
 }
 
 /*make the title link spread over the entire post*/
-
 .et_pb_blog_grid .et_pb_post .entry-title a:after,
 .et_pb_posts .et_pb_post .entry-title a:after {
   position: absolute;
@@ -19,7 +22,6 @@
 }
 
 /*change the mouse cursor into a pointer*/
-
 .et_pb_blog_grid .et_pb_post:hover,
 .et_pb_posts .et_pb_post:hover {
   cursor: pointer;

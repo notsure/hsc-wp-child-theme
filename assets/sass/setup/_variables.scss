@@ -1,3 +1,8 @@
+@forward './variables/breakpoints';
+@forward './variables/colors';
+@forward './variables/font';
+@forward './variables/spacing';
+
 $transition-default: 0.2s ease-in-out 0s;
 $transition-slow: 250ms ease-in-out 0s;
 

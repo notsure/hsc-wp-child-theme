@@ -1,8 +1,13 @@
+@use '../setup/variables' as variables;
+//@use '../setup/mixins' as mixins;
+//@use '../setup/extends' as extends;
+//@use '../setup/functions' as functions;
+
 .hsc-member-card-benefit {
   margin-bottom: 50px !important;
 
   .dsm_card_image_wrapper {
-    background: $color-white;
+    background: variables.$color-white;
     height: 200px;
 
     img {
@@ -13,9 +18,9 @@
   }
 
   .dsm_card_badge_text {
-    font-size: $font-size--default;
-    line-height: $line-height--default;
-    font-family: $font-family-bold;
+    font-size: variables.$font-size--default;
+    line-height: variables.$line-height--default;
+    font-family: variables.$font-family-bold;
   }
 
   .dsm_card_subtitle {

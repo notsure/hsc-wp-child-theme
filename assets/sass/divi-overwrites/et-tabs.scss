@@ -1,7 +1,12 @@
+//@use '../setup/variables' as variables;
+@use '../setup/mixins' as mixins;
+//@use '../setup/extends' as extends;
+//@use '../setup/functions' as functions;
+
 .et_pb_tabs {
     .et_pb_tabs_controls {
         a {
-            @include font-bold-italic(16px);
+            @include mixins.font-bold-italic(16px);
         }
     }
 }

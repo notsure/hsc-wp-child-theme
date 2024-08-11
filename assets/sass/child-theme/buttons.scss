@@ -1,0 +1,183 @@
+@use '../setup/variables' as variables;
+@use '../setup/mixins' as mixins;
+//@use '../setup/extends' as extends;
+//@use '../setup/functions' as functions;
+
+.hsc-btn {
+  @include mixins.font-bold-italic(18px);
+
+  transition: all 0.3s;
+  cursor: pointer;
+  padding: 20px 80px;
+  display: inline-block;
+  border: 2px solid variables.$color-blue-dark;
+  color: variables.$color-blue-dark;
+  background: transparent;
+
+  &:hover {
+    background: #ccc;
+  }
+
+  &.box-shadow {
+    box-shadow: 3px 10px 10px -6px rgba(variables.$color-blue-dark, 0.3);
+  }
+
+  &.box-shadow-yellow {
+    box-shadow: 3px 10px 10px -6px rgba(variables.$color-yellow, 0.3);
+  }
+}
+
+.hsc-btn-xs {
+  @include mixins.font-bold-italic(14px);
+
+  padding: 4px 10px;
+}
+.hsc-btn-small {
+  @include mixins.font-bold-italic(14px);
+
+  padding: 10px 40px;
+}
+
+.hsc-btn-big {
+  @include mixins.font-bold-italic(22px);
+
+  padding: 30px 100px;
+}
+
+.hsc-btn-primary {
+  background: variables.$color-blue-dark;
+  color: variables.$color-white;
+
+  &:hover {
+    @include mixins.bg-hsc-white(0.1);
+
+    color: variables.$color-blue-dark;
+  }
+}
+
+.hsc-btn-success {
+  background: variables.$color-green;
+  color: variables.$color-white;
+  border-color: variables.$color-green;
+
+  &:hover {
+    @include mixins.bg-hsc-white(0.1);
+
+    color: variables.$color-green;
+    border-color: variables.$color-green;
+  }
+}
+
+.hsc-btn-warning {
+  background: variables.$color-orange;
+  color: variables.$color-white;
+  border-color: variables.$color-orange;
+
+  &:hover {
+    @include mixins.bg-hsc-white(0.1);
+
+    color: variables.$color-orange;
+    border-color: variables.$color-orange;
+  }
+}
+
+.hsc-btn-danger {
+  background: variables.$color-red;
+  color: variables.$color-white;
+  border-color: variables.$color-red;
+
+  &:hover {
+    @include mixins.bg-hsc-white(0.1);
+
+    color: variables.$color-red;
+    border-color: variables.$color-red;
+  }
+}
+
+.hsc-btn-yellow {
+  background: variables.$color-yellow;
+  color: variables.$color-blue-dark;
+  border-color: variables.$color-yellow;
+
+  &:hover {
+    @include mixins.bg-hsc-white(0.1);
+
+    color: variables.$color-yellow;
+    border-color: variables.$color-yellow;
+  }
+}
+
+.hsc-btn-link {
+  background: transparent !important;
+  border-color: transparent !important;
+
+  &:hover {
+    background: transparent !important;
+    border-color: transparent !important;
+  }
+}
+
+/* Inverse */
+.hsc-btn-primary-inverse {
+  @include mixins.bg-hsc-white(0.1);
+
+  color: variables.$color-blue-dark;
+  border: 3px solid variables.$color-blue-dark;
+
+  &:hover {
+    background: variables.$color-blue-dark;
+    color: variables.$color-white;
+  }
+}
+
+.hsc-btn-success-inverse {
+  @include mixins.bg-hsc-white(0.1);
+
+  color: variables.$color-green;
+  border: 3px solid variables.$color-green;
+
+  &:hover {
+    background: variables.$color-green;
+    color: variables.$color-white;
+    border-color: variables.$color-green;
+  }
+}
+
+.hsc-btn-warning-inverse {
+  @include mixins.bg-hsc-white(0.1);
+
+  color: variables.$color-orange;
+  border: 3px solid variables.$color-orange;
+
+  &:hover {
+    background: variables.$color-orange;
+    color: variables.$color-white;
+    border-color: variables.$color-orange;
+  }
+}
+
+.hsc-btn-danger-inverse {
+  @include mixins.bg-hsc-white(0.1);
+
+  color: variables.$color-red;
+  border: 3px solid variables.$color-red;
+
+  &:hover {
+    background: variables.$color-red;
+    color: variables.$color-white;
+    border-color: variables.$color-red;
+  }
+}
+
+.hsc-btn-yellow-inverse {
+  @include mixins.bg-hsc-white(0.1);
+
+  color: variables.$color-yellow;
+  border: 3px solid variables.$color-yellow;
+
+  &:hover {
+    background: variables.$color-yellow;
+    color: variables.$color-blue-dark;
+    border-color: variables.$color-yellow;
+  }
+}

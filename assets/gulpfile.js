@@ -4,16 +4,21 @@ const { src, dest, parallel, series } = require('gulp');
 // Include our plugins.
 const sass = require('gulp-sass')(require('sass'));
 const concat = require('gulp-concat');
+const replace = require('gulp-replace');
 const autoprefixer = require('gulp-autoprefixer');
 const postcss = require('gulp-postcss');
-const uglify = require('gulp-uglify-es').default;
+// const uglify = require('gulp-uglify-es').default;
 const gulpTerser = require('gulp-terser');
-const terser = require('terser');
+// const terser = require('terser');
 const babel = require('gulp-babel');
+
+const fs = require('fs');
+const packageJson = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
+const themeVersion = packageJson.version;
 
 function scss() {
     return src([
-        './sass/style.scss'
+        './sass/styles.scss'
       ])
         .pipe(sass.sync({ outputStyle: 'compressed' }).on('error', sass.logError))
         .pipe(postcss([autoprefixer]))
@@ -26,6 +31,7 @@ function exportToRoot() {
     './sass/wordpress.css',
     './dist/style.css',
   ])
+    .pipe(replace(/(Version:\s+)[^\s]+/, `$1${themeVersion}`)) // Replace the version dynamically
     .pipe(concat(`style.css`))
     .pipe(dest('../'));
 }

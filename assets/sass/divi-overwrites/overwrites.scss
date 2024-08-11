@@ -1,3 +1,8 @@
+//@use '../setup/variables' as variables;
+@use '../setup/mixins' as mixins;
+//@use '../setup/extends' as extends;
+//@use '../setup/functions' as functions;
+
 .et_pb_all_tabs {
     padding: 0;
 }
@@ -13,7 +18,7 @@
     padding-bottom: 85px;
 }
 
-@media #{$viewport-phone} {
+@include mixins.media($down: sm) {
     html.js {
         margin-top: 0 !important;
     }

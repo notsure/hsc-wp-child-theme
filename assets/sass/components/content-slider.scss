@@ -1,4 +1,9 @@
-@include media($down: sm) {
+//@use '../setup/variables' as variables;
+//@use '../setup/extends' as extends;
+@use '../setup/mixins' as mixins;
+//@use '../setup/functions' as functions;
+
+@include mixins.media($down: sm) {
   .hsc--content-slider {
     max-width: none;
     display: flex;
