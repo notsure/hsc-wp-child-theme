@@ -4,7 +4,6 @@
 //@use '../setup/functions' as functions;
 
 @mixin heading-default {
-  color: variables.$color-blue-dark;
   font-family: variables.$font-family-bold-italic;
   line-height: variables.$line-height--default;
 }
