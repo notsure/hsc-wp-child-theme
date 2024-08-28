@@ -7,9 +7,7 @@ const concat = require('gulp-concat');
 const replace = require('gulp-replace');
 const autoprefixer = require('gulp-autoprefixer');
 const postcss = require('gulp-postcss');
-// const uglify = require('gulp-uglify-es').default;
 const gulpTerser = require('gulp-terser');
-// const terser = require('terser');
 const babel = require('gulp-babel');
 
 const fs = require('fs');

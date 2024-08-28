@@ -48,7 +48,7 @@ class Navigation {
     });
 
     if (this.desktopToolbar && this.desktopMenu && this.mobileMenu) {
-      window.addEventListener('scroll', this.throttle(() => this.onWindowScroll(), 100));
+      window.addEventListener('scroll', this.throttle(() => this.onWindowScroll(), 10));
     }
   }
 
