@@ -1,7 +1,6 @@
 <?php
 
 define('NABA_WP_THEME_NAME', 'hsc-wp-child-theme');
-define('NABA_WP_THEME_VERSION', getThemeVersion());
 define('NABA_WP_THEME_PATH', get_stylesheet_directory_uri());
 define('NABA_WP_THEME_SRC', get_stylesheet_directory() . '/src');
 defined('ABSPATH') or die('Direct script access disallowed.');
@@ -22,16 +21,18 @@ function getThemeVersion() {
   return $version;
 }
 
+define('NABA_WP_THEME_VERSION', getThemeVersion());
+
 // Not sure why this was added but it changes the version of the divi script includes. maybe they had to be synced but I am not sure.
-//function et_get_theme_version() {
-//    return NABA_WP_THEME_VERSION;
-//}
+function et_get_theme_version() {
+    return NABA_WP_THEME_VERSION;
+}
 
 add_action( 'wp_enqueue_scripts', 'hsc_styles' );
 
 function hsc_styles() {
     wp_enqueue_style('parent-theme', get_template_directory_uri() .'/style.css');
-    wp_enqueue_script('naba-hsc-scripts', get_stylesheet_directory_uri() . '/assets/dist/scripts.js?ver=' . NABA_WP_THEME_VERSION, [], null, true);
+    wp_enqueue_script('naba-hsc-scripts', get_stylesheet_directory_uri() . '/assets/dist/scripts.js?ver=' . NABA_WP_THEME_VERSION, [], NABA_WP_THEME_VERSION, true);
 }
 
 // Use Timber to load and render twig files.
