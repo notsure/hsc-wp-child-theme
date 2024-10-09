@@ -186,11 +186,12 @@
     border: none;
     width: 2rem;
     font-size: 3rem;
-    padding: 0;
+    padding: 0 0 10px 0;
     cursor: pointer;
     opacity: 0.2;
     transition: opacity 100ms;
     z-index: 10;
+    align-items: center;
   }
 
   .hsc--slider-arrow:hover,
@@ -252,7 +253,8 @@
         top: 0;
         height: 100%;
         width: 0; // Start from zero width
-        background-color: variables.$color-yellow;
+        background-color: rgba(variables.$color-grayscale--200, 0.1);
+        //background-color: variables.$color-yellow;
         transform-origin: left;
       }
 

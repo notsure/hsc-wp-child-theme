@@ -24,7 +24,7 @@
   }
 
   .hsc-header-nav-mobile-container {
-    position: relative;
+    position: fixed;
     background-color: variables.$color-blue-dark;
     display: grid;
     grid-template-columns: auto 50px 50px;
@@ -34,6 +34,7 @@
     padding: 15px 5px 15px 15px;
     height: $mobile-menu-height;
     z-index: $mobile-nav-index;
+    width: 100%;
   }
 
   .hsc--menu-home-link {
@@ -121,7 +122,9 @@
   .hsc--menu-overlay-highlights {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    background-color: rgba(variables.$color-white, 0.4);
+    background-color: rgba(variables.$color-white, 0.8);
+    margin: 10px 20px 15px;
+    border-radius: 3px;
   }
 
   .hsc--menu-overlay-highlights-item {
@@ -130,7 +133,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 5px;
     padding: 10px;
     color: variables.$color-blue-dark;
     font-family: variables.$font-family-bold;
@@ -153,6 +155,10 @@
       height: 50px;
       width: 1px;
       background-color: variables.$color-blue-dark;
+    }
+
+    &:last-child:after {
+      width: 0;
     }
   }
 
@@ -192,17 +198,18 @@
 
   .hsc--nav-main-item {
     border-left: 4px solid transparent;
-    padding: .25rem 0;
     border-bottom: 1px solid rgba(variables.$color-black, 0.6);
   }
 
   .hsc--nav-main-link {
     font-size: 1.25rem;
-    line-height: 1;
+    line-height: 0.8;
     display: block;
-    padding: 1.5rem 15px;
+    padding: 22px 15px 17px 15px;
+    letter-spacing: 0.1px;
     color: variables.$color-white;
     font-family: variables.$font-family-semibold;
+    text-transform: uppercase;
   }
 
   .hsc--nav-main-item.menu-item-has-children .hsc--nav-main-link {
@@ -212,7 +219,7 @@
       content: '';
       position: absolute;
       right: 15px;
-      top: 25px;
+      top: 18px;
       border: solid variables.$color-white;
       border-width: 0 3px 3px 0;
       display: inline-block;
@@ -228,6 +235,7 @@
 
     &:after {
       transform: rotate(225deg);
+      top: 22px;
     }
   }
 
@@ -238,17 +246,22 @@
     transition: all variables.$transition-default;
     max-height: 0;
     overflow: hidden;
+    background: rgba(variables.$color-grayscale--0, 0.1);
   }
 
   .hsc--subnav-item {
     border-left: 4px solid transparent;
+
+    &:first-child {
+      margin-top: 5px;
+    }
   }
 
   .hsc--subnav-link {
     font-size: variables.$font-size--default;
     line-height: variables.$line-height--default;
     display: block;
-    padding: 10px 10px 10px 30px;
+    padding: 10px 10px 10px 20px;
     color: variables.$color-white;
     font-family: variables.$font-family-semibold;
   }
