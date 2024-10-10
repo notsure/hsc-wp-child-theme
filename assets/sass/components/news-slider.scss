@@ -40,6 +40,8 @@
   }
 
   .hsc--slide {
+    $slide-shadow-color: variables.$color-grayscale--0;
+
     display: flex;
     flex: none;
     justify-content: center;
@@ -58,26 +60,11 @@
       height: 100%;
       z-index: 1;
       background-color: rgba(variables.$color-black, 0.1) !important;
-      background: linear-gradient(
-          0deg,
-          variables.$color-grayscale--850 0%,
-          variables.$color-grayscale--850 6%,
-          rgba(variables.$color-grayscale--850, 0.5) 32%,
-          rgba(variables.$color-grayscale--850, 0) 50%
+      background: linear-gradient(to bottom,
+        rgba(variables.$color-blue-light-alt, 0.4) 20%,
+        rgba(variables.$color-blue-dark-alt, 1) 100%
       );
-    }
-
-    @include mixins.media(sm) {
-      &::after {
-        background: linear-gradient(
-            0deg,
-            variables.$color-grayscale--850 0%,
-            variables.$color-grayscale--850 0%,
-            rgba(variables.$color-grayscale--850, 0.5) 30%,
-            rgba(variables.$color-grayscale--850, 0) 50%
-        );
-      }
-    }
+  }
   }
 
   .hsc--slide .hsc--slide-image {
@@ -144,7 +131,7 @@
     font-size: clamp(1.8rem, 5vw, 3.5rem);
     font-family: variables.$font-family-bold;
     line-height: 1.15em;
-    color: variables.$color-blue-dark;
+    color: variables.$color-grayscale--900;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
@@ -192,10 +179,10 @@
     transition: opacity 100ms;
     z-index: 10;
     align-items: center;
+    overflow: hidden;
   }
 
-  .hsc--slider-arrow:hover,
-  .hsc--slider-arrow:focus {
+  .hsc--slider-arrow:hover {
     opacity: 0.8;
   }
 
@@ -212,19 +199,22 @@
   }
 
   .hsc--slider-pagination {
-    background: variables.$color-grayscale--850;
+    background: variables.$color-blue-dark-alt;
     padding-bottom: var(--spacing);
 
     .hsc--slider-pagination-inner {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
+      grid-template-columns: repeat(4, 12px);
+      gap: 10px;
       max-width: 1344px;
       width: calc(100% - 40px);
       margin: auto;
+      justify-content: center;
 
       @include mixins.media(sm) {
         width: 90%;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
       }
     }
 
@@ -234,41 +224,27 @@
       display: flex;
       flex-direction: column;
       row-gap: 20px;
+      opacity: 0.6;
+      transition: all variables.$transition-very-slow;
     }
 
     .hsc--pagination-progress {
       width: 100%;
-      height: 3px;
-      background-color: variables.$color-grayscale--500; // Set static background to grey
+      height: 4px;
+      background-color: rgba(variables.$color-grayscale--0, 0.2);
       position: relative; // Needed to position the pseudo-element
       overflow: hidden; // Ensures the pseudo-element does not exceed the parent's bounds
       transform: skewX(-7.77deg);
-      transition: all variables.$transition-default;
-
-      // Create a pseudo-element for the red loading bar
-      &::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 0;
-        height: 100%;
-        width: 0; // Start from zero width
-        background-color: rgba(variables.$color-grayscale--200, 0.1);
-        //background-color: variables.$color-yellow;
-        transform-origin: left;
-      }
-
-      @include mixins.media(sm) {
-        height: 4px;
-      }
+      transition: all variables.$transition-very-slow;
     }
 
     .hsc--pagination-title {
-      color: variables.$color-grayscale--500;
+      color: rgba(variables.$color-grayscale--1000, 0.2);
       font-family: variables.$font-family-semibold;
-      font-size: variables.$font-size--default;
+      font-size: variables.$font-size--small;
+      line-height: 1.1;
       display: none;
-      transition: all variables.$transition-default;
+      transition: all variables.$transition-very-slow;
 
       @include mixins.media(sm) {
         display: block;
@@ -276,22 +252,15 @@
     }
 
     .hsc--pagination-item.active {
-      .hsc--pagination-progress:before {
-        animation: fillProgress 6000ms linear forwards;
+      opacity: 1;
+
+      .hsc--pagination-progress {
+        background-color: rgba(variables.$color-grayscale--0, 0.5);
       }
 
       .hsc--pagination-title {
-        color: variables.$color-blue-dark;
+        color: rgba(variables.$color-grayscale--1000, 0.5);
       }
-    }
-  }
-
-  @keyframes fillProgress {
-    0% {
-      width: 0;
-    }
-    100% {
-      width: 100%; // Animates to full width
     }
   }
 
@@ -305,6 +274,8 @@
   }
 
   @keyframes slideIn {
-    100% { transform: translateX(0%); }
+    100% {
+      transform: translateX(0%);
+    }
   }
 }

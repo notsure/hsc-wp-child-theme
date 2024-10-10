@@ -1,6 +1,6 @@
 class NewsSlider {
   constructor() {
-    this.sliderAutoPlayDuration = 6000;
+    this.sliderAutoPlayDuration = 6800;
     this.autoSlideInterval = null;
     this.slidesContainer = document.getElementById('hsc--slider-container');
     this.slides = document.getElementsByClassName('hsc--slide');
