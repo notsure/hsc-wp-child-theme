@@ -59,10 +59,10 @@
       width: 100%;
       height: 100%;
       z-index: 1;
-      background-color: rgba(variables.$color-black, 0.1) !important;
+      background-color: rgba(variables.$color-black, 0.06) !important;
       background: linear-gradient(to bottom,
-        rgba(variables.$color-blue-light-alt, 0.4) 20%,
-        rgba(variables.$color-blue-dark-alt, 1) 100%
+        rgba(variables.$color-blue-light-alt, 0.2) 20%,
+        rgba(variables.$color-blue-dark-alt, 0.99) 100%
       );
   }
   }
@@ -203,19 +203,13 @@
     padding-bottom: var(--spacing);
 
     .hsc--slider-pagination-inner {
-      display: grid;
-      grid-template-columns: repeat(4, 12px);
+      display: flex;
       gap: 10px;
       max-width: 1344px;
-      width: calc(100% - 40px);
+      width: 100%;
       margin: auto;
       justify-content: center;
-
-      @include mixins.media(sm) {
-        width: 90%;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 20px;
-      }
+      align-items: center;
     }
 
     .hsc--pagination-item {
@@ -226,6 +220,7 @@
       row-gap: 20px;
       opacity: 0.6;
       transition: all variables.$transition-very-slow;
+      width: 20px;
     }
 
     .hsc--pagination-progress {
@@ -245,10 +240,6 @@
       line-height: 1.1;
       display: none;
       transition: all variables.$transition-very-slow;
-
-      @include mixins.media(sm) {
-        display: block;
-      }
     }
 
     .hsc--pagination-item.active {
