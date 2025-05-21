@@ -1,88 +1,69 @@
-@use '../setup/variables' as variables;
-//@use '../setup/mixins' as mixins;
-//@use '../setup/extends' as extends;
-//@use '../setup/functions' as functions;
+//@use '../setup/variables' as variables;
+@use '../setup/mixins';
 
-@mixin heading-default {
-  font-family: variables.$font-family-bold-italic;
-  line-height: variables.$line-height--default;
-}
-
+html,
 body {
-  font-family: variables.$font-family-urw-regular;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
+  font-size: 16px;
+  width: 100%;
 
-h1, h2, h3, h4, h5, h6 {
-  a, div, span, b, i, em, p {
-    @include heading-default;
+  @include mixins.media(sm) {
+    font-size: 18px;
   }
-
-  @include heading-default;
 }
 
-.h1, .h1-heading {
-  @include heading-default;
+h1, .h1 {
+  font-size: 2.986rem;
 
-  font-size: variables.$font-size--h1;
+  @include mixins.media(xs) {
+    font-size: 2.027rem;
+  }
 }
 
-.h2, .h2-heading {
-  @include heading-default;
+h2, .h2 {
+  font-size: 2.488rem;
 
-  font-size: variables.$font-size--h2;
+  @include mixins.media(xs) {
+    font-size: 1.802rem;
+  }
 }
 
-.h3, .h3-heading {
-  @include heading-default;
+h3, .h3 {
+  font-size: 2.074rem;
 
-  font-size: variables.$font-size--h3;
+  @include mixins.media(xs) {
+    font-size: 1.602rem;
+  }
 }
 
-.h4, .h4-heading {
-  @include heading-default;
+h4, .h4 {
+  font-size: 1.728rem;
 
-  font-size: variables.$font-size--h4;
+  @include mixins.media(xs) {
+    font-size: 1.424rem;
+  }
 }
 
-.h5, .h5-heading {
-  @include heading-default;
+h5, .h5 {
+  font-size: 1.44rem;
 
-  font-size: variables.$font-size--h5;
+  @include mixins.media(xs) {
+    font-size: 1.266rem;
+  }
 }
 
-.h6, .h6-heading {
-  @include heading-default;
+h6, .h6 {
+  font-size: 1.2rem;
 
-  font-size: variables.$font-size--h6;
+  @include mixins.media(xs) {
+    font-size: 1.125rem;
+  }
 }
 
-b,
-strong {
-  font-family: variables.$font-family-semibold;
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  line-height: 1.15em;
+  letter-spacing: -0.022em;
+  font-weight: bold;
 }
 
-.text-shadow {
-  text-shadow: 1px 1px variables.$color-blue-dark;
-}
-
-.text-shadow-inverse {
-  text-shadow: 1px 1px variables.$color-yellow;
-}
-
-.text-white {
-  color: variables.$color-white !important;
-}
-
-.text-blue {
-  color: variables.$color-blue-dark !important;
-}
-
-.text-yellow {
-  color: variables.$color-yellow !important;
-}
-
-.text-grey {
-  color: variables.$color-grey !important;
-}
