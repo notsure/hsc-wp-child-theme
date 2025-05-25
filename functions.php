@@ -40,7 +40,5 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // Child themes includes.
 require_once(NABA_WP_THEME_SRC . '/deload.php');
-require_once(NABA_WP_THEME_SRC . '/sponsor-plugin.php');
 require_once(NABA_WP_THEME_SRC . '/season-number.php');
 require_once(NABA_WP_THEME_SRC . '/header-menu-plugin.php');
-require_once(NABA_WP_THEME_SRC . '/news-slider.php');

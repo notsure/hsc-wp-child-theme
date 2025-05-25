@@ -3,32 +3,32 @@
 //@use '../setup/extends' as extends;
 //@use '../setup/functions' as functions;
 
-.et_pb_all_tabs {
-    padding: 0;
-}
+//.et_pb_all_tabs {
+//    padding: 0;
+//}
 
-#main-intro-slider .header-content {
-    padding-top: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-}
+//#main-intro-slider .header-content {
+//    padding-top: 0;
+//    margin-top: 0;
+//    margin-bottom: 0;
+//}
 
-#main-content .container {
-    padding-top: 85px;
-    padding-bottom: 85px;
-}
+//#main-content .container {
+//    padding-top: 85px;
+//    padding-bottom: 85px;
+//}
 
-@include mixins.media($down: sm) {
-    html.js {
-        margin-top: 0 !important;
-    }
-
-    #main-content .container {
-        width: 92%;
-    }
-
-    .et_pb_row {
-        width: 100%;
-        padding: 0 15px;
-    }
-}
+//@include mixins.media($down: sm) {
+//    html.js {
+//        margin-top: 0 !important;
+//    }
+//
+//    #main-content .container {
+//        width: 92%;
+//    }
+//
+//    .et_pb_row {
+//        width: 100%;
+//        padding: 0 15px;
+//    }
+//}

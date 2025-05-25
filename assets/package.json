@@ -1,6 +1,6 @@
 {
     "name": "hsc-theme",
-    "version": "2.11.3",
+    "version": "2.11.4",
     "scripts": {
         "build": "gulp"
     },
