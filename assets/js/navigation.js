@@ -19,7 +19,10 @@ class Navigation {
 
   constructor() {
     this.lastScrollTop = 0; // To track the last scroll position
-    this.init();
+
+    if (document.querySelector(this.SELECTORS.desktopMenu) || document.querySelector(this.SELECTORS.mobileMenu)) {
+      this.init();
+    }
   }
 
   init() {

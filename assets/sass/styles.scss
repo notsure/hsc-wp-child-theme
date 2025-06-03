@@ -1,11 +1,9 @@
 @import './child-theme/fonts-families';
 @import './child-theme/fonts';
 @import './child-theme/layout';
-@import './child-theme/helpers';
 @import './child-theme/buttons';
 @import './child-theme/navigation-desktop';
 @import './child-theme/navigation-mobile';
-@import './child-theme/hsc-icons';
 
 @import './components/blog-cards';
 @import './components/blog-filter';
@@ -14,11 +12,5 @@
 @import './components/membercard';
 @import './components/content-slider';
 
-@import './divi-overwrites/columns';
 @import './divi-overwrites/overwrites';
-@import './divi-overwrites/et-tabs';
-@import './divi-overwrites/owl-sliders';
 @import './divi-overwrites/table';
-
-@import './plugin-overwrites/dsm-image-carousel';
-@import './plugin-overwrites/divi-supreme';
