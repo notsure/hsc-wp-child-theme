@@ -38,7 +38,6 @@
   }
 
   .hsc--menu-home-link {
-    font-size: variables.$font-size--h5;
     line-height: variables.$line-height--default;
     font-family: variables.$font-family-bold;
     grid-column: 1/1;
@@ -259,7 +258,7 @@
   }
 
   .hsc--subnav-link {
-    font-size: variables.$font-size--default;
+    font-size: 1rem;
     line-height: variables.$line-height--default;
     display: block;
     padding: 10px 10px 10px 20px;
@@ -289,7 +288,6 @@
       display: block;
       margin-top: 15px;
       text-transform: uppercase;
-      font-family: variables.$font-family-roboto;
       letter-spacing: 0.5px;
     }
   }

@@ -2,22 +2,13 @@
 $font-family-bold: 'URWGeometric-Black', Arial, Helvetica, sans-serif;
 $font-family-semibold: 'URWGeometric-SemiBold', Arial, Helvetica, sans-serif;
 $font-family-bold-italic: 'URWGeometric-BlackOblique', Arial, Helvetica, sans-serif;
-$font-family-roboto: 'Roboto Flex', Arial, Helvetica, sans-serif;
 $font-family-urw-regular: 'URWGeometric-Regular', Arial, Helvetica, sans-serif;
 $font-family-default: $font-family-urw-regular;
 
 // new
-$font-size--h1: 3.815rem;
-$font-size--h2: 3.052rem;
-$font-size--h3: 2.441rem;
-$font-size--h4: 1.953rem;
-$font-size--h5: 1.563rem;
-$font-size--h6: 1.25rem;
 $font-size--default: 1rem;
 $font-size--small: 0.8rem;
 $font-size--xs: 0.64rem;
-$font-size--browser-fallback--mobile: 16px;
-$font-size--browser-fallback--desktop: 20px;
 
 $line-height--default: 1.15em;
 $letter-spacing--default: -0.022em;
@@ -25,44 +16,39 @@ $letter-spacing--default: -0.022em;
 // Based on best practices from: https://typescale.com/
 // Font set: large
 // Common use-case: desktop
-$va-font-size-major--third: (
+$font-sizes--desktop: (
   'regular': 1rem,
-  'h1': 3.815rem,
-  'h2': 3.052rem,
-  'h3': 2.441rem,
-  'h4': 1.953rem,
-  'h5': 1.563rem,
-  'h6': 1.25rem,
-  'small': 0.8rem,
-  'extra-small': 0.64rem,
-);
-// Common use-case: tablet / phone
-$va-font-size-major--second: (
-  'regular': 1rem,
-  'h1': 2.027rem,
-  'h2': 1.802rem,
-  'h3': 1.602rem,
-  'h4': 1.424rem,
-  'h5': 1.266rem,
-  'h6': 1.125rem,
+  'h1': 2.75rem,
+  'h2': 2rem,
+  'h3': 1.375rem,
+  'h4': 1.125rem,
+  'h5': 1.09rem,
+  'h6': 1.04rem,
   'small': 0.889rem,
   'extra-small': 0.79rem,
 );
 
-// Font set: large
-// Common use-case: desktop
-$va-font-size-minor--third: (
+$font-sizes--tablet: (
   'regular': 1rem,
-  'h1': 2.986rem,
-  'h2': 2.488rem,
-  'h3': 2.074rem,
-  'h4': 1.728rem,
-  'h5': 1.44rem,
-  'h6': 1.2rem,
+  'h1': 2.75rem,
+  'h2': 2rem,
+  'h3': 1.375rem,
+  'h4': 1.125rem,
+  'h5': 1.09rem,
+  'h6': 1.04rem,
   'small': 0.833rem,
   'extra-small': 0.694rem,
 );
 
-$va-font-size--desktop: $va-font-size-major--third;
-$va-font-size--tablet: $va-font-size-minor--third;
-$va-font-size--phone: $va-font-size-major--second;
+$font-sizes--mobile: (
+  'regular': 1rem,
+  'h1': 1.625rem,
+  'h2': 1.1875rem,
+  'h3': 1.296rem,
+  'h4': 1rem,
+  'h5': 1rem,
+  'h6': 1rem,
+  'small': 0.937rem,
+  'extra-small': 0.878rem,
+);
+

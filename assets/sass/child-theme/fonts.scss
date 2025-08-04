@@ -1,4 +1,5 @@
-//@use '../setup/variables' as variables;
+@use 'sass:map';
+@use '../setup/variables';
 @use '../setup/mixins';
 
 html,
@@ -13,57 +14,94 @@ body {
   }
 }
 
-h1, .h1 {
-  font-size: 2.986rem;
-
-  @include mixins.media(xs) {
-    font-size: 2.027rem;
-  }
-}
-
-h2, .h2 {
-  font-size: 2.488rem;
-
-  @include mixins.media(xs) {
-    font-size: 1.802rem;
-  }
-}
-
-h3, .h3 {
-  font-size: 2.074rem;
-
-  @include mixins.media(xs) {
-    font-size: 1.602rem;
-  }
-}
-
-h4, .h4 {
-  font-size: 1.728rem;
-
-  @include mixins.media(xs) {
-    font-size: 1.424rem;
-  }
-}
-
-h5, .h5 {
-  font-size: 1.44rem;
-
-  @include mixins.media(xs) {
-    font-size: 1.266rem;
-  }
-}
-
-h6, .h6 {
-  font-size: 1.2rem;
-
-  @include mixins.media(xs) {
-    font-size: 1.125rem;
-  }
-}
-
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+%heading-base {
   line-height: 1.15em;
   letter-spacing: -0.022em;
   font-weight: bold;
 }
+
+h1, .h1 {
+  @extend %heading-base;
+
+  font-size: map.get(variables.$font-sizes--mobile, 'h1');
+
+  @include mixins.media(sm) {
+    font-size: map.get(variables.$font-sizes--tablet, 'h1');
+  }
+
+  @include mixins.media(md) {
+    font-size: map.get(variables.$font-sizes--desktop, 'h1');
+  }
+}
+
+h2, .h2 {
+  @extend %heading-base;
+
+  font-size: map.get(variables.$font-sizes--mobile, 'h2');
+
+  @include mixins.media(sm) {
+    font-size: map.get(variables.$font-sizes--tablet, 'h2');
+  }
+
+  @include mixins.media(md) {
+    font-size: map.get(variables.$font-sizes--desktop, 'h2');
+  }
+}
+
+h3, .h3 {
+  @extend %heading-base;
+
+  font-size: map.get(variables.$font-sizes--mobile, 'h3');
+
+  @include mixins.media(sm) {
+    font-size: map.get(variables.$font-sizes--tablet, 'h3');
+  }
+
+  @include mixins.media(md) {
+    font-size: map.get(variables.$font-sizes--desktop, 'h3');
+  }
+}
+
+h4, .h4 {
+  @extend %heading-base;
+
+  font-size: map.get(variables.$font-sizes--mobile, 'h4');
+
+  @include mixins.media(sm) {
+    font-size: map.get(variables.$font-sizes--tablet, 'h4');
+  }
+
+  @include mixins.media(md) {
+    font-size: map.get(variables.$font-sizes--desktop, 'h4');
+  }
+}
+
+h5, .h5 {
+  @extend %heading-base;
+
+  font-size: map.get(variables.$font-sizes--mobile, 'h5');
+
+  @include mixins.media(sm) {
+    font-size: map.get(variables.$font-sizes--tablet, 'h5');
+  }
+
+  @include mixins.media(md) {
+    font-size: map.get(variables.$font-sizes--desktop, 'h5');
+  }
+}
+
+h6, .h6 {
+  @extend %heading-base;
+
+  font-size: map.get(variables.$font-sizes--mobile, 'h6');
+
+  @include mixins.media(sm) {
+    font-size: map.get(variables.$font-sizes--tablet, 'h6');
+  }
+
+  @include mixins.media(md) {
+    font-size: map.get(variables.$font-sizes--desktop, 'h6');
+  }
+}
+
 

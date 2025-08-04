@@ -68,7 +68,6 @@
   }
 
   .hsc--logo {
-    font-size: variables.$font-size--h4;
     line-height: variables.$line-height--default;
     font-family: variables.$font-family-bold;
     grid-area: logo / logo / logo / logo;
@@ -101,7 +100,7 @@
   }
 
   .hsc--nav-main-link {
-    font-size: variables.$font-size--default;
+    font-size: 1rem;
     line-height: variables.$line-height--default;
     transition: color variables.$transition-default;
     border-bottom: 1px solid transparent;
@@ -228,7 +227,7 @@
   }
 
   .hsc--nav-main-link {
-    font-size: variables.$font-size--default;
+    font-size: 1rem;
     line-height: variables.$line-height--default;
     border-bottom: 2px solid transparent;
     text-transform: uppercase;
@@ -276,7 +275,7 @@
   }
 
   .hsc--subnav-link {
-    font-size: variables.$font-size--default;
+    font-size: 1rem;
     line-height: variables.$line-height--default;
     transition: all variables.$transition-default;
     display: block;
