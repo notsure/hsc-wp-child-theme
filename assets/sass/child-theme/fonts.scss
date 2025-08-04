@@ -8,17 +8,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-size: 16px;
   width: 100%;
-}
-
-body {
-  font-size: map.get(variables.$font-sizes--mobile, 'regular');
 
   @include mixins.media(sm) {
-    font-size: map.get(variables.$font-sizes--tablet, 'regular');
-  }
-
-  @include mixins.media(md) {
-    font-size: map.get(variables.$font-sizes--desktop, 'regular');
+    font-size: 18px;
   }
 }
 
