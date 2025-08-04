@@ -2,23 +2,24 @@
 @use '../setup/variables';
 @use '../setup/mixins';
 
-html {
-  font-size: 16px;
-
-  @include mixins.media(sm) {
-    font-size: 18px;
-  }
-}
-
 html,
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
   width: 100%;
 }
 
 body {
-  font-size: 1rem;
+  font-size: map.get(variables.$font-sizes--mobile, 'regular');
+
+  @include mixins.media(sm) {
+    font-size: map.get(variables.$font-sizes--tablet, 'regular');
+  }
+
+  @include mixins.media(md) {
+    font-size: map.get(variables.$font-sizes--desktop, 'regular');
+  }
 }
 
 %heading-base {
