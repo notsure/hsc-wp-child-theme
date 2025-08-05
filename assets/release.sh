@@ -32,6 +32,7 @@ cd assets
 end=$(date +%s) # Record end time
 runtime=$((end - start)) # Calculate runtime
 
+echo ""
 echo "=================================="
-echo "✅ Build completed in $runtime seconds."
+echo "✅ Release completed in $runtime seconds."
 echo "=================================="
