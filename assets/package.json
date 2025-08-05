@@ -1,8 +1,9 @@
 {
     "name": "hsc-theme",
-    "version": "2.11.9",
+    "version": "2.11.10",
     "scripts": {
-        "build": "gulp"
+        "build": "gulp",
+        "release": "./release.sh"
     },
     "devDependencies": {
         "@babel/core": "^7.19.3",
