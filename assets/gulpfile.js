@@ -34,21 +34,21 @@ function exportToRoot() {
     .pipe(dest('../'));
 }
 
-function js() {
-    return src('js/**/*.js')
-      .pipe(babel({
-        presets: ['@babel/env']
-      }))
-      .pipe(concat('scripts.js'))
-      .pipe(gulpTerser({
-        mangle: true,
-        compress: true,
-      }))
-      .pipe(dest('dist'));
-}
+// function js() {
+//     return src('js/**/*.js')
+//       .pipe(babel({
+//         presets: ['@babel/env']
+//       }))
+//       .pipe(concat('scripts.js'))
+//       .pipe(gulpTerser({
+//         mangle: true,
+//         compress: true,
+//       }))
+//       .pipe(dest('dist'));
+// }
 
 exports.default = series(
   parallel(scss),
-  js,
+  // js,
   exportToRoot,
 );

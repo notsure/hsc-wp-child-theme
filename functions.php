@@ -32,7 +32,7 @@ add_action( 'wp_enqueue_scripts', 'hsc_styles' );
 
 function hsc_styles() {
     wp_enqueue_style('parent-theme', get_template_directory_uri() .'/style.css');
-    wp_enqueue_script('naba-hsc-scripts', get_stylesheet_directory_uri() . '/assets/dist/scripts.js?ver=' . NABA_WP_THEME_VERSION, [], NABA_WP_THEME_VERSION, true);
+//    wp_enqueue_script('naba-hsc-scripts', get_stylesheet_directory_uri() . '/assets/dist/scripts.js?ver=' . NABA_WP_THEME_VERSION, [], NABA_WP_THEME_VERSION, true);
 }
 
 // Use Timber to load and render twig files.
@@ -41,4 +41,3 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Child themes includes.
 require_once(NABA_WP_THEME_SRC . '/deload.php');
 require_once(NABA_WP_THEME_SRC . '/season-number.php');
-require_once(NABA_WP_THEME_SRC . '/header-menu-plugin.php');

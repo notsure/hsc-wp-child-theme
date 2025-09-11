@@ -1,6 +1,6 @@
 {
     "name": "hsc-theme",
-    "version": "2.11.11",
+    "version": "2.11.12",
     "scripts": {
         "build": "gulp",
         "release": "./release.sh"
